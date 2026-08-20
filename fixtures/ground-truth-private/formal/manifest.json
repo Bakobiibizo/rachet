@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "set": "formal",
+  "fixtures": [
+    {
+      "fixture_id": "formal-authorization-defect",
+      "path": "formal-authorization-defect/truth.json",
+      "sha256": "d7727b06bfacffdfed12ea31f37823baa73a014a1c986c0f988d20ae8a034839"
+    },
+    {
+      "fixture_id": "formal-clean-change",
+      "path": "formal-clean-change/truth.json",
+      "sha256": "1aad72bfa473fd008858ff501a12f9f703806ee3e03576a6665360063191c317"
+    },
+    {
+      "fixture_id": "formal-genuinely-ambiguous-claim",
+      "path": "formal-genuinely-ambiguous-claim/truth.json",
+      "sha256": "13466dc9f18e8895de73e6523fd2f6522ae44e7c2a0cb6a67f57c65f2288ffd7"
+    },
+    {
+      "fixture_id": "formal-malformed-error-handling",
+      "path": "formal-malformed-error-handling/truth.json",
+      "sha256": "65713962a92d172edddd47de5ef9ca36c5eafb35dd27b0016e10dc74711d7330"
+    },
+    {
+      "fixture_id": "formal-misleading-but-valid-change",
+      "path": "formal-misleading-but-valid-change/truth.json",
+      "sha256": "8da47c5bed0f7d3367241fd79e5109ccccbff83fce7718056cc9827bf5c435d6"
+    },
+    {
+      "fixture_id": "formal-obvious-regression",
+      "path": "formal-obvious-regression/truth.json",
+      "sha256": "9ec5089e0002b383369b4e83991a832bac46f2db10d59657a18baafb7bd56c6f"
+    },
+    {
+      "fixture_id": "formal-specification-violation",
+      "path": "formal-specification-violation/truth.json",
+      "sha256": "c69fe0b87cdc811c95f7470d11b9ff57cbb73b39ab6c5d985757af8272a5826c"
+    },
+    {
+      "fixture_id": "formal-subtle-regression",
+      "path": "formal-subtle-regression/truth.json",
+      "sha256": "319a5ded905835f5d7d4d57a3da1884edeee18ba04b8f40afcabf9231bbb4e5b"
+    },
+    {
+      "fixture_id": "formal-test-only-failure",
+      "path": "formal-test-only-failure/truth.json",
+      "sha256": "9e58cc3ce1bcae79068eff5837fe94f8cd50f2f1ace04176cc9466ed2f1cf807"
+    }
+  ]
+}

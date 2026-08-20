@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rachet.invalid/schemas/operator-observation/operator-observation-v1.schema.json",
+  "title": "Rachet operator observation v1",
+  "$comment": "Host JSON encoding only; this is not a consensus encoding.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "epoch",
+    "height",
+    "operator",
+    "economic_state",
+    "resource_budget",
+    "available_jobs",
+    "public_history_ref",
+    "private_operator_history_ref"
+  ],
+  "properties": {
+    "schema_version": { "const": "operator-observation.v1" },
+    "experiment_id": { "$ref": "#/$defs/identifier" },
+    "epoch": { "$ref": "#/$defs/nonNegativeInteger" },
+    "height": { "$ref": "#/$defs/nonNegativeInteger" },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor_id", "role", "objective"],
+      "properties": {
+        "actor_id": { "$ref": "#/$defs/identifier" },
+        "role": { "const": "validation_operator" },
+        "objective": { "$ref": "#/$defs/objective" }
+      }
+    },
+    "economic_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanism_set", "reputation"],
+      "properties": {
+        "mechanism_set": {
+          "type": "array",
+          "maxItems": 128,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "reputation": { "$ref": "#/$defs/signedInteger" }
+      }
+    },
+    "resource_budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "remaining_model_calls",
+        "remaining_tool_calls",
+        "remaining_validation_seconds"
+      ],
+      "properties": {
+        "remaining_model_calls": { "$ref": "#/$defs/nonNegativeInteger" },
+        "remaining_tool_calls": { "$ref": "#/$defs/nonNegativeInteger" },
+        "remaining_validation_seconds": { "$ref": "#/$defs/nonNegativeInteger" }
+      }
+    },
+    "available_jobs": {
+      "type": "array",
+      "maxItems": 1024,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/identifier" }
+    },
+    "public_history_ref": { "$ref": "#/$defs/reference" },
+    "private_operator_history_ref": { "$ref": "#/$defs/reference" }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[^\\s]+$"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "pattern": "^[^\\u0000-\\u001f]+$"
+    },
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "signedInteger": {
+      "type": "integer",
+      "minimum": -9223372036854775808,
+      "maximum": 9223372036854775807
+    }
+  }
+}

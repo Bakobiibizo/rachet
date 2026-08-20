@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "formal-specification-violation",
+  "public_fixture_sha256": "59f9f0317517334ef5b700488ddb343068b616af89708bc37a0850c53d5a2950",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "The candidate uses code-point ordering rather than required case-insensitive ordering.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The mixed-case three-name ordering assertion fails."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "moderate",
+        "expected_validation_seconds": 90,
+        "skill_tags": [
+          "specification",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

@@ -1,0 +1,3177 @@
+# Rachet Network Core v1
+
+## Commonware Implementation and Experimental Mechanism Specification
+
+**Status:** Implementation-ready draft
+**Audience:** Coding agents, protocol implementers, experiment operators
+**Scope:** Core protocol, Commonware node, deterministic laboratory, operator interface, M00/M01 baseline economy
+**Explicitly excluded:** Final economy, production payments, native token, public marketplace, GitHub App, governance
+
+---
+
+## 1. Purpose
+
+Rachet Network v1 is a purpose-built blockchain for coordinating evidence-backed validation of software changes.
+
+The network does not sell agent labor. It records and evaluates claims made about work produced elsewhere.
+
+A customer submits an immutable Git change and a set of claims. Independent validation operators inspect the change, produce evidence, and attest to those claims. Economic mechanisms can then assign reputation, exposure, rewards, penalties, or other consequences to the resulting history.
+
+The core system has two inseparable purposes:
+
+1. Operate a validation ledger that can eventually support a normal consumer product resembling an accountable, multi-agent code-review service.
+2. Serve as an experimental laboratory in which autonomous agents attempt to maximize network reputation and rewards, thereby exposing defects in the network’s incentive structure.
+
+The final economy is not specified in advance. It is derived incrementally through hypothesis-driven development:
+
+```text
+minimal economy
+→ autonomous operator run
+→ observed exploit or pathology
+→ falsifiable hypothesis
+→ mechanism implementation
+→ preregistered comparison
+→ retain, reject, or revise
+→ preserve exploit as a regression case
+```
+
+The project’s central research question is:
+
+> Can autonomous operators make their network number go up substantially without becoming better validators?
+
+A mechanism fails when the answer is yes.
+
+---
+
+## 2. Normative Language
+
+The terms **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** are normative.
+
+A coding agent implementing this specification MUST distinguish:
+
+* a mandatory v1 requirement;
+* an explicitly deferred feature;
+* a proposed economic mechanism;
+* an experiment-specific parameter.
+
+The agent MUST NOT implement proposed economic modules merely because they appear in the catalog.
+
+---
+
+## 3. Fixed v1 Decisions
+
+These decisions are settled for the first implementation.
+
+### 3.1 Commonware, not Substrate
+
+The network will be built as a purpose-specific Rust blockchain using Commonware primitives.
+
+Substrate would provide a broader runtime framework than this project needs. Commonware lets the application define its block, state, execution, networking, storage, and experimental boundaries directly.
+
+### 3.2 Fixed consensus committee
+
+The first live network uses four consensus nodes in a fixed committee.
+
+Committee reconfiguration, delegation, public validator admission, and governance are deferred.
+
+### 3.3 Consensus nodes and validation operators are different roles
+
+The word “validator” is overloaded in blockchain systems. This project must keep the concepts separate:
+
+* **Consensus node:** orders and finalizes blocks.
+* **Validation operator:** examines a software artifact and makes claims about it.
+
+Consensus authority does not grant validation reputation.
+
+Validation reputation does not grant consensus authority.
+
+The two roles MUST use different key types, configuration sections, state records, and terminology in code.
+
+### 3.4 Git is the software transfer layer
+
+The chain stores Git object references and content hashes.
+
+It does not store repositories, patches, source trees, specifications, test logs, or evidence bodies.
+
+### 3.5 No token in v1
+
+The baseline system uses no native asset, emission schedule, liquidity pool, staking token, or on-chain payment rail.
+
+Experiments MAY use non-withdrawable test credits to model payments, bonds, or payouts.
+
+Fiat settlement and token design are deferred until a mechanism demonstrates a concrete need.
+
+### 3.6 Module set fixed at genesis
+
+Each experimental network begins with a declared mechanism set.
+
+The mechanism set cannot change while that network is running.
+
+Testing another mechanism or mechanism version requires a new genesis configuration and a distinct experiment identity.
+
+Runtime governance and in-place protocol upgrades are deferred.
+
+### 3.7 Linux execution environment
+
+Commonware currently supports Linux and macOS development, recommends Linux for production use, and does not support native Windows. Development on a Windows host therefore uses WSL2 or a Linux machine.
+
+### 3.8 Exact dependency pins
+
+The initial spike MUST pin all Commonware dependencies to one exact release family and commit `Cargo.lock`.
+
+The current Alto workspace uses Commonware `2026.7.0` components and identifies itself as version `2026.7.1`; that release set is the initial integration target.
+
+Use exact requirements:
+
+```toml
+commonware-actor = "=2026.7.0"
+commonware-broadcast = "=2026.7.0"
+commonware-codec = "=2026.7.0"
+commonware-consensus = { version = "=2026.7.0", features = ["mocks"] }
+commonware-cryptography = { version = "=2026.7.0", features = ["mocks"] }
+commonware-glue = "=2026.7.0"
+commonware-invariants = "=2026.7.0"
+commonware-p2p = "=2026.7.0"
+commonware-resolver = "=2026.7.0"
+commonware-runtime = "=2026.7.0"
+commonware-storage = "=2026.7.0"
+commonware-utils = "=2026.7.0"
+```
+
+If one package is not published at that exact version, the integration spike may pin the matching Commonware Git revision instead. The decision and revision MUST be recorded.
+
+Dependency upgrades require a separate issue, conformance run, deterministic replay run, and four-node recovery test.
+
+---
+
+## 4. Commonware Component Mapping
+
+Commonware supplies independent primitives rather than a prescribed blockchain runtime. The project will use the following components directly.
+
+| System concern              | Commonware component                                     | v1 use                                                          |
+| --------------------------- | -------------------------------------------------------- | --------------------------------------------------------------- |
+| Production execution        | `commonware_runtime::tokio`                              | Live node runtime                                               |
+| Deterministic execution     | `commonware_runtime::deterministic`                      | Simulation, schedule replay, fault testing                      |
+| Consensus                   | `commonware_consensus::simplex`                          | BFT block agreement                                             |
+| Application integration     | `commonware_consensus::Application`                      | Application block proposal and verification boundary            |
+| Ordered finalization        | `commonware_consensus::marshal::standard::Deferred`      | Finalized block ordering and ancestry recovery                  |
+| Stateful execution          | `commonware_glue::stateful::Stateful`                    | Speculative fork state, verification, finalization, recovery    |
+| Block distribution          | `commonware_broadcast::buffered`                         | Block dissemination and cache                                   |
+| Missing-data recovery       | `commonware_resolver::TargetedResolver`                  | Targeted block and state resolution                             |
+| Live peer network           | `commonware_p2p::authenticated::lookup`                  | Fixed authenticated committee with known addresses              |
+| Simulated peer network      | `commonware_p2p::simulated`                              | Drops, delays, partitions, and deterministic network faults     |
+| Consensus signatures        | `commonware_consensus::simplex::scheme::ed25519::Scheme` | Attributable consensus certificates without DKG                 |
+| Operator signatures         | `commonware_cryptography::ed25519`                       | Signed customer and validation actions                          |
+| Hashing                     | `commonware_cryptography::sha256`                        | IDs, content references, commitments, roots                     |
+| Canonical binary format     | `commonware_codec`                                       | Consensus-safe action, block, event, and state encoding         |
+| Current authenticated state | `commonware_storage::qmdb::current`                      | Merkleized application state                                    |
+| Finalized archives          | `commonware_storage::archive::immutable`                 | Finalized blocks and certificates                               |
+| Append-only records         | `commonware_storage::journal`                            | Receipts, operator traces, and local recovery records           |
+| Actor structure             | `commonware_actor`                                       | Mempool, ingress, finalization, and operator-facing node actors |
+| Encoding compatibility      | `commonware_conformance`                                 | Locked codec vectors and hashes                                 |
+| Stateful fuzzing            | `commonware_invariants::minifuzz`                        | Transition and mechanism invariant exploration                  |
+
+Commonware’s runtime exposes deterministic and Tokio-backed execution under compatible runtime abstractions, which is the main reason the live node and simulator can share component implementations.
+
+Simplex accepts application-defined blocks and separates agreement from application execution, broadcast, and synchronization. The marshal layer supplies ordered, at-least-once finalized delivery and block backfilling.
+
+The authenticated P2P implementation supports a fixed authenticated peer set. The simulated implementation supports controlled network behavior for deterministic tests.
+
+`commonware_glue::stateful` is specifically intended to maintain speculative state for pending consensus forks, replay missing ancestry, commit the winning state at finalization, and prune losing branches. It can wrap `marshal::standard::Deferred`, which is the required integration for this project.
+
+Alto is the primary integration reference for wiring buffered broadcast, Simplex, marshal, resolver, runtime, and immutable storage. It is a reference, not a codebase to fork wholesale.
+
+---
+
+## 5. System Architecture
+
+```text
+┌───────────────────────────────────────────────────────────────┐
+│ Consumer integrations — deferred                              │
+│ GitHub App, PR checks, web report, fiat billing               │
+└──────────────────────────────┬────────────────────────────────┘
+                               │ signed actions / queries
+┌──────────────────────────────▼────────────────────────────────┐
+│ Operator and client layer                                     │
+│ rchtctl, rcht-operator, agentctl workers, Git worktrees           │
+└──────────────────────────────┬────────────────────────────────┘
+                               │ operator actions
+┌──────────────────────────────▼────────────────────────────────┐
+│ Node ingress and bounded action pool                          │
+│ validation, deduplication, authenticated peer forwarding      │
+└──────────────────────────────┬────────────────────────────────┘
+                               │ candidate block actions
+┌──────────────────────────────▼────────────────────────────────┐
+│ Commonware chain adapter                                      │
+│ P2P → broadcast → Simplex → marshal → stateful application    │
+└──────────────────────────────┬────────────────────────────────┘
+                               │ deterministic execution
+┌──────────────────────────────▼────────────────────────────────┐
+│ Protocol core                                                 │
+│ canonical actions, transitions, events, receipts, invariants  │
+├───────────────────────────────────────────────────────────────┤
+│ Selected mechanism set                                        │
+│ M00 or M01 initially; later hypothesis-backed modules         │
+└──────────────────────────────┬────────────────────────────────┘
+                               │ committed state
+┌──────────────────────────────▼────────────────────────────────┐
+│ QMDB current state + finalized block/event archives           │
+└───────────────────────────────────────────────────────────────┘
+
+Separate laboratory path:
+
+operator observations
+→ autonomous or scripted decisions
+→ captured signed action trace
+→ deterministic Commonware simulation
+→ hidden evaluator resolutions
+→ metrics, exploit extraction, assessment
+```
+
+---
+
+## 6. Architectural Boundaries
+
+### 6.1 Protocol core
+
+The protocol core is a pure deterministic state machine.
+
+It MUST NOT:
+
+* open files;
+* fetch Git repositories;
+* call models;
+* read wall-clock time;
+* access the network;
+* use environment variables;
+* generate randomness internally;
+* inspect local process state;
+* depend on Commonware runtime traits;
+* depend on a particular evidence store.
+
+It receives explicit state, an action, and deterministic transition context.
+
+### 6.2 Commonware chain adapter
+
+The chain adapter owns:
+
+* proposal construction;
+* block verification;
+* consensus integration;
+* speculative state management;
+* persistence;
+* peer communication;
+* finalized event delivery;
+* node startup and recovery.
+
+It MUST call the same protocol transition functions used by the simulator.
+
+### 6.3 Economic mechanisms
+
+Mechanisms derive economic consequences from canonical events.
+
+They MUST NOT:
+
+* rewrite canonical jobs, claims, attestations, or resolutions;
+* change a semantic PASS into FAIL or vice versa;
+* modify prior events;
+* fetch external evidence;
+* use nondeterministic values;
+* write outside their assigned state namespace.
+
+### 6.4 Operator host
+
+Operator hosts execute autonomous agents and validation tools.
+
+They may:
+
+* clone and inspect Git repositories;
+* run tests;
+* invoke models;
+* create evidence;
+* decide whether to participate;
+* submit signed actions.
+
+They are outside consensus.
+
+### 6.5 Evidence storage
+
+Evidence remains off-chain.
+
+The chain treats an evidence hash as an identity, not as proof that:
+
+* the evidence is correct;
+* the evidence is available;
+* the evidence is safe;
+* the evidence supports the attached claim.
+
+Those questions remain validation responsibilities.
+
+---
+
+## 7. Terminology and Actors
+
+### Consensus node
+
+A fixed committee member participating in Simplex consensus.
+
+Code term:
+
+```rust
+ConsensusNodeId
+```
+
+### Network actor
+
+A cryptographic account that can submit signed protocol actions.
+
+Code term:
+
+```rust
+ActorId
+```
+
+### Customer
+
+An actor that creates validation jobs.
+
+### Validation operator
+
+An actor that submits attestations about claims.
+
+Code term:
+
+```rust
+ValidationOperatorId
+```
+
+Avoid the unqualified code name `ValidatorId`.
+
+### Challenger
+
+An actor that submits a counterclaim against a prior resolution or attestation.
+
+### Resolution authority
+
+A configured actor or deterministic verifier allowed to submit ground-truth resolutions under the job’s resolution policy.
+
+In initial experiments, this is the hidden evaluator.
+
+A resolution authority:
+
+* cannot validate jobs;
+* cannot earn reputation;
+* cannot act as a customer in the same run;
+* is not described as decentralized truth.
+
+### Experiment operator
+
+Software controlling one customer, validation, or adversarial identity during a laboratory run.
+
+---
+
+## 8. Repository Layout
+
+Keep the initial workspace small. Do not create one crate per concept.
+
+```text
+/
+├── Cargo.toml
+├── Cargo.lock
+├── AGENTS.md
+├── README.md
+├── crates/
+│   ├── core/
+│   │   ├── actions
+│   │   ├── blocks
+│   │   ├── codec
+│   │   ├── events
+│   │   ├── state
+│   │   ├── transition
+│   │   └── invariants
+│   ├── mechanisms/
+│   │   ├── catalog
+│   │   ├── m00_record_only
+│   │   └── m01_naive_reputation
+│   ├── chain/
+│   │   ├── application
+│   │   ├── engine
+│   │   ├── ingress
+│   │   ├── mempool
+│   │   ├── persistence
+│   │   └── rpc
+│   ├── client/
+│   │   ├── identity
+│   │   ├── signing
+│   │   └── transport
+│   ├── operator/
+│   │   ├── observation
+│   │   ├── decision
+│   │   ├── evidence
+│   │   └── agentctl
+│   ├── lab/
+│   │   ├── simulator
+│   │   ├── evaluator
+│   │   ├── metrics
+│   │   ├── replay
+│   │   └── experiment
+│   └── cli/
+├── bins/
+│   ├── rcht-node/
+│   ├── rchtctl/
+│   ├── rcht-operator/
+│   └── rcht-lab/
+├── configs/
+│   ├── devnet/
+│   └── experiments/
+├── schemas/
+│   ├── operator-observation/
+│   ├── operator-decision/
+│   └── experiment/
+├── fixtures/
+│   ├── repositories/
+│   ├── jobs-public/
+│   └── ground-truth-private/
+├── experiments/
+├── exploits/
+├── conformance/
+└── docs/
+```
+
+Do not split `core` into additional crates until a concrete compile-time dependency problem appears.
+
+---
+
+## 9. Canonical Types
+
+### 9.1 Primitive identifiers
+
+```rust
+pub struct ChainId(pub [u8; 32]);
+pub struct ActorId(pub Ed25519PublicKey);
+pub struct JobId(pub Sha256Digest);
+pub struct ClaimId(pub Sha256Digest);
+pub struct AttestationId(pub Sha256Digest);
+pub struct EvidenceId(pub Sha256Digest);
+pub struct ChallengeId(pub Sha256Digest);
+pub struct CommitmentId(pub Sha256Digest);
+pub struct ActionId(pub Sha256Digest);
+pub struct MechanismSetId(pub Sha256Digest);
+pub struct ExperimentId(pub Sha256Digest);
+```
+
+Identifiers are derived from canonical encoded content with domain-separated SHA-256 hashing.
+
+### 9.2 Domain separation
+
+At minimum:
+
+```text
+validation-network/action/v1
+validation-network/job/v1
+validation-network/claim/v1
+validation-network/evidence/v1
+validation-network/commitment/v1
+validation-network/block/v1
+validation-network/state/v1
+validation-network/mechanism-set/v1
+validation-network/experiment/v1
+```
+
+The signing domain MUST include:
+
+* protocol version;
+* chain ID;
+* object class;
+* canonical payload.
+
+### 9.3 Bounded data
+
+Every consensus-decoded variable-length value MUST have an explicit maximum.
+
+Initial bounds:
+
+```text
+repository locator       512 bytes
+content locator hint     512 bytes
+claim statement          4 KiB
+counterclaim              4 KiB
+metadata                  8 KiB
+action                    64 KiB
+evidence manifest ref     2 KiB
+actions per block         1,024
+block body                4 MiB
+claims per job            128
+attestations per claim    1,024
+open challenges per claim 256
+```
+
+These are protocol parameters and become part of the genesis configuration.
+
+### 9.4 No floating point
+
+Consensus state and economic calculations MUST NOT use floating-point values.
+
+Use:
+
+* integer counts;
+* basis points;
+* explicitly scaled signed integers;
+* checked arithmetic;
+* declared rounding rules.
+
+Overflow checks MUST remain enabled in development, test, and release profiles.
+
+---
+
+## 10. Git Artifact Model
+
+```rust
+pub enum GitHash {
+    Sha1([u8; 20]),
+    Sha256([u8; 32]),
+}
+
+pub struct ContentRef {
+    pub digest: Sha256Digest,
+    pub locator_hint: BoundedBytes<512>,
+    pub media_type: BoundedBytes<128>,
+}
+
+pub struct GitArtifact {
+    pub repository: BoundedBytes<512>,
+    pub base_commit: GitHash,
+    pub candidate_commit: GitHash,
+    pub specification: ContentRef,
+}
+```
+
+The repository locator is informational and used by operators.
+
+The immutable identity of the software change is:
+
+```text
+repository locator
++ base commit
++ candidate commit
++ specification digest
+```
+
+A changed candidate commit or specification produces a new job.
+
+A revised job MAY reference its predecessor through:
+
+```rust
+pub supersedes: Option<JobId>
+```
+
+---
+
+## 11. Signed Action Envelope
+
+```rust
+pub struct SignedAction {
+    pub version: ProtocolVersion,
+    pub chain_id: ChainId,
+    pub actor: ActorId,
+    pub nonce: u64,
+    pub valid_until_height: u64,
+    pub payload: Action,
+    pub signature: Ed25519Signature,
+}
+```
+
+The actor’s nonce MUST increase exactly by one for each accepted action.
+
+An expired action is invalid.
+
+An invalid signature, incorrect chain ID, invalid nonce, unsupported protocol version, malformed payload, or oversized field invalidates the action.
+
+A block containing any invalid action is invalid.
+
+The node ingress path SHOULD reject invalid actions before they enter the pending pool, but consensus verification MUST repeat all checks.
+
+---
+
+## 12. Core Actions
+
+```rust
+pub enum Action {
+    CreateJob(CreateJob),
+    RegisterEvidence(RegisterEvidence),
+    SubmitAttestation(SubmitAttestation),
+
+    CreateCommitment(CreateCommitment),
+    RevealCommitment(RevealCommitment),
+
+    CreateChallenge(CreateChallenge),
+
+    ResolveClaim(ResolveClaim),
+    ResolveChallenge(ResolveChallenge),
+
+    CloseJob(CloseJob),
+}
+```
+
+Epoch advancement is derived from finalized block height and is not an action.
+
+Mechanisms MAY require commitments or challenge bonds, but the generic commitment and challenge objects exist in the core.
+
+### 12.1 CreateJob
+
+Required fields:
+
+```rust
+pub struct CreateJob {
+    pub artifact: GitArtifact,
+    pub claims: BoundedVec<ClaimDefinition, 128>,
+    pub resolution_policy: ResolutionPolicy,
+    pub validation_opens_at: u64,
+    pub validation_closes_at: u64,
+    pub reveal_closes_at: Option<u64>,
+    pub challenge_closes_at: Option<u64>,
+    pub supersedes: Option<JobId>,
+    pub metadata: BoundedBytes<8192>,
+}
+```
+
+### 12.2 RegisterEvidence
+
+```rust
+pub struct RegisterEvidence {
+    pub job_id: JobId,
+    pub claim_id: Option<ClaimId>,
+    pub evidence: ContentRef,
+    pub manifest_digest: Sha256Digest,
+}
+```
+
+### 12.3 SubmitAttestation
+
+```rust
+pub enum Verdict {
+    Pass,
+    Fail,
+    Abstain,
+    Indeterminate,
+}
+
+pub struct SubmitAttestation {
+    pub job_id: JobId,
+    pub claim_id: ClaimId,
+    pub verdict: Verdict,
+    pub confidence_basis_points: u16,
+    pub evidence_ids: BoundedVec<EvidenceId, 64>,
+}
+```
+
+`confidence_basis_points` is descriptive evidence about the operator’s stated confidence. It does not affect core resolution or M01 reputation.
+
+### 12.4 Commitment
+
+```rust
+pub struct CreateCommitment {
+    pub subject: CommitmentSubject,
+    pub digest: Sha256Digest,
+    pub reveal_after_height: u64,
+    pub reveal_before_height: u64,
+}
+
+pub struct RevealCommitment {
+    pub commitment_id: CommitmentId,
+    pub payload: BoundedBytes<65536>,
+    pub salt: BoundedBytes<128>,
+}
+```
+
+The core verifies the reveal hash but does not assign a reward or penalty.
+
+### 12.5 Challenge
+
+```rust
+pub struct CreateChallenge {
+    pub target: ChallengeTarget,
+    pub counterclaim: BoundedBytes<4096>,
+    pub evidence_ids: BoundedVec<EvidenceId, 64>,
+}
+```
+
+The core records the challenge.
+
+Challenge bonds and bounties do not exist until their modules are implemented.
+
+### 12.6 Resolution
+
+```rust
+pub enum ResolutionVerdict {
+    Pass,
+    Fail,
+    Unresolved,
+}
+
+pub struct ResolveClaim {
+    pub job_id: JobId,
+    pub claim_id: ClaimId,
+    pub verdict: ResolutionVerdict,
+    pub evidence_ids: BoundedVec<EvidenceId, 64>,
+    pub resolution_reference: ContentRef,
+}
+
+pub struct ResolveChallenge {
+    pub challenge_id: ChallengeId,
+    pub upheld: bool,
+    pub evidence_ids: BoundedVec<EvidenceId, 64>,
+    pub resolution_reference: ContentRef,
+}
+```
+
+Only an actor permitted by the job’s `ResolutionPolicy` may resolve the target.
+
+---
+
+## 13. Resolution Policies
+
+```rust
+pub enum ResolutionPolicy {
+    ExperimentAuthority {
+        authority: ActorId,
+    },
+    DeterministicVerifier {
+        verifier_id: Sha256Digest,
+        verifier_spec: ContentRef,
+    },
+}
+```
+
+Only `ExperimentAuthority` is required for the first formal experiment.
+
+The hidden laboratory evaluator submits signed ground-truth resolutions after operator decisions are closed.
+
+This is an experimental oracle, not a claim that blockchain consensus determines software correctness.
+
+The deterministic-verifier variant is reserved for later machine-checkable claims such as:
+
+* test command exit status;
+* exact artifact presence;
+* schema validation;
+* deterministic exploit reproduction.
+
+Customer acceptance, majority vote, and validator reputation MUST NOT be treated as ground truth.
+
+---
+
+## 14. Canonical Events and Receipts
+
+Actions are inputs. Events are deterministic transition outputs.
+
+```rust
+pub enum CanonicalEvent {
+    JobCreated { job_id: JobId },
+    ClaimCreated { job_id: JobId, claim_id: ClaimId },
+    EvidenceRegistered { evidence_id: EvidenceId },
+    AttestationSubmitted { attestation_id: AttestationId },
+    CommitmentCreated { commitment_id: CommitmentId },
+    CommitmentRevealed { commitment_id: CommitmentId },
+    CommitmentExpired { commitment_id: CommitmentId },
+    ChallengeCreated { challenge_id: ChallengeId },
+    ClaimResolved { claim_id: ClaimId, verdict: ResolutionVerdict },
+    ClaimReopened { claim_id: ClaimId },
+    ChallengeResolved { challenge_id: ChallengeId, upheld: bool },
+    JobResolved { job_id: JobId },
+    JobClosed { job_id: JobId },
+    EpochChanged { previous: u64, current: u64 },
+}
+```
+
+Each accepted action produces:
+
+```rust
+pub struct ActionReceipt {
+    pub action_id: ActionId,
+    pub actor: ActorId,
+    pub nonce: u64,
+    pub events: BoundedVec<CanonicalEvent, MAX_EVENTS_PER_ACTION>,
+}
+```
+
+Receipts are deterministic and included in the block receipt root.
+
+---
+
+## 15. Block Model
+
+```rust
+pub struct BlockHeader {
+    pub protocol_version: ProtocolVersion,
+    pub chain_id: ChainId,
+    pub height: u64,
+    pub epoch: u64,
+
+    pub parent_block: Sha256Digest,
+    pub parent_state_root: Sha256Digest,
+
+    pub action_root: Sha256Digest,
+    pub receipt_root: Sha256Digest,
+    pub post_state_root: Sha256Digest,
+
+    pub mechanism_set_id: MechanismSetId,
+    pub timestamp_ms: u64,
+}
+
+pub struct Block {
+    pub context: ConsensusContext,
+    pub header: BlockHeader,
+    pub actions: BoundedVec<SignedAction, MAX_ACTIONS_PER_BLOCK>,
+}
+```
+
+Economic behavior MUST use height and epoch, not wall-clock time.
+
+`timestamp_ms` is block metadata and may be checked for monotonicity or gross clock validity. It must not control:
+
+* maturity;
+* deadlines;
+* payouts;
+* commitment windows;
+* reputation updates.
+
+The epoch is:
+
+```text
+epoch = height / blocks_per_epoch
+```
+
+`blocks_per_epoch` is fixed in genesis.
+
+---
+
+## 16. Pure Transition Engine
+
+The protocol core exposes one authoritative execution path:
+
+```rust
+pub fn execute_block(
+    parent: &mut dyn StateBatch,
+    context: &TransitionContext,
+    actions: &[SignedAction],
+    mechanisms: &MechanismSet,
+) -> Result<ExecutionOutput, BlockExecutionError>;
+```
+
+```rust
+pub struct TransitionContext {
+    pub chain_id: ChainId,
+    pub protocol_version: ProtocolVersion,
+    pub height: u64,
+    pub epoch: u64,
+    pub mechanism_set_id: MechanismSetId,
+}
+```
+
+Execution order:
+
+1. Verify block-level limits.
+2. Verify each signature, chain ID, version, expiry, and nonce.
+3. Run every active mechanism’s pre-action validation.
+4. Apply the canonical action transition.
+5. Emit canonical events.
+6. Pass canonical events to mechanisms.
+7. Apply mechanism mutations in deterministic dependency order.
+8. Run core and mechanism invariants.
+9. Merkleize the state batch.
+10. Produce receipts and roots.
+
+The same input state, context, actions, and mechanism set MUST always produce identical:
+
+* events;
+* receipts;
+* state writes;
+* action root;
+* receipt root;
+* post-state root;
+* error result.
+
+No catch-and-continue behavior is permitted. One invalid action invalidates the candidate block.
+
+---
+
+## 17. Canonical State
+
+The first implementation uses one authenticated current-state database with namespaced keys.
+
+```text
+00/account/<actor>
+10/job/<job_id>
+11/claim/<claim_id>
+12/evidence/<evidence_id>
+13/attestation/<attestation_id>
+14/commitment/<commitment_id>
+15/challenge/<challenge_id>
+20/index/jobs-by-customer/<actor>/<job_id>
+21/index/attestations-by-operator/<actor>/<attestation_id>
+22/index/claims-by-job/<job_id>/<claim_id>
+30/mechanism/<module_id>/<module-key>
+40/protocol/config
+41/protocol/epoch
+```
+
+Use lexicographically ordered binary keys.
+
+Do not depend on `HashMap` iteration order.
+
+The state layer must expose typed accessors. Protocol code MUST NOT concatenate arbitrary key strings throughout the codebase.
+
+---
+
+## 18. Commonware Stateful Integration
+
+The in-memory transition engine is implemented first, then adapted to a single `commonware_storage::qmdb::current` database managed through `commonware_glue::stateful`.
+
+`Stateful` handles:
+
+* speculative state for competing block branches;
+* forking batches from parent state;
+* application execution during proposal and verification;
+* merkleization;
+* pending state keyed by block digest;
+* finalization of the winning branch;
+* pruning dead forks;
+* lazy recovery of missing pending state after restart.
+
+The chain application implements:
+
+```rust
+commonware_glue::stateful::Application<E>
+```
+
+Required behavior:
+
+### `genesis`
+
+Create the initial block and initial QMDB state containing:
+
+* protocol configuration;
+* chain ID;
+* consensus-independent genesis metadata;
+* mechanism set and configuration;
+* resolution authorities;
+* empty actor, job, and economic namespaces.
+
+### `propose`
+
+1. Read pending signed actions from the provider handle.
+2. Select actions using deterministic limits and ordering.
+3. Execute them against the supplied unmerkleized batch.
+4. Merkleize the result.
+5. Construct a block committing to the resulting roots.
+6. Return the block and merkleized batch.
+
+### `verify`
+
+1. Validate parent, height, epoch, mechanism set, and bounds.
+2. Execute the proposed actions against the supplied parent batch.
+3. Recompute receipts and state roots.
+4. Reject any mismatch.
+5. Return the merkleized batch only when the block is valid.
+
+### `apply`
+
+Replay a previously accepted block during lazy recovery using the same transition engine.
+
+### `sync_targets`
+
+Return the QMDB sync target committed by the block.
+
+The application itself must remain cloneable and stateless. Consensus-relevant mutable state resides in the provided database batches, as required by the Commonware stateful interface.
+
+---
+
+## 19. Commonware Consensus Pipeline
+
+The live node follows this pipeline:
+
+```text
+authenticated peer network
+        ↓
+bounded block broadcast
+        ↓
+Simplex consensus
+        ↓
+marshal::standard::Deferred
+        ↓
+Stateful validation application
+        ↓
+QMDB speculative/finalized state
+        ↓
+finalization reporter
+        ↓
+local immutable archives and query indexes
+```
+
+### 19.1 Consensus scheme
+
+Use:
+
+```rust
+commonware_consensus::simplex::scheme::ed25519::Scheme
+```
+
+The Ed25519 scheme is attributable and avoids threshold-key generation. Its larger quorum certificates are acceptable for the four-node v1 network.
+
+Do not use BLS threshold signatures in v1.
+
+### 19.2 Leader election
+
+Use:
+
+```rust
+commonware_consensus::simplex::elector::RoundRobin
+```
+
+Random or stake-weighted election is unnecessary for the fixed laboratory committee.
+
+### 19.3 Marshal integration
+
+Use:
+
+```rust
+commonware_consensus::marshal::standard::{
+    Standard,
+    Deferred,
+}
+```
+
+Do not use `Inline`; Commonware’s stateful wrapper explicitly requires `Deferred` or the coding marshaled path.
+
+### 19.4 Broadcast
+
+Use:
+
+```rust
+commonware_broadcast::buffered
+```
+
+for block dissemination and bounded block caching.
+
+### 19.5 Resolver
+
+Use:
+
+```rust
+commonware_resolver::TargetedResolver
+```
+
+for targeted resolution of missing blocks and state-sync operations.
+
+### 19.6 P2P
+
+Live devnet:
+
+```rust
+commonware_p2p::authenticated::lookup
+```
+
+Every consensus peer is known in genesis configuration.
+
+Laboratory:
+
+```rust
+commonware_p2p::simulated
+```
+
+The lab must expose configurable:
+
+* latency;
+* jitter;
+* message drop;
+* disconnection;
+* reconnection;
+* partition;
+* corrupted peer behavior where supported.
+
+### 19.7 Runtime
+
+Live:
+
+```rust
+commonware_runtime::tokio::Runner
+```
+
+Deterministic simulation and integration tests:
+
+```rust
+commonware_runtime::deterministic::Runner
+```
+
+---
+
+## 20. Action Ingress and Pending Pool
+
+The consensus protocol does not define customer-facing action submission. The node therefore includes a small ingress subsystem.
+
+### 20.1 External ingress
+
+Initial RPC:
+
+```text
+POST /v1/actions
+GET  /v1/actions/{action_id}
+GET  /v1/jobs
+GET  /v1/jobs/{job_id}
+GET  /v1/actors/{actor_id}
+GET  /v1/blocks/{height}
+GET  /v1/state/root
+GET  /v1/health
+```
+
+RPC JSON is not consensus encoding.
+
+The node decodes JSON, constructs or accepts canonical action bytes, verifies the signature, and inserts the canonical action into the pending pool.
+
+### 20.2 Peer forwarding
+
+A valid action received by one consensus node is forwarded over an authenticated action channel to the other committee nodes.
+
+### 20.3 Pending pool
+
+The pending pool is bounded and deduplicated by `ActionId`.
+
+Required limits:
+
+* maximum actions globally;
+* maximum actions per actor;
+* maximum total bytes;
+* maximum nonce gap;
+* expiry by `valid_until_height`.
+
+Candidate selection is deterministic from the proposer’s current pool:
+
+```text
+(actor_id, nonce, action_id)
+```
+
+This ordering is not an economic fairness policy. It is a simple reproducible v1 rule.
+
+Fee markets, priority auctions, and public mempool policy are deferred.
+
+---
+
+## 21. Encoding and Conformance
+
+All consensus objects implement `commonware_codec` traits directly.
+
+Do not use:
+
+* `bincode`;
+* default `serde_json`;
+* architecture-dependent memory layouts;
+* unbounded decoding;
+* undocumented enum discriminants.
+
+Every public consensus type must have:
+
+* explicit discriminants;
+* explicit maximum lengths;
+* test vectors;
+* round-trip tests;
+* malformed-input tests;
+* truncation tests;
+* trailing-byte tests;
+* stable conformance hashes.
+
+`commonware_conformance` should lock mechanism and encoding outputs into checked-in TOML vectors so accidental serialization changes fail CI.
+
+A codec change requires:
+
+* `CodecVersion` increment;
+* migration or new genesis;
+* conformance vector update with explicit review;
+* replay of all retained exploit traces.
+
+---
+
+## 22. Mechanism Architecture
+
+Economic modules are compiled, deterministic policy components.
+
+They are not:
+
+* dynamic native plugins;
+* WASM smart contracts;
+* downloaded capabilities;
+* arbitrary user-supplied code.
+
+This is deliberate. Runtime plugin systems would enlarge the consensus and security surface before the economic model exists.
+
+### 22.1 Mechanism manifest
+
+```rust
+pub struct MechanismManifest {
+    pub id: MechanismId,
+    pub version: MechanismVersion,
+    pub status: MechanismStatus,
+    pub requires: BoundedVec<MechanismId, 16>,
+    pub reads_exports: BoundedVec<MechanismExportId, 32>,
+    pub state_namespace: MechanismNamespace,
+    pub config_digest: Sha256Digest,
+}
+
+pub enum MechanismStatus {
+    Proposed,
+    Implemented,
+    Experimental,
+    Accepted,
+    Rejected,
+    Superseded,
+}
+```
+
+### 22.2 Mechanism interface
+
+```rust
+pub trait Mechanism {
+    fn manifest(&self) -> MechanismManifest;
+
+    fn validate_config(
+        &self,
+        config: &[u8],
+    ) -> Result<(), MechanismError>;
+
+    fn pre_action(
+        &self,
+        view: &MechanismReadView<'_>,
+        action: &SignedAction,
+    ) -> Result<(), MechanismError>;
+
+    fn on_event(
+        &self,
+        view: &MechanismReadView<'_>,
+        event: &CanonicalEvent,
+    ) -> Result<Vec<MechanismMutation>, MechanismError>;
+
+    fn on_epoch(
+        &self,
+        view: &MechanismReadView<'_>,
+        epoch: u64,
+    ) -> Result<Vec<MechanismMutation>, MechanismError>;
+
+    fn check_invariants(
+        &self,
+        view: &MechanismReadView<'_>,
+    ) -> Result<(), MechanismInvariantError>;
+}
+```
+
+### 22.3 Compiled registry
+
+A concrete enum wraps every implemented mechanism:
+
+```rust
+pub enum MechanismInstance {
+    M00RecordOnly(M00Config),
+    M01NaiveReputation(M01Config),
+
+    // Added only after their implementation experiments begin.
+}
+```
+
+The mechanism set is an ordered list of implemented instances.
+
+Selection of a catalog entry with `Proposed` status is a configuration error.
+
+### 22.4 Dependencies
+
+A mechanism may read only:
+
+* canonical state;
+* its own state;
+* exports of mechanisms listed in `requires`.
+
+The mechanism registry topologically sorts dependencies at genesis.
+
+Cycles invalidate the mechanism set.
+
+### 22.5 State isolation
+
+Each mechanism writes only beneath:
+
+```text
+30/mechanism/<module-id>/<version>/...
+```
+
+Cross-module writes are forbidden.
+
+### 22.6 Mutation order
+
+For each canonical event:
+
+1. All modules read the same finalized pre-event view plus declared dependency exports.
+2. Modules emit mutations.
+3. Mutations are sorted by mechanism ID and key.
+4. Namespace collisions invalidate execution.
+5. Mutations are applied.
+6. Module invariants run.
+
+A module does not observe another module’s same-event mutation unless that interaction is represented through a separately specified processing phase.
+
+Do not create hidden order dependencies.
+
+---
+
+## 23. Mechanism Set Configuration
+
+Example genesis configuration:
+
+```toml
+[protocol]
+version = 1
+blocks_per_epoch = 100
+max_block_bytes = 4194304
+max_actions_per_block = 1024
+
+[[mechanisms]]
+id = "M01"
+version = "1.0.0"
+
+[mechanisms.config]
+correct_delta = 1
+incorrect_delta = -1
+abstain_delta = 0
+unresolved_delta = 0
+```
+
+Mechanism set identity:
+
+```text
+SHA256(
+    domain
+    + protocol version
+    + ordered mechanism IDs
+    + mechanism versions
+    + canonical configs
+)
+```
+
+Every block commits to `MechanismSetId`.
+
+---
+
+## 24. Initial Mechanism Catalog
+
+The catalog records the current design hypotheses. Catalog presence is not implementation authorization.
+
+| ID  | Mechanism             | Hypothesized purpose                                               | Initial status |
+| --- | --------------------- | ------------------------------------------------------------------ | -------------- |
+| M00 | Record only           | Establish protocol and simulator null condition                    | Implement now  |
+| M01 | Naive reputation      | Test whether simple correctness history predicts future validation | Implement now  |
+| M02 | Reputation stake      | Make careless claims expose accumulated credibility                | Proposed       |
+| M03 | Commit/reveal         | Reduce copying and consensus following                             | Proposed       |
+| M04 | Customer standing     | Discount synthetic demand and reputation farming                   | Proposed       |
+| M05 | Challenge bonds       | Make frivolous challenges costly                                   | Proposed       |
+| M06 | Challenge bounties    | Reward useful falsification and minority findings                  | Proposed       |
+| M07 | Deferred compensation | Attach future payout to durable claim survival                     | Proposed       |
+| M08 | Reputation maturity   | Prevent rapid reputation farming and season claims                 | Proposed       |
+| M09 | Self-challenge        | Reward disclosure and continued monitoring                         | Proposed       |
+| M10 | Information weighting | Discount redundant agreement and reward uncertainty reduction      | Proposed       |
+| M11 | Domain reputation     | Infer validator specialization from history                        | Proposed       |
+| M12 | Portfolio exposure    | Limit unchecked accumulation of outstanding liability              | Proposed       |
+
+The catalog file should live at:
+
+```text
+crates/mechanisms/catalog/catalog.toml
+```
+
+Example entry:
+
+```toml
+[[mechanism]]
+id = "M07"
+name = "deferred-compensation"
+status = "proposed"
+summary = "Defer validator profit across a claim assurance window."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+```
+
+---
+
+## 25. New Mechanism Insertion
+
+The catalog is open-ended.
+
+An autonomous run may expose an exploit not addressed by M02–M12.
+
+The insertion process is:
+
+```text
+observed exploit
+→ immutable exploit artifact
+→ root-cause assessment
+→ GitHub issue
+→ mechanism hypothesis
+→ mechanism ID allocation
+→ preregistration
+→ implementation
+→ controlled run
+→ assessment
+```
+
+New modules receive monotonically assigned IDs:
+
+```text
+M13
+M14
+M15
+...
+```
+
+The agent MUST NOT force a new mechanism into an existing catalog category when it expresses a genuinely different causal intervention.
+
+---
+
+## 26. No Silent Mechanism Tuning
+
+A material behavior change produces a new version.
+
+Examples:
+
+```text
+M02@1.0.0 — linear reputation exposure
+M02@1.1.0 — capped exposure, same reward rule
+M02@2.0.0 — asymmetric loss function
+```
+
+A failed version remains buildable and replayable.
+
+Do not:
+
+* overwrite old experiment configurations;
+* rewrite old result files;
+* replace failing traces;
+* adjust thresholds after observing the formal result;
+* repeatedly tune a module under the same hypothesis identifier.
+
+---
+
+## 27. M00 — Record-Only Economy
+
+M00 produces no economic state.
+
+It exists to verify:
+
+* network correctness;
+* event history;
+* agent action capture;
+* evaluator resolution;
+* replay;
+* metrics independent of reputation.
+
+M00 is the mechanism-control condition for M01.
+
+---
+
+## 28. M01 — Naive Reputation
+
+M01 is intentionally weak.
+
+State:
+
+```rust
+pub struct NaiveReputation {
+    pub score: i64,
+    pub correct: u64,
+    pub incorrect: u64,
+    pub abstained: u64,
+    pub unresolved: u64,
+}
+```
+
+Default update:
+
+```text
+matching resolved verdict      +1 score
+contradicting resolved verdict -1 score
+ABSTAIN                          0
+INDETERMINATE                    0
+unresolved target                0
+```
+
+A validation is evaluated against the configured resolution authority, not majority agreement.
+
+M01 has:
+
+* no staking;
+* no standing;
+* no maturity;
+* no domain weighting;
+* no challenge reward;
+* no payout;
+* no special minority reward;
+* no decay;
+* no validation-count cap.
+
+This is deliberate. The first operator economy should expose how agents exploit simple cumulative correctness.
+
+Negative reputation is permitted under M01.
+
+M01 reputation:
+
+* cannot be transferred;
+* cannot be purchased;
+* cannot be granted manually;
+* does not affect consensus;
+* does not restrict job participation.
+
+---
+
+## 29. Deterministic Laboratory
+
+The laboratory uses the real:
+
+* canonical types;
+* codecs;
+* transition engine;
+* mechanism registry;
+* block model;
+* Commonware deterministic runtime;
+* simulated P2P implementation.
+
+It must not implement a second toy version of the economy.
+
+### 29.1 Laboratory modes
+
+#### Scripted mode
+
+Pure Rust operator policies produce actions deterministically.
+
+Use for:
+
+* smoke tests;
+* mechanism controls;
+* known exploit regressions;
+* invariant tests;
+* exact CI replay.
+
+#### Trace-replay mode
+
+Previously captured operator decisions are replayed without invoking a model.
+
+Use for:
+
+* reproducing economic exploits;
+* comparing mechanism versions against identical decisions where causal assumptions permit;
+* network-fault and scheduling variations;
+* dependency-upgrade regression.
+
+#### Closed-loop agent mode
+
+External agents receive observations and return decisions during the run.
+
+Use for:
+
+* emergent strategy search;
+* novel exploit discovery;
+* realistic autonomous validation.
+
+Model generation itself is not deterministic. Therefore closed-loop runs are reproducible at the level of:
+
+* exact observations;
+* exact prompts;
+* exact model/provider configuration;
+* captured raw responses;
+* parsed decisions;
+* signed actions;
+* resulting network execution.
+
+A replay uses the captured actions rather than recalling the model.
+
+### 29.2 Deterministic boundary
+
+Remote model calls MUST NOT occur inside Commonware deterministic actors.
+
+The laboratory pauses at operator decision points:
+
+```text
+deterministic network reaches decision boundary
+→ observation snapshot written
+→ external operator host invoked
+→ decision and raw output captured
+→ decision converted to signed action
+→ deterministic execution resumes
+```
+
+This prevents nondeterministic model behavior from contaminating consensus replay.
+
+---
+
+## 30. Autonomous Operator Host
+
+`rcht-operator` controls one network identity.
+
+Each operator receives:
+
+* an isolated home directory;
+* its own signing key;
+* its own Git worktree;
+* its own agent configuration;
+* a bounded resource budget;
+* no hidden ground truth;
+* no unrevealed peer decisions;
+* no shared scratchpad unless an experiment explicitly enables communication.
+
+`agentctl` is the preferred process boundary for external coding agents.
+
+The operator host records:
+
+```text
+operator ID
+role
+objective
+model and provider
+system prompt hash
+observation hash
+prompt hash
+raw output hash
+parsed decision
+submitted action
+tool commands
+raw log locations
+token or call usage
+wall-clock execution
+Git worktree state
+evidence artifacts
+```
+
+---
+
+## 31. Operator Observation Contract
+
+Every autonomous decision receives a bounded JSON observation.
+
+```json
+{
+  "schema_version": "operator-observation.v1",
+  "experiment_id": "...",
+  "epoch": 12,
+  "height": 1240,
+  "operator": {
+    "actor_id": "...",
+    "role": "validation_operator",
+    "objective": "maximize_long_term_reputation"
+  },
+  "economic_state": {
+    "mechanism_set": ["M01@1.0.0"],
+    "reputation": 14
+  },
+  "resource_budget": {
+    "remaining_model_calls": 4,
+    "remaining_tool_calls": 40,
+    "remaining_validation_seconds": 900
+  },
+  "available_jobs": [],
+  "public_history_ref": "...",
+  "private_operator_history_ref": "..."
+}
+```
+
+The observation MUST identify exactly what information the operator was permitted to receive.
+
+---
+
+## 32. Operator Decision Contract
+
+```json
+{
+  "schema_version": "operator-decision.v1",
+  "decision": "validate",
+  "job_id": "...",
+  "claims": [
+    {
+      "claim_id": "...",
+      "verdict": "fail",
+      "confidence_basis_points": 8200,
+      "evidence_refs": ["..."]
+    }
+  ],
+  "resource_report": {
+    "model_calls": 2,
+    "tool_calls": 18
+  }
+}
+```
+
+Allowed top-level decisions:
+
+```text
+validate
+abstain
+challenge
+wait
+```
+
+Malformed output is captured as an operator failure rather than silently repaired.
+
+Grist MAY later parse tolerant model output, but the initial operator protocol should require strict JSON.
+
+---
+
+## 33. Operator Populations
+
+### 33.1 Productive operators
+
+Objective:
+
+> Maximize validation accuracy under the available resource budget.
+
+This is a functional baseline, not the target behavior.
+
+### 33.2 Self-interested operators
+
+Objective:
+
+> Maximize long-term network reputation and realized rewards using any permitted action.
+
+Do not tell them to validate honestly.
+
+This population tests what behavior naturally emerges from the mechanism.
+
+### 33.3 Explicitly adversarial operators
+
+Objective:
+
+> Maximize long-term network reputation and realized rewards while minimizing useful validation effort.
+
+This population searches for high-reputation, low-competence strategies.
+
+### 33.4 Fixed heuristic operators
+
+Required examples:
+
+* always PASS;
+* always FAIL;
+* random verdict;
+* validate only trivial jobs;
+* consensus follower;
+* maximum-volume operator;
+* perfect abstainer;
+* historical-majority follower.
+
+These are trivial heuristics and must not be presented as resource-matched intelligent competitors.
+
+### 33.5 Customer operators
+
+Initial customer operators create jobs from a controlled fixture set.
+
+Adversarial customer strategies are added after M04 becomes relevant.
+
+---
+
+## 34. Independence
+
+Separate identities do not prove independence.
+
+Each experiment declares independence across:
+
+* model family;
+* system prompt;
+* random seed;
+* tool harness;
+* memory;
+* worktree;
+* evidence method;
+* communication channel;
+* customer relationship.
+
+The result report must state the actual independence level.
+
+For example:
+
+```text
+8 identities
+1 model family
+1 shared prompt
+independent worktrees
+no communication
+```
+
+must not be summarized as “8 independent validator systems” without qualification.
+
+---
+
+## 35. Validation Fixtures and Hidden Truth
+
+Initial experiments use real Git repositories with controlled candidate commits.
+
+Public fixture:
+
+```text
+repository
+base commit
+candidate commit
+specification
+claims
+permitted commands
+resource limits
+```
+
+Private evaluator fixture:
+
+```text
+ground-truth verdict by claim
+seeded defect description
+reproduction procedure
+expected evidence
+ambiguity classification
+difficulty metadata
+```
+
+Operators receive only the public fixture.
+
+Fixture classes:
+
+* clean changes;
+* obvious regressions;
+* subtle regressions;
+* authorization defects;
+* malformed error handling;
+* specification violations;
+* test-only failures;
+* misleading but valid changes;
+* genuinely ambiguous claims.
+
+Calibration fixtures and formal held-out fixtures MUST be disjoint.
+
+---
+
+## 36. Resource Accounting
+
+At minimum, record:
+
+```text
+model calls
+input/output tokens where available
+tool calls
+command duration
+CPU time where available
+validation wall-clock allowance
+Git objects read
+files inspected
+tests executed
+jobs inspected
+jobs accepted
+claims evaluated
+evidence bytes
+```
+
+A mechanism cannot be said to reward productive validation if exploitative operators receive materially more compute.
+
+Formal comparisons MUST state:
+
+1. What exact capability is tested.
+2. What information each method receives.
+3. What adaptation or learning each method is allowed.
+4. What resources or capacity are matched.
+5. Which claimed advantage the comparison can confirm or falsify.
+
+---
+
+## 37. Experiment Artifact Layout
+
+```text
+experiments/
+└── H-REP-001/
+    ├── hypothesis.md
+    ├── preregistration.toml
+    ├── mechanism-set.toml
+    ├── protocol-lock.json
+    ├── fixture-manifest-public.json
+    ├── fixture-manifest-private.hash
+    ├── operators/
+    │   ├── operator-001.toml
+    │   └── ...
+    ├── prompts/
+    ├── seeds/
+    ├── runs/
+    │   └── <run-id>/
+    │       ├── initial-state.bin
+    │       ├── observations.jsonl
+    │       ├── decisions.jsonl
+    │       ├── actions.bin
+    │       ├── blocks.bin
+    │       ├── events.bin
+    │       ├── economic-state.jsonl
+    │       ├── resources.json
+    │       ├── metrics.json
+    │       └── discovered-strategies.md
+    ├── assessment.md
+    └── result.md
+```
+
+Run identity:
+
+```text
+SHA256(
+    protocol Git commit
+    + Cargo.lock hash
+    + mechanism set
+    + experiment config
+    + public fixture manifest
+    + private fixture manifest hash
+    + operator manifests
+    + prompt hashes
+    + seeds
+)
+```
+
+---
+
+## 38. Experiment Lifecycle
+
+Every formal mechanism experiment follows:
+
+### Phase 1 — Smoke
+
+Purpose:
+
+* verify implementation;
+* find invalid fixtures;
+* confirm artifact capture;
+* exercise failure paths.
+
+No research conclusion.
+
+### Phase 2 — Calibration
+
+Purpose:
+
+* estimate runtime;
+* choose resource budgets;
+* estimate measurement variance;
+* set formal thresholds.
+
+Calibration fixtures and outputs are excluded from formal evaluation.
+
+### Phase 3 — Preregistration
+
+Lock:
+
+* hypothesis;
+* mechanism versions;
+* operator populations;
+* information access;
+* learning rules;
+* resource budgets;
+* metrics;
+* pass/fail thresholds;
+* exclusion criteria;
+* seeds or seed-generation procedure;
+* held-out fixture manifest hash.
+
+### Phase 4 — Formal run
+
+No mechanism tuning or threshold changes.
+
+### Phase 5 — Audit
+
+Reconstruct:
+
+* action signatures;
+* block transitions;
+* events;
+* roots;
+* reputation updates;
+* resource totals;
+* hidden evaluator resolutions.
+
+### Phase 6 — Assessment
+
+Result is:
+
+```text
+PASS
+FAIL
+INVALID
+INCONCLUSIVE
+```
+
+### Phase 7 — Mechanism decision
+
+The mechanism is:
+
+```text
+accepted for next layer
+rejected
+revised under a new version
+awaiting another experiment
+```
+
+---
+
+## 39. Baseline Categories
+
+Every experiment must keep these categories separate.
+
+### Functional baseline
+
+A method attempting the same validation function.
+
+Example:
+
+* productive validation agent.
+
+### Mechanism control
+
+The same network without the proposed mechanism.
+
+Example:
+
+* M01 versus M00.
+
+### Null model
+
+A model unrelated to useful validation.
+
+Example:
+
+* random reputation allocation.
+
+### Trivial heuristic
+
+A cheap strategy.
+
+Example:
+
+* always PASS;
+* validate only obvious jobs.
+
+### Resource-matched competitor
+
+A competing economic policy receiving the same jobs, information, operators, and resource budgets.
+
+### Adversarial strategy
+
+A policy attempting to exploit the mechanism rather than perform the target capability.
+
+Success against one category does not imply success against another.
+
+---
+
+## 40. First Formal Hypothesis
+
+### H-REP-001 — Naive Reputation Under Autonomous Optimization
+
+#### Exact capability being tested
+
+Whether cumulative reputation derived from resolved validation correctness allocates higher future reputation to operators that are more accurate on held-out software claims.
+
+#### Information received
+
+All operators receive:
+
+* the same public job artifacts;
+* their own private history;
+* public resolved network history;
+* their current M01 score;
+* declared resource limits.
+
+They do not receive:
+
+* hidden ground truth before resolution;
+* private evaluator metadata;
+* another operator’s private reasoning;
+* simulator internals.
+
+M01 does not use commit/reveal, so already-submitted public attestations MAY be visible. This deliberately leaves consensus-following available as a candidate exploit.
+
+#### Learning allowed
+
+Operators may adapt:
+
+* job selection;
+* claim selection;
+* validation effort;
+* abstention;
+* tooling;
+* strategy based on past resolutions.
+
+They may not:
+
+* create additional identities;
+* create jobs;
+* modify the protocol;
+* access hidden labels.
+
+#### Resource match
+
+Each intelligent operator receives the same per-epoch limits on:
+
+* model calls;
+* tool calls;
+* validation duration;
+* concurrent jobs.
+
+Fixed heuristics are reported separately and are not considered resource-matched.
+
+#### Functional baseline
+
+Productive operators instructed to maximize accuracy.
+
+#### Mechanism control
+
+M00 record-only network using identical operators and jobs.
+
+#### Null and trivial baselines
+
+* random ranking;
+* validation count;
+* always PASS;
+* always FAIL;
+* majority following;
+* easy-job-only selection.
+
+#### Advantage the experiment can establish
+
+H-REP-001 can establish whether M01 reputation is predictive of future correctness under the tested operator population and resource constraints.
+
+It cannot establish:
+
+* Sybil resistance;
+* human behavior;
+* public-market sustainability;
+* token necessity;
+* customer-standing efficacy;
+* challenge-market efficacy;
+* generalization beyond software validation.
+
+#### Mandatory formal gates
+
+Numeric thresholds must be locked after calibration, but the preregistration MUST include gates covering:
+
+1. Held-out correctness prediction by M01 score.
+2. Improvement over raw validation count.
+3. Improvement over majority-following.
+4. Top-reputation operator held-out error.
+5. Easy-job farming profitability.
+6. Reputation gained per unit of validation effort.
+7. Benefit of strategic abstention.
+8. Concentration of reputation.
+9. Frequency of high-reputation, low-correctness operators.
+10. Reproducibility across seeds.
+
+M01 should be expected to expose problems, but the result must not be pre-labelled FAIL.
+
+---
+
+## 41. Exploit Registry
+
+Every profitable non-productive strategy becomes a permanent artifact.
+
+```text
+exploits/
+└── REP-001-trivial-job-farming/
+    ├── README.md
+    ├── discovery.json
+    ├── mechanism-set.toml
+    ├── initial-state.bin
+    ├── operator-manifest.toml
+    ├── observation-trace.jsonl
+    ├── action-trace.bin
+    ├── expected-outcome.json
+    ├── root-cause.md
+    ├── reproducer.toml
+    └── status.toml
+```
+
+Required metadata:
+
+```text
+exploit ID
+name
+discovery run
+discovering operator
+mechanism versions
+required preconditions
+strategy
+useful validation performed
+reputation or reward obtained
+resource cost
+root cause
+affected claims
+status
+replacement mechanism hypothesis
+```
+
+Statuses:
+
+```text
+open
+reproduced
+mechanism-proposed
+mitigated
+regression-passing
+accepted-risk
+```
+
+---
+
+## 42. Mechanism Hardening Loop
+
+The development loop is:
+
+```text
+agents exploit network
+→ exploit trace becomes artifact
+→ exploit reproduces deterministically
+→ causal defect identified
+→ new hypothesis proposed
+→ new module or module version implemented
+→ old exploit replayed
+→ unconstrained agents search for new strategies
+→ result assessed
+```
+
+Do not patch individual traces with actor blacklists or one-off special cases unless the hypothesis explicitly concerns identity abuse.
+
+Prefer correcting the incentive that made the strategy profitable.
+
+---
+
+## 43. Dogfooding
+
+Once the network can validate real repositories, changes to the network itself become eligible jobs:
+
+```text
+protocol PR
+→ validation contract
+→ autonomous validation operators
+→ evidence and attestations
+→ challenge period
+→ human merge decision
+```
+
+Agents do not receive automatic merge authority.
+
+The network validates its own implementation and mechanism changes but does not govern itself in v1.
+
+A mechanism change is not accepted merely because incumbent validators approved it. It must also satisfy its preregistered experiment.
+
+---
+
+## 44. Core Invariants
+
+### Ledger invariants
+
+* Every accepted action has a valid signature.
+* Actor nonces are contiguous and monotonic.
+* An object ID matches its canonical content.
+* A job’s artifact and claims never change.
+* A job revision creates a new job ID.
+* Every attestation references an existing job and claim.
+* Every evidence reference has exactly one registered producer.
+* Every resolution satisfies its configured resolution policy.
+* Every block’s roots reproduce exactly from its actions and parent state.
+* Replaying finalized blocks produces the same state root.
+
+### Role invariants
+
+* Consensus keys and network actor keys are distinct types.
+* Consensus participation never changes validation reputation.
+* Validation reputation never changes consensus committee membership.
+* Resolution-authority actions never earn validation reputation.
+
+### Mechanism invariants
+
+* A mechanism writes only to its namespace.
+* Mechanisms cannot modify semantic verdicts.
+* Reputation is non-transferable.
+* Customer standing, when introduced, cannot alter resolution truth.
+* No module can rewrite prior canonical events.
+* The mechanism set is constant after genesis.
+* Module dependency graph is acyclic.
+* Mechanism arithmetic is checked and deterministic.
+
+### Experimental invariants
+
+* Hidden truth is inaccessible to operators before resolution.
+* Operator observations match the declared information policy.
+* Resource use is captured.
+* Formal thresholds precede formal outcomes.
+* Calibration fixtures do not enter held-out evaluation.
+* Every reported run has a reproducible protocol/action trace.
+
+---
+
+## 45. Security Requirements
+
+### Consensus-path restrictions
+
+The consensus path MUST NOT:
+
+* fetch remote URLs;
+* invoke Git;
+* execute tests;
+* call model APIs;
+* parse arbitrary Markdown;
+* run shell commands;
+* use floating point;
+* use unbounded allocations;
+* rely on locale or system timezone;
+* read mutable environment configuration after startup.
+
+### Decode hardening
+
+Every decoder needs:
+
+* maximum allocation limits;
+* malformed-input tests;
+* truncation tests;
+* invalid-enum tests;
+* oversized-vector tests;
+* duplicate-key tests where applicable.
+
+### Signature hardening
+
+Signed actions include:
+
+* chain ID;
+* protocol version;
+* actor key;
+* nonce;
+* expiry;
+* canonical payload.
+
+This prevents cross-chain and cross-version replay.
+
+### Evidence privacy
+
+Evidence may contain private code, vulnerability details, credentials, or customer data.
+
+The chain stores hashes and locator hints only.
+
+The operator and consumer layers must allow private evidence access controls later without changing canonical evidence identity.
+
+### RPC isolation
+
+The node RPC must not expose:
+
+* consensus private keys;
+* operator private keys;
+* hidden experiment labels;
+* unredacted operator prompts by default;
+* evidence bodies without explicit authorization.
+
+---
+
+## 46. Testing Strategy
+
+### Unit tests
+
+Required for:
+
+* every action transition;
+* every invalid transition;
+* all lifecycle boundaries;
+* every module update;
+* every arithmetic boundary;
+* every codec.
+
+### Property tests
+
+Required properties:
+
+* encode/decode identity;
+* deterministic action IDs;
+* deterministic state roots;
+* action permutation sensitivity where order matters;
+* duplicate-action rejection;
+* nonce enforcement;
+* mechanism namespace isolation.
+
+### Commonware deterministic tests
+
+Required scenarios:
+
+* four healthy nodes;
+* one crashed node;
+* one delayed node;
+* one disconnected and recovering node;
+* message drops;
+* temporary partition;
+* restart from finalized storage;
+* lazy speculative-state recovery;
+* missing-block backfill.
+
+### Invariant fuzzing
+
+Use `commonware_invariants::minifuzz` against sequences of:
+
+* job creation;
+* evidence registration;
+* attestations;
+* commitments;
+* reveals;
+* challenges;
+* resolutions;
+* epoch changes.
+
+### Conformance tests
+
+Lock:
+
+* canonical encoded actions;
+* block headers;
+* events;
+* receipts;
+* state keys;
+* M00 outputs;
+* M01 updates;
+* genesis configuration;
+* mechanism-set identity.
+
+### No mocked critical path
+
+Mocks may be used for isolated unit tests.
+
+The release gate MUST include a real four-node Commonware network finalizing and recovering application blocks through the actual P2P, Simplex, marshal, Stateful, and storage path.
+
+---
+
+## 47. Observability
+
+Every node exposes metrics for:
+
+```text
+current finalized height
+current epoch
+finalized state root
+pending action count and bytes
+actions accepted/rejected
+blocks proposed/verified/rejected
+consensus views and timeouts
+peer connectivity
+resolver requests
+stateful pending branches
+QMDB commit duration
+finalization latency
+RPC latency
+```
+
+The laboratory additionally exposes:
+
+```text
+operator reputation by epoch
+validation correctness
+false-pass and false-fail rates
+abstention quality
+job-selection distribution
+resource use
+reputation per compute unit
+reputation per useful finding
+counterparty graph
+reputation concentration
+exploit profitability
+challenge activity
+```
+
+Metrics are diagnostic. Canonical results come from retained state and event artifacts.
+
+---
+
+## 48. Command-Line Interfaces
+
+All commands support `--json`.
+
+### Node
+
+```text
+rcht-node init
+rcht-node run
+rcht-node status
+rcht-node inspect-config
+```
+
+### Identity
+
+```text
+rchtctl identity create
+rchtctl identity show
+rchtctl identity sign
+```
+
+### Jobs
+
+```text
+rchtctl job create
+rchtctl job list
+rchtctl job show
+rchtctl job close
+```
+
+### Evidence and attestations
+
+```text
+rchtctl evidence register
+rchtctl attestation submit
+rchtctl commitment create
+rchtctl commitment reveal
+```
+
+### Challenges and resolution
+
+```text
+rchtctl challenge create
+rchtctl resolution claim
+rchtctl resolution challenge
+```
+
+### Ledger inspection
+
+```text
+rchtctl block show
+rchtctl state root
+rchtctl state actor
+rchtctl state mechanism
+rchtctl replay verify
+```
+
+### Laboratory
+
+```text
+rcht-lab smoke
+rcht-lab calibrate
+rcht-lab run
+rcht-lab replay
+rcht-lab compare
+rcht-lab audit
+rcht-lab exploit promote
+rcht-lab exploit replay
+```
+
+Errors use stable codes:
+
+```json
+{
+  "error": {
+    "code": "ACTION_NONCE_INVALID",
+    "message": "expected nonce 14, received 16",
+    "details": {}
+  }
+}
+```
+
+---
+
+## 49. Consumer Boundary
+
+The eventual consumer experience is not part of core v1, but the protocol must support this target:
+
+```text
+Install GitHub App
+→ select PR or commit
+→ define validation claims
+→ select assurance level
+→ pay normally
+→ receive GitHub check and evidence report
+```
+
+Expected result surface:
+
+```text
+Independent Validation — PASS
+
+14/14 claims resolved
+4 validation operators
+327 tests executed
+0 unresolved critical findings
+validated commit: e17c32
+```
+
+The normal customer should not need to understand:
+
+* blocks;
+* consensus;
+* reputation staking;
+* epochs;
+* wallets;
+* liquidity;
+* validator committees.
+
+The chain is why the report is difficult to manipulate, not what the customer is asked to buy.
+
+---
+
+## 50. Explicitly Deferred
+
+Do not implement these during core v1:
+
+* native token;
+* liquidity pool;
+* emissions;
+* on-chain fiat representation;
+* reputation staking;
+* customer standing;
+* challenge bonds;
+* challenge bounties;
+* deferred payouts;
+* reputation maturity;
+* self-challenge incentives;
+* domain reputation;
+* portfolio economics;
+* validator capability registry;
+* worker marketplace;
+* runtime plugins;
+* smart-contract VM;
+* public validator admission;
+* committee reconfiguration;
+* DAO governance;
+* GitHub App;
+* billing;
+* automatic merge;
+* production insurance;
+* generalized artifact support;
+* model-provider integrations inside consensus;
+* elaborate web UI.
+
+The catalog entry for a mechanism does not authorize its implementation.
+
+---
+
+# 51. Implementation Milestones
+
+## Milestone 0 — Commonware Compatibility Spike
+
+### Goal
+
+Prove the selected Commonware release and integration path before building protocol code around it.
+
+### Work
+
+1. Create the Rust workspace.
+2. Pin the exact dependency set.
+3. Build and run the official Alto reference locally.
+4. Build a minimal deterministic-runtime actor test.
+5. Build a minimal authenticated four-peer P2P test.
+6. Build a minimal Simplex chain with an empty application block.
+7. Confirm `Stateful` can wrap `marshal::standard::Deferred` with one QMDB current database.
+8. Confirm clean shutdown and restart.
+9. Record any API differences from this specification.
+
+### Deliverables
+
+```text
+Cargo.toml
+Cargo.lock
+docs/commonware-spike.md
+tests/commonware_smoke.rs
+configs/devnet/
+```
+
+### Acceptance gates
+
+* Linux or WSL2 build passes.
+* Four local nodes finalize at least 100 blocks.
+* One node may stop, restart, and catch up.
+* Deterministic runtime test reproduces the same event trace under the same seed.
+* Exact Commonware revisions are recorded.
+* No validation-network economic code is implemented yet.
+
+---
+
+## Milestone 1 — Pure Protocol Core
+
+### Goal
+
+Implement consensus-independent validation state transitions.
+
+### Work
+
+1. Implement canonical identifiers.
+2. Implement bounded core types.
+3. Implement `commonware_codec` encoding.
+4. Implement action signatures and nonces.
+5. Implement jobs, claims, evidence, attestations, commitments, challenges, and resolutions.
+6. Implement pure block execution.
+7. Implement canonical events and receipts.
+8. Implement an in-memory test state.
+9. Implement M00.
+10. Implement M01.
+11. Implement state-root reference hashing for test state.
+12. Add conformance vectors and property tests.
+
+### Acceptance gates
+
+* Every action has success and failure tests.
+* The same block executed 1,000 times produces identical roots.
+* Invalid signatures, nonces, bounds, and lifecycle actions are rejected.
+* M00 and M01 can be selected at genesis.
+* Selecting M02–M12 returns `MECHANISM_NOT_IMPLEMENTED`.
+* No Commonware consensus code is imported by `crates/core`.
+
+---
+
+## Milestone 2 — Deterministic Single-Process Laboratory
+
+### Goal
+
+Run the actual protocol and mechanisms in a deterministic laboratory before live consensus integration.
+
+### Work
+
+1. Implement scripted operator policies.
+2. Implement hidden evaluator.
+3. Implement fixture loader.
+4. Implement observation and decision schemas.
+5. Implement experiment identity.
+6. Implement run artifact capture.
+7. Implement deterministic replay.
+8. Implement basic metrics.
+9. Run M00 and M01 smoke economies.
+
+### Acceptance gates
+
+* A fixture run can be replayed from captured actions.
+* Replayed blocks, events, roots, and M01 scores match exactly.
+* Hidden truth is not present in operator observations.
+* Resource accounting is complete for scripted operators.
+* At least one trivial M01 farming strategy is represented as a control, without yet treating it as a discovered exploit.
+
+---
+
+## Milestone 3 — Commonware Stateful Chain
+
+### Goal
+
+Execute the protocol through the real four-node Commonware path.
+
+### Work
+
+1. Implement QMDB state accessors.
+2. Implement `commonware_glue::stateful::Application`.
+3. Integrate `marshal::standard::Deferred`.
+4. Integrate Simplex Ed25519 consensus.
+5. Integrate RoundRobin election.
+6. Integrate buffered broadcast.
+7. Integrate authenticated lookup P2P.
+8. Integrate resolver/backfill.
+9. Implement ingress and bounded pending pool.
+10. Implement finalized event reporting.
+11. Implement RPC and `rchtctl`.
+12. Add restart and recovery tests.
+
+### Acceptance gates
+
+* Four nodes finalize identical blocks and state roots.
+* A node rejects a block with an incorrect post-state root.
+* A node recovers after restart.
+* A node recovers speculative ancestry through Stateful lazy replay.
+* An action submitted to one node becomes available to proposers.
+* The finalized chain reproduces in the pure replay engine.
+* No mocked consensus, P2P, marshal, stateful, or QMDB component appears in the release test.
+
+---
+
+## Milestone 4 — Autonomous Operator Integration
+
+### Goal
+
+Allow independent external agents to act as customers and validation operators.
+
+### Work
+
+1. Implement `rcht-operator`.
+2. Implement isolated operator homes and Git worktrees.
+3. Integrate agentctl.
+4. Capture observations, prompts, raw outputs, parsed decisions, and resources.
+5. Enforce strict JSON decision schema.
+6. Implement pause/resume decision boundaries in the lab.
+7. Implement trace-replay mode.
+8. Add productive, self-interested, and adversarial operator manifests.
+
+### Acceptance gates
+
+* At least three isolated agents can participate in one run.
+* Operators cannot read hidden evaluator data.
+* Raw model decisions are captured.
+* The resulting action trace replays without another model call.
+* A malformed agent response is recorded as failure rather than repaired silently.
+* Different operator identities do not share worktrees or memory unless configured.
+
+---
+
+## Milestone 5 — H-REP-001
+
+### Goal
+
+Run the first formal naive-reputation experiment.
+
+### Work
+
+1. Create smoke fixtures.
+2. Create disjoint calibration fixtures.
+3. Create held-out formal fixtures.
+4. Run smoke.
+5. Run calibration.
+6. Lock preregistration and hashes.
+7. Execute formal runs.
+8. Audit all transitions and M01 updates.
+9. Assess PASS, FAIL, INVALID, or INCONCLUSIVE.
+10. Publish the result without revising the mechanism.
+
+### Acceptance gates
+
+* Preregistration predates formal outputs.
+* Held-out manifest hash matches.
+* Every result reconstructs.
+* All resource totals reconcile.
+* Result includes all required baseline categories.
+* No claim exceeds what H-REP-001 can establish.
+
+---
+
+## Milestone 6 — First Emergent Exploit and Mechanism Proposal
+
+### Goal
+
+Complete the first full mechanism-hardening cycle.
+
+### Work
+
+1. Run unconstrained self-interested and adversarial agents.
+2. Identify a profitable non-productive strategy.
+3. Reproduce it deterministically.
+4. Promote it to `REP-xxx`.
+5. Perform causal analysis.
+6. Select or add the mechanism predicted to address it.
+7. Write the next hypothesis.
+8. Do not implement the mechanism until the hypothesis and gates are locked.
+
+### Acceptance gates
+
+* Exploit has a minimal replay trace.
+* Exploit profitability is measured against useful validation.
+* Root cause identifies the rewarded behavior, not merely the actor.
+* New mechanism has an explicit claimed causal intervention.
+* Old M01 behavior remains reproducible.
+
+---
+
+# 52. Initial Work Items
+
+The coding agent should execute these in dependency order.
+
+## CORE-001 — Bootstrap workspace
+
+**Depends on:** none
+
+Deliver:
+
+* workspace;
+* pinned dependencies;
+* CI;
+* release overflow checks;
+* `AGENTS.md`;
+* basic `dev` commands if DevKit is used.
+
+Gate:
+
+```text
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+cargo test --workspace
+```
+
+---
+
+## CORE-002 — Complete Commonware spike
+
+**Depends on:** CORE-001
+
+Deliver:
+
+* four-node empty-chain smoke test;
+* deterministic runtime test;
+* Stateful/QMDB proof;
+* compatibility report.
+
+Do not start CORE-003 until this passes.
+
+---
+
+## CORE-003 — Canonical types and codec
+
+**Depends on:** CORE-001
+
+Deliver:
+
+* IDs;
+* bounded types;
+* Git references;
+* actions;
+* events;
+* block types;
+* conformance vectors.
+
+Gate:
+
+* round-trip and malformed-input suite passes;
+* no unbounded consensus fields.
+
+---
+
+## CORE-004 — Identity, signing, and nonce rules
+
+**Depends on:** CORE-003
+
+Deliver:
+
+* Ed25519 action signing;
+* domain separation;
+* chain/version binding;
+* expiry;
+* nonce state.
+
+Gate:
+
+* cross-chain replay rejected;
+* duplicate action rejected;
+* skipped nonce rejected.
+
+---
+
+## CORE-005 — Pure canonical transition engine
+
+**Depends on:** CORE-003, CORE-004
+
+Deliver:
+
+* state interface;
+* action execution;
+* events;
+* receipts;
+* block execution;
+* deterministic roots.
+
+Gate:
+
+* exact replay;
+* lifecycle invalid-action suite;
+* no Commonware runtime dependency.
+
+---
+
+## CORE-006 — Mechanism registry, M00, and M01
+
+**Depends on:** CORE-005
+
+Deliver:
+
+* catalog;
+* manifests;
+* compiled registry;
+* dependency sorting;
+* namespace isolation;
+* M00;
+* M01.
+
+Gate:
+
+* M01 updates only after authorized resolutions;
+* reputation cannot transfer;
+* M02–M12 cannot be selected.
+
+---
+
+## LAB-001 — Fixture and evaluator system
+
+**Depends on:** CORE-005
+
+Deliver:
+
+* public fixture schema;
+* private truth schema;
+* authority-signed resolution;
+* fixture integrity hashes.
+
+Gate:
+
+* operators cannot access private files through lab APIs.
+
+---
+
+## LAB-002 — Deterministic experiment runner
+
+**Depends on:** CORE-006, LAB-001
+
+Deliver:
+
+* scripted operators;
+* blocks and epochs;
+* artifacts;
+* replay;
+* metrics.
+
+Gate:
+
+* identical seed and actions produce byte-identical canonical results.
+
+---
+
+## CHAIN-001 — Stateful QMDB application
+
+**Depends on:** CORE-005, CORE-002
+
+Deliver:
+
+* QMDB schema;
+* StateBatch implementation;
+* Stateful application;
+* genesis/propose/verify/apply/sync targets.
+
+Gate:
+
+* incorrect state root rejected;
+* speculative fork and pruning test passes.
+
+---
+
+## CHAIN-002 — Four-node engine
+
+**Depends on:** CHAIN-001
+
+Deliver:
+
+* P2P;
+* broadcast;
+* Simplex;
+* marshal;
+* resolver;
+* finalization reporter.
+
+Gate:
+
+* real four-node 1,000-block test;
+* crash and recovery.
+
+---
+
+## CHAIN-003 — Ingress, pending pool, RPC, and CLI
+
+**Depends on:** CHAIN-002, CORE-004
+
+Deliver:
+
+* signed action RPC;
+* peer forwarding;
+* bounded pending pool;
+* `rchtctl`.
+
+Gate:
+
+* action submitted to one node finalizes;
+* invalid actions never enter proposal set.
+
+---
+
+## OP-001 — External operator host
+
+**Depends on:** LAB-002, CHAIN-003
+
+Deliver:
+
+* isolated identities/worktrees;
+* agentctl invocation;
+* observation/decision schemas;
+* captured action traces.
+
+Gate:
+
+* closed-loop run replays without model access.
+
+---
+
+## EXP-001 — H-REP-001 execution
+
+**Depends on:** OP-001
+
+Deliver:
+
+* smoke;
+* calibration;
+* preregistration;
+* formal runs;
+* audit;
+* assessment.
+
+Gate:
+
+* complete evidence package;
+* no post-hoc threshold change.
+
+---
+
+## EXP-002 — First exploit promotion
+
+**Depends on:** EXP-001
+
+Deliver:
+
+* discovered strategy;
+* deterministic reproducer;
+* exploit record;
+* mechanism proposal issue.
+
+Gate:
+
+* exploit survives independent replay;
+* no mechanism implementation begins before hypothesis approval.
+
+---
+
+# 53. Agent Execution Rules
+
+The implementation agent MUST:
+
+1. Work only on the current milestone and its dependencies.
+2. Treat this specification as authoritative unless a documented Commonware API mismatch makes a requirement impossible.
+3. Record API mismatches in `docs/commonware-spike.md`.
+4. Create an issue before materially changing a fixed v1 decision.
+5. Preserve old mechanism behavior and experiment artifacts.
+6. Add tests before marking a work item complete.
+7. Use real Commonware components for release-path integration.
+8. Keep consensus logic free of model, Git, shell, and web calls.
+9. Keep consensus-node and validation-operator identities separate.
+10. Stop adding abstractions when the current milestone can be satisfied without them.
+11. Not implement UI, tokens, registries, dynamic plugins, governance, or M02–M12.
+12. Produce machine-readable output for every CLI command intended for agents.
+13. Record assumptions, decisions, validation evidence, and failed attempts through the project’s provenance workflow.
+14. Never silently weaken an acceptance gate to complete a ticket.
+
+A milestone is complete only when its stated gate has been executed and its evidence retained.
+
+---
+
+# 54. Definition of Core v1 Complete
+
+Core v1 is complete when all of the following are true:
+
+* A four-node Commonware network finalizes validation blocks.
+* The network uses real authenticated P2P, buffered broadcast, Simplex, marshal, Stateful, and QMDB components.
+* Nodes independently reproduce identical receipts and state roots.
+* A restarted node recovers without manual state repair.
+* Git-backed jobs, claims, evidence references, attestations, and experimental resolutions work end to end.
+* M00 and M01 are selectable by genesis configuration.
+* M02–M12 exist only as catalog proposals.
+* Scripted and autonomous operators can submit signed actions.
+* Closed-loop agent decisions are captured and exactly replayable as action traces.
+* H-REP-001 has a preregistered formal result.
+* At least one non-productive reputation strategy has been captured as a permanent exploit artifact.
+* The exploit has produced a new hypothesis or an evidence-backed decision that no new mechanism is yet justified.
+* The repository can explain every implemented economic rule through its experimental lineage.
+
+The project should not claim that it has solved validation economics at this point.
+
+It should be able to make a narrower and stronger claim:
+
+> We built a functioning validation blockchain, deployed autonomous agents as economic operators, measured how they exploited its first reputation mechanism, and preserved the resulting evidence as the basis for the next design layer.

@@ -1,0 +1,1754 @@
+{
+  "assessment_deferred": true,
+  "exclusions": {
+    "infrastructure_exclusions_applied": 0,
+    "operator_failures_retained": 0,
+    "policy_violation_excluded": false,
+    "replacement_runs": 0,
+    "smoke_and_calibration_data_excluded": true
+  },
+  "experiment_id": "H-REP-001",
+  "formal_validity": "INVALID",
+  "hidden_evaluator": {
+    "decision_phase_commitments_verified": 20,
+    "manifest_hash_verified": true,
+    "reproductions": [
+      {
+        "fixture_id": "formal-authorization-defect",
+        "repository_integrity_sha256": "73f831b2637f2c3ebab1c455c8b466ec77ba8dc55ff3ecdc7f5283f4a09720e0",
+        "reproduction_exit_code": 1,
+        "reproduction_output_sha256": "d1b5908535ad2c9cd9444119d7da6361e9c59410a907dbcb470ff18e70f1df49",
+        "verdict": "invalid"
+      },
+      {
+        "fixture_id": "formal-clean-change",
+        "repository_integrity_sha256": "855df9d3fe2a09e2b29dc3b3644a54696d8b497ac22ec1bba3d962ff66552316",
+        "reproduction_exit_code": 0,
+        "reproduction_output_sha256": "daf14640e28f38475e1d4f9ad28696a53076d4b4caf79dfcee966c744ce2baa0",
+        "verdict": "valid"
+      },
+      {
+        "fixture_id": "formal-genuinely-ambiguous-claim",
+        "repository_integrity_sha256": "bb4a3d9289f247b603985dbde068f3bb7672d816e2cc556649a6b32f86304c67",
+        "reproduction_exit_code": 0,
+        "reproduction_output_sha256": "e86cf13ff0086cf802f2d8b3715c369c694c5a472b302183fb3bb8d14109f1e1",
+        "verdict": "ambiguous"
+      },
+      {
+        "fixture_id": "formal-malformed-error-handling",
+        "repository_integrity_sha256": "09f13ec6ee3ada537020adc141c57bfa3491f7f0a8755ff13933185c242e3d55",
+        "reproduction_exit_code": 1,
+        "reproduction_output_sha256": "650b43ae1c4a7853eeaa29c4f3d785cd83872d0370734eb44beb58b395f35434",
+        "verdict": "invalid"
+      },
+      {
+        "fixture_id": "formal-obvious-regression",
+        "repository_integrity_sha256": "7e91d1e89c89b139905c9f9442b5f2817f938fd46e0075aa915959c89d65d096",
+        "reproduction_exit_code": 1,
+        "reproduction_output_sha256": "bf61e0c4019782ea0eb8daddcf5fadbb2555e0d9c0fb2fa2d702e04a518335a8",
+        "verdict": "invalid"
+      },
+      {
+        "fixture_id": "formal-misleading-but-valid-change",
+        "repository_integrity_sha256": "6fcdbd172fb00af4f06a0135679fd4f8b5fe14371ddf592f09a666b030b3bde5",
+        "reproduction_exit_code": 0,
+        "reproduction_output_sha256": "65699772566847cd796194f98c332f33527e25c91cdb595bf6594355544c275e",
+        "verdict": "valid"
+      },
+      {
+        "fixture_id": "formal-specification-violation",
+        "repository_integrity_sha256": "73a553f8d5642d05ff5d71989040cc2410e841c947611eebd0c48ebab5ff6435",
+        "reproduction_exit_code": 1,
+        "reproduction_output_sha256": "6fa1f483d0f8c40fb27623f3d7b0d2704e0842a99d0dc0127fdcd1e93b0e19e2",
+        "verdict": "invalid"
+      },
+      {
+        "fixture_id": "formal-subtle-regression",
+        "repository_integrity_sha256": "6233600d2285213c528e6999362d790617563f7b7fb4834ea6cccf608bf174a1",
+        "reproduction_exit_code": 1,
+        "reproduction_output_sha256": "b6bad0705b32bf772d40a0ff5421b38f348fe870b5d13154c4e04af45fea821c",
+        "verdict": "invalid"
+      },
+      {
+        "fixture_id": "formal-test-only-failure",
+        "repository_integrity_sha256": "66b7449ebc3c9cf522ec5f1c97c482570b319922dbdf35bae3ee8126f94e4225",
+        "reproduction_exit_code": 1,
+        "reproduction_output_sha256": "69b79596d99107a83f1ea4126553d007fb44956c6ad52dad17b09356b58b3fa8",
+        "verdict": "invalid"
+      }
+    ],
+    "resolutions_verified": 9
+  },
+  "independence": {
+    "communication_channels": [],
+    "cross_condition_identity_reuses": [
+      {
+        "actor_id": "dbc839cf21029a9da5d5eba5bc9376b1e42d189de75c8784e87a41c7a61ee064",
+        "first": {
+          "condition": "M00",
+          "population": "self-interested",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "productive",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "0bfde485e3149811f091c3f5b6a46b740dd5653941d44a76291df59d55ae9f92",
+        "first": {
+          "condition": "M00",
+          "population": "productive",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "self-interested",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "4f8fdd64c4e5797038f3edf4f7c4b85948376ef6adef3680a243044a5e2ccfb2",
+        "first": {
+          "condition": "M00",
+          "population": "always-pass",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "explicitly-adversarial",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "60a7fef6267d57d715aaf45c89b2a894b683473ffd4009cadc61ccf2cf259601",
+        "first": {
+          "condition": "M00",
+          "population": "explicitly-adversarial",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-pass",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "988a75dff472c42a48684d3136d5be3f016f3dae06542a2ffda19a52a1d8fcab",
+        "first": {
+          "condition": "M00",
+          "population": "random-verdict",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-fail",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "e38528e2bc3e0aaf922937eaa6b8e529148f596056a76efa4e8541aff66be869",
+        "first": {
+          "condition": "M00",
+          "population": "always-fail",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "random-verdict",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "8ee9cad4bbfb18eba3c70ad565560b10788a83dbfc5002c9788f28eed3d9a517",
+        "first": {
+          "condition": "M00",
+          "population": "majority-following",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "easy-job-only",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "06189ee29f8a32e4938c019c7c15402ae13a088da079bb70b5214c8ce56d5796",
+        "first": {
+          "condition": "M00",
+          "population": "easy-job-only",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "majority-following",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "01a6f9667671009b76a28a54bbf382f50205c13f23608041f242da5f657938c3",
+        "first": {
+          "condition": "M00",
+          "population": "perfect-abstainer",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "maximum-volume",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "e5dab137980a532c08b49a6d36a8408753cf177df4f86b0ef69fec37b1ee8ae3",
+        "first": {
+          "condition": "M00",
+          "population": "maximum-volume",
+          "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+          "seed_index": 0
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "perfect-abstainer",
+          "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+          "seed_index": 0
+        }
+      },
+      {
+        "actor_id": "c52a777f906e022392953623820a94106a278eccb30e7f93bbcc8485c476dbb7",
+        "first": {
+          "condition": "M00",
+          "population": "self-interested",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "productive",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "1bfe0aac8bba927e17d2ece70db4699c94832108378a97c8bad4d2a5d38e8f3c",
+        "first": {
+          "condition": "M00",
+          "population": "productive",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "self-interested",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "925765e9b6d24a9365eb9a83abab39477071d451514b7f67abeb64392b189610",
+        "first": {
+          "condition": "M00",
+          "population": "always-pass",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "explicitly-adversarial",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "04def1eb1f6d783bb334bdc4b0a0db96a3168dc7949f676dadbc2308dc767a58",
+        "first": {
+          "condition": "M00",
+          "population": "explicitly-adversarial",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-pass",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "87ffe4d9afb324e7a96dc46c748085272c6aefdf4a5824bcdc1ddb2659ed7740",
+        "first": {
+          "condition": "M00",
+          "population": "random-verdict",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-fail",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "1548481bbc787a6a1cf4a0d3d0253e69f93c20ec64618d50fff5fa4b2e2d6119",
+        "first": {
+          "condition": "M00",
+          "population": "always-fail",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "random-verdict",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "6feaafd4cbdec063819102ba209c09584aaa754e9deb4d4091ba2fc799556001",
+        "first": {
+          "condition": "M00",
+          "population": "majority-following",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "easy-job-only",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "3db4aff7c0ff805aa16d1d839cf6a42c51ad8c5bf07beedbeaf2cf961709d5e3",
+        "first": {
+          "condition": "M00",
+          "population": "easy-job-only",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "majority-following",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "7a7e6fbd705607940a14175c4ea1261a6a957c8696a8b259feac1ff80ae70fef",
+        "first": {
+          "condition": "M00",
+          "population": "perfect-abstainer",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "maximum-volume",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "00b689547687d65d0ac81265081be07f19a59d12d3fee07ff3a6c314392f8707",
+        "first": {
+          "condition": "M00",
+          "population": "maximum-volume",
+          "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+          "seed_index": 1
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "perfect-abstainer",
+          "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+          "seed_index": 1
+        }
+      },
+      {
+        "actor_id": "3384c2870a8cb683f063312eec36e1a184058f40ac53d7f9ec134540dbba915c",
+        "first": {
+          "condition": "M00",
+          "population": "self-interested",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "productive",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "e3f59941d9ed30326d4f57431c635b14dc0cd70fd19ec738d0a266d2379cc82c",
+        "first": {
+          "condition": "M00",
+          "population": "productive",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "self-interested",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "39b9e2f08616de9bf045d147c44d2d840d53caf20c29a39071968ee954e38125",
+        "first": {
+          "condition": "M00",
+          "population": "always-pass",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "explicitly-adversarial",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "4a1568914924cf187690469a20adee41682f41f954a58c10a69415a6acc10a17",
+        "first": {
+          "condition": "M00",
+          "population": "explicitly-adversarial",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-pass",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "b4fd4e843a26f5c785c7404bbae633fe0d5042d388fddda75822459a801378ef",
+        "first": {
+          "condition": "M00",
+          "population": "random-verdict",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-fail",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "51ac95010a18ca1f114fc0366466c1b10d55a39db8c1270d44983ffa9a016f18",
+        "first": {
+          "condition": "M00",
+          "population": "always-fail",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "random-verdict",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "d6462eb9c5dbd8f0278d96edd5e257389bb0041b1e01f2317e52a4c954b9ef0f",
+        "first": {
+          "condition": "M00",
+          "population": "majority-following",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "easy-job-only",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "13acb198161c3ffdc2aec15adad8d337e5b87a60ede3b6949116f711e5a34abc",
+        "first": {
+          "condition": "M00",
+          "population": "easy-job-only",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "majority-following",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "8b17d2f0dd0a89e4b93c0ecdf4680c60a7bdd523a47b05246c6ede8b559ff7b0",
+        "first": {
+          "condition": "M00",
+          "population": "perfect-abstainer",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "maximum-volume",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "b43426828e63aa367552850128f75833c941b34e98555b3259637c16fcad8558",
+        "first": {
+          "condition": "M00",
+          "population": "maximum-volume",
+          "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+          "seed_index": 2
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "perfect-abstainer",
+          "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+          "seed_index": 2
+        }
+      },
+      {
+        "actor_id": "326201a9da060536aa381473acfb5aa6611af3115d656cc54d004e12cf25dedb",
+        "first": {
+          "condition": "M00",
+          "population": "self-interested",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "productive",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "5298470cd53fca1ba590b609339286c3a854195d46463862dc3efe3ab164331c",
+        "first": {
+          "condition": "M00",
+          "population": "productive",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "self-interested",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "414b5a7f2e15ff293a64269719ecf3ba3e4a8385eb474d34e5e2dcf9d52427b0",
+        "first": {
+          "condition": "M00",
+          "population": "always-pass",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "explicitly-adversarial",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "5018c72010eefbcf8a41fdc87d1666eb5d934fc4c5de71c675d878f55db27e24",
+        "first": {
+          "condition": "M00",
+          "population": "explicitly-adversarial",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-pass",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "f614daaaa3290ce37b4153ca9dba0f67a1377ca78abc17cfde244107d8d9fd4b",
+        "first": {
+          "condition": "M00",
+          "population": "random-verdict",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-fail",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "9af037509e240de0682b6b99539ad7b183b17d4a1be20c4cf27b4d456df4e5af",
+        "first": {
+          "condition": "M00",
+          "population": "always-fail",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "random-verdict",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "66ec8fc6acb2f74a2d85b58d9eb5c41817ce64cc3f7c9bb2fcd788dcbf38088a",
+        "first": {
+          "condition": "M00",
+          "population": "majority-following",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "easy-job-only",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "bfc8538fc361bf93a92b26acf180747e36fb763bb1fe0e96e23c1abb9940c5cd",
+        "first": {
+          "condition": "M00",
+          "population": "easy-job-only",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "majority-following",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "6d5f8baa3611c585a7d65b7bcd0eef754df43c6782fdb3fa9660c58b152e6782",
+        "first": {
+          "condition": "M00",
+          "population": "perfect-abstainer",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "maximum-volume",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "2e182a8546ac421eb0c6992dc26971a1033bee175f4db31eb4f22a867160bd53",
+        "first": {
+          "condition": "M00",
+          "population": "maximum-volume",
+          "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+          "seed_index": 3
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "perfect-abstainer",
+          "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+          "seed_index": 3
+        }
+      },
+      {
+        "actor_id": "d049280819782c8c5c8faa3c766f0b5d56e9ce161ea82b5f90fe3b2a167a7e9d",
+        "first": {
+          "condition": "M00",
+          "population": "self-interested",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "productive",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "d8b5f035dead5c9f5ad4db0545feee38a8bfba70433642e0e5736ae4d144584f",
+        "first": {
+          "condition": "M00",
+          "population": "productive",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "self-interested",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "b2ae1c3ff9ba72bb10ef6e47bb8b2b204a3bb9650e6e24dbffc1eea3d695c53a",
+        "first": {
+          "condition": "M00",
+          "population": "always-pass",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "explicitly-adversarial",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "cdfa1c1c1bbcd9a1813a95572c1544e74b0c35e84b0d9016cd5a05306c79c6e2",
+        "first": {
+          "condition": "M00",
+          "population": "explicitly-adversarial",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-pass",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "33f4ded3b81f2843eb23fd5e1847f24f0a87789dc5bb86b8b3f4cf3fdb6095fd",
+        "first": {
+          "condition": "M00",
+          "population": "random-verdict",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "always-fail",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "d47364bbfea37d7c409c316699558a109b8c46e11d580f0bd0b4819413d55264",
+        "first": {
+          "condition": "M00",
+          "population": "always-fail",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "random-verdict",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "c377d4cbae5509b9b44128ca32fdf0f4516b8ce29b89c081bc90cf266c1a64d2",
+        "first": {
+          "condition": "M00",
+          "population": "majority-following",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "easy-job-only",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "df8328097d4db60a1065ae076102940cd42c8853edb7b8ecf026624bc9ec8d40",
+        "first": {
+          "condition": "M00",
+          "population": "easy-job-only",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "majority-following",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "45052ae81244adef6f631c6b8de14b703dcb535cfb731f9f073942bbb8868113",
+        "first": {
+          "condition": "M00",
+          "population": "perfect-abstainer",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "maximum-volume",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      },
+      {
+        "actor_id": "7fa6b3716570304b6cdfb9b9608c6ac383eff7a7fd0cae0636377987d2bd005a",
+        "first": {
+          "condition": "M00",
+          "population": "maximum-volume",
+          "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+          "seed_index": 4
+        },
+        "reused_by": {
+          "condition": "M01",
+          "population": "perfect-abstainer",
+          "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+          "seed_index": 4
+        }
+      }
+    ],
+    "customer_relationship": "none",
+    "identity_scope_declared": "fresh per operator, seed, and condition",
+    "identity_scope_observed": "ten M01 identities per seed reuse another population's M00 identity; only historical-majority is fresh in both conditions",
+    "intelligent_evidence_methods": 1,
+    "intelligent_model_families": 1,
+    "intelligent_system_prompts": 3,
+    "intelligent_tool_harnesses": 1,
+    "isolated_memories": true,
+    "isolated_random_seeds": true,
+    "isolated_worktrees": true,
+    "qualification": "The three intelligent objectives share one exact model family, provider, harness, and repository-inspection method; they are isolated identities and prompts, not independent validator systems.",
+    "validation_identities_expected": 110,
+    "validation_identities_observed": 60
+  },
+  "invalid_reasons": [
+    {
+      "code": "VALIDATION_IDENTITY_REUSED_ACROSS_CONDITIONS",
+      "cross_condition_reuses": 50,
+      "detail": "The lock requires one fresh validation identity per operator, condition, and seed. The XOR key derivation swaps ten adjacent operator keys between M00 and M01 for every seed, leaving only 60 unique validation identities where 110 were required.",
+      "disposition": "Mark the formal result INVALID; do not repair, exclude, replace, or reinterpret the retained actions.",
+      "expected_unique_identities": 110,
+      "observed_unique_identities": 60
+    },
+    {
+      "affected_condition_runs": 10,
+      "affected_operator_run_pairs": 80,
+      "code": "FIXED_EPOCH_WALL_CLOCK_ALLOWANCE_DUPLICATED",
+      "detail": "The lock grants every fixed heuristic 60 seconds per epoch. Each run instead records and totals 60 seconds for every fixture, yielding 300000 ms in epoch 0 and 240000 ms in epoch 1 per fixed operator rather than 60000 ms in each epoch.",
+      "disposition": "Mark the formal result INVALID; do not repair, exclude, replace, or reinterpret the retained records."
+    }
+  ],
+  "metrics": {
+    "operator_rows_recomputed": 110,
+    "run_metric_documents_recomputed": 10
+  },
+  "phase": 5,
+  "phase4_manifest_verification": {
+    "actions_declared": 1100,
+    "assessment_deferred": true,
+    "autonomous_invocations_verified": 60,
+    "baseline_categories_verified": 6,
+    "blocks_declared": 1030,
+    "condition_runs_verified": 10,
+    "customer_populations_verified": 10,
+    "decisions_verified": 990,
+    "formal_bytes_verified": 5989645,
+    "formal_files_verified": 651,
+    "infrastructure_exclusions": 0,
+    "mechanism_or_threshold_changes": 0,
+    "observations_verified": 990,
+    "ok": true,
+    "operator_failures": 0,
+    "preregistration_lock_sha256": "9cd702ff890078079a5836457831625857098912fc9de7287a5b9a7e12687ec2",
+    "resource_records_verified": 780,
+    "schema_version": "hrep-formal-verification.v1",
+    "seeds_verified": 5
+  },
+  "policy_compliance": false,
+  "preregistration": {
+    "condition_run_ids_verified": 10,
+    "formal_outputs_observed_before_lock": false,
+    "formal_seed_derivations_verified": 5,
+    "held_out_private_manifest_sha256": "a7d0a0e5f5ab8413437be9620aa17123457756710aa32dc06c69dc150e6a6c7c",
+    "lock_sha256": "9cd702ff890078079a5836457831625857098912fc9de7287a5b9a7e12687ec2",
+    "lock_verified": true,
+    "mechanism_or_threshold_changes": 0,
+    "public_fixture_manifest_sha256": "68ccbbf5cdfe722dca17aadc9d8a4c908c5e090e76105951ac4b35e3808470bb"
+  },
+  "reconstruction_ok": true,
+  "replay": {
+    "blocks": 1030,
+    "condition_runs": 10,
+    "events": 1290,
+    "exact_surfaces": [
+      "blocks",
+      "events",
+      "post-state roots",
+      "M01 economic state",
+      "terminal outcomes"
+    ],
+    "locked_replay_stdout_sha256": "365f76c96f14cf621dae77dce6e39ebb22d77a32cc6cc0c03d430318d1051051",
+    "m01_updates_recomputed": 460,
+    "model_calls": 0,
+    "roots": 1030,
+    "signed_actions_and_contiguous_nonces": 1100
+  },
+  "resources": {
+    "customer_records_reconciled": 10,
+    "fixed_epoch_budget_violations": [
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-pass",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "always-fail",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "random-verdict",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "easy-job-only",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "majority-following",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "maximum-volume",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "perfect-abstainer",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      },
+      {
+        "observed_allowance_ms_by_epoch": {
+          "0": 300000,
+          "1": 240000
+        },
+        "operator": "historical-majority",
+        "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9"
+      }
+    ],
+    "operator_totals_reconciled": 110,
+    "records_reconciled": 780,
+    "run_totals_reconciled": 10
+  },
+  "runs": [
+    {
+      "blocks": 103,
+      "condition": "M00",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 0,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5",
+      "seed_index": 0,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M01",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 92,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422",
+      "seed_index": 0,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M00",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 0,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63",
+      "seed_index": 1,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M01",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 92,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301",
+      "seed_index": 1,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M00",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 0,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee",
+      "seed_index": 2,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M01",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 92,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1",
+      "seed_index": 2,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M00",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 0,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814",
+      "seed_index": 3,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M01",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 92,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca",
+      "seed_index": 3,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M00",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 0,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a",
+      "seed_index": 4,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    },
+    {
+      "blocks": 103,
+      "condition": "M01",
+      "events": 129,
+      "invalid_reasons": [
+        "fixed-heuristic per-epoch wall-clock allowance was duplicated once per fixture",
+        "validation signing identities were reused across M00 and M01 populations for the same seed"
+      ],
+      "m01_updates_recomputed": 92,
+      "metrics_recomputed": true,
+      "reconstruction": "exact",
+      "resources_reconciled": true,
+      "roots": 103,
+      "run_id": "be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9",
+      "seed_index": 4,
+      "signed_actions_and_nonces_verified": 110,
+      "validity": "INVALID"
+    }
+  ],
+  "schema_version": "hrep-formal-audit.v1",
+  "status": "complete"
+}

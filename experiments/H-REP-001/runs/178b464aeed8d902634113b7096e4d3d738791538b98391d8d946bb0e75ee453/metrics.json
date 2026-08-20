@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "diagnostic_only": true,
+  "resource_use": {
+    "records": 0,
+    "model_calls": 0,
+    "input_tokens": {
+      "availability": "complete",
+      "total": 0
+    },
+    "output_tokens": {
+      "availability": "complete",
+      "total": 0
+    },
+    "tool_calls": 0,
+    "command_duration_ms": 0,
+    "cpu_time_ms": {
+      "availability": "complete",
+      "total": 0
+    },
+    "validation_wall_clock_allowance_ms": 0,
+    "git_objects_read": 0,
+    "files_inspected": 0,
+    "tests_executed": 0,
+    "jobs_inspected": 0,
+    "jobs_accepted": 0,
+    "claims_evaluated": 0,
+    "evidence_bytes": 0,
+    "compute_units": {
+      "availability": "complete",
+      "total": 0
+    }
+  },
+  "validation": {
+    "overall": {
+      "evaluated": 0,
+      "binary_decisions": 0,
+      "correct": 0,
+      "incorrect": 0,
+      "false_passes": 0,
+      "false_fails": 0,
+      "abstentions": 0,
+      "indeterminate": 0,
+      "unresolved_truth": 0,
+      "decisive_on_unresolved": 0,
+      "correctness": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "error_rate": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "false_pass_rate": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "false_fail_rate": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "abstention_quality": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "unresolved_abstention_coverage": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      }
+    },
+    "by_operator": []
+  },
+  "job_selection": {
+    "decisions": 0,
+    "no_selection": 0,
+    "jobs": []
+  },
+  "reputation": {
+    "by_epoch": [],
+    "efficiency": [],
+    "concentration": []
+  },
+  "counterparty_graph": {
+    "nodes": [],
+    "edges": []
+  },
+  "exploit_profitability": {
+    "overall": {
+      "operator": null,
+      "strategy": null,
+      "attempts": 0,
+      "successes": 0,
+      "revenue_microunits": 0,
+      "cost_microunits": 0,
+      "profit_microunits": {
+        "negative": false,
+        "magnitude": 0
+      },
+      "success_rate": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "return_on_cost": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      }
+    },
+    "by_operator_and_strategy": []
+  },
+  "challenge_activity": {
+    "total": 0,
+    "open": 0,
+    "resolved": 0,
+    "upheld": 0,
+    "rejected": 0,
+    "upheld_rate": {
+      "status": "unavailable",
+      "reason": "zero_denominator"
+    },
+    "unique_challengers": 0,
+    "unique_targets": 0
+  }
+}

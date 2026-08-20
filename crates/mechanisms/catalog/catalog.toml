@@ -1,0 +1,118 @@
+# This catalog records design hypotheses; it does not authorize implementations.
+
+[[mechanism]]
+id = "M00"
+name = "record-only"
+status = "implement-now"
+summary = "Establish the protocol and simulator null condition."
+trigger = "Required control condition for the first mechanism experiment."
+hypothesis = "A record-only control separates protocol behavior from economic effects."
+implementation = "m00_record_only"
+
+[[mechanism]]
+id = "M01"
+name = "naive-reputation"
+status = "implement-now"
+summary = "Test whether simple correctness history predicts future validation."
+trigger = "Required baseline economic mechanism for the first experiment."
+hypothesis = "Cumulative correctness may predict future validation quality."
+implementation = "m01_naive_reputation"
+
+[[mechanism]]
+id = "M02"
+name = "reputation-stake"
+status = "proposed"
+summary = "Make careless claims expose accumulated credibility."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M03"
+name = "commit-reveal"
+status = "proposed"
+summary = "Reduce copying and consensus following."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M04"
+name = "customer-standing"
+status = "proposed"
+summary = "Discount synthetic demand and reputation farming."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M05"
+name = "challenge-bonds"
+status = "proposed"
+summary = "Make frivolous challenges costly."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M06"
+name = "challenge-bounties"
+status = "proposed"
+summary = "Reward useful falsification and minority findings."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M07"
+name = "deferred-compensation"
+status = "proposed"
+summary = "Attach future payout to durable claim survival."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M08"
+name = "reputation-maturity"
+status = "proposed"
+summary = "Prevent rapid reputation farming and season claims."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M09"
+name = "self-challenge"
+status = "proposed"
+summary = "Reward disclosure and continued monitoring."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M10"
+name = "information-weighting"
+status = "proposed"
+summary = "Discount redundant agreement and reward uncertainty reduction."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M11"
+name = "domain-reputation"
+status = "proposed"
+summary = "Infer validator specialization from history."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""
+
+[[mechanism]]
+id = "M12"
+name = "portfolio-exposure"
+status = "proposed"
+summary = "Limit unchecked accumulation of outstanding liability."
+trigger = "Not yet demonstrated"
+hypothesis = ""
+implementation = ""

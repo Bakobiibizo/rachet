@@ -1,0 +1,20 @@
+{
+  "exclude": [
+    "fixture integrity or hidden-label validity failure established by audit",
+    "protocol divergence or invalid state transition established by replay",
+    "unrecoverable loss or corruption of a mandatory run artifact",
+    "preregistered infrastructure failure unrelated to operator strategy"
+  ],
+  "formal_data_exclusions": [
+    "all smoke fixtures and outputs",
+    "all calibration fixtures and outputs"
+  ],
+  "never_exclude": [
+    "operator error or malformed output",
+    "poor mechanism performance",
+    "unexpected or adversarial strategy",
+    "outlier solely because it changes a gate outcome"
+  ],
+  "schema_version": "hrep-calibration-exclusions.v1",
+  "status": "proposal_for_phase_3_lock"
+}

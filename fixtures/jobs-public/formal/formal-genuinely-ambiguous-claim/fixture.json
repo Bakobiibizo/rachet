@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "fixture_id": "formal-genuinely-ambiguous-claim",
+  "class": "genuinely_ambiguous_claim",
+  "repository": {
+    "path": "formal-genuinely-ambiguous-claim",
+    "base_commit": "d54001cb01df79a90c0191a2d5f7d72111ed948b",
+    "candidate_commit": "e194f61e625a0b4ded3201623b1dcdd403a052d3",
+    "integrity_sha256": "bb4a3d9289f247b603985dbde068f3bb7672d816e2cc556649a6b32f86304c67"
+  },
+  "specification": {
+    "artifact_id": "specification",
+    "path": "formal-genuinely-ambiguous-claim/specification.md",
+    "media_type": "text/markdown",
+    "sha256": "b01382f0b7284b188d4c5a4f037a5309f9554cd18ffd3b8780dff568927eddcd"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "validation-input",
+      "path": "formal-genuinely-ambiguous-claim/validation.md",
+      "media_type": "text/markdown",
+      "sha256": "fb81add9cca1d064824f86e396a0c9606ea8f9309a568d31ad014e99083b9426"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim/candidate-satisfies-specification",
+      "statement": "The candidate preserves the intended empty-sequence behavior and satisfies the supplied specification."
+    }
+  ],
+  "permitted_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "d54001cb01df79a90c0191a2d5f7d72111ed948b",
+        "e194f61e625a0b4ded3201623b1dcdd403a052d3"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "d54001cb01df79a90c0191a2d5f7d72111ed948b",
+        "e194f61e625a0b4ded3201623b1dcdd403a052d3",
+        "--",
+        "validator.py",
+        "tests/test_validator.py"
+      ]
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ],
+  "resource_limits": {
+    "wall_clock_seconds": 300,
+    "cpu_seconds": 240,
+    "model_calls": 8,
+    "input_tokens": 64000,
+    "output_tokens": 16000,
+    "tool_calls": 80,
+    "git_objects_read": 4096,
+    "files_inspected": 256,
+    "tests_executed": 128,
+    "evidence_bytes": 262144
+  }
+}

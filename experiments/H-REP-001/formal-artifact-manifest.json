@@ -1,0 +1,3262 @@
+{
+  "files": [
+    {
+      "bytes": 9981,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "d90bb06f0bd407a55d7ec22e95e4f05aa96f01993e0f685561f29e8442df90ae"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2291,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "cb9f8f323de628bc20bad50c3bddcdf544b97f0023c4f0632a040d0073653e5b"
+    },
+    {
+      "bytes": 1332,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "85a0e1f6f0e8445bd7d15be44218b4bf8f2b3b346c0804efe7427e0d05e90dc8"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "1ecb550bb5f51c6eac994ca71ac823a642f8ebad7ba41dbe75546554621b9708"
+    },
+    {
+      "bytes": 1341,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "cab6927c671de6ae23d45a7e9942e03fbb45fe88ccc01231ead358ac8795b102"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "4366da1bad447592d39022436bd4f556c89e95ffd6a56429d17db31895b1de77"
+    },
+    {
+      "bytes": 1002,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "3fd9dd6bfb9a2755000e7da0a0ebcc3280375f5ee12e81835c4fad7ca021cd0a"
+    },
+    {
+      "bytes": 9268,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "397baee4cd498f954e8e372964054faa1dbb2cffc293d61240e1d844e6a64d36"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2637,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "d3f94fb03c342846b13433eaa34cea64d70090baaead83e7487152e5f41e37b8"
+    },
+    {
+      "bytes": 1783,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "4b40fac5f2d47fc03e0ac01fa495ad28a8aa51dacb7111c862169f004952da47"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "b2a486358bb46acfe5fdfe4854941987d01f691be26848e4e572e21d77656945"
+    },
+    {
+      "bytes": 1792,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "d7f9e9ab8fb7cc1a44ca93d4f64930ec15fee0cd213a4999a69b16b514e21cc5"
+    },
+    {
+      "bytes": 481,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "2c0545a2376c2259d386614f9f6b56ce5163132e6914b13ad71df5082a7db9ac"
+    },
+    {
+      "bytes": 980,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "6a685bbc73de7c64bf2211610fd7664a52cdf257cb53f44db7e478e9160a14a2"
+    },
+    {
+      "bytes": 9706,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "f35708affef7f4bbeb872341605fd3b47799b17d618eafe44b44b998c7ed37e4"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2516,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "44a6eed16a376ee44e80aab3bea5998918c0cbf4441ef0faf863f1d9348d5a14"
+    },
+    {
+      "bytes": 1625,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "289e398c6b137ba93653620e3674bd99d31eadd34ce4cc6521ee5e307a2452df"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "da29adfe16a1e4a235b96b5faf6b3ad33ad3b09b058ae95f3ae6e4d0d898e9be"
+    },
+    {
+      "bytes": 1634,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "143a6a89508c8d51721ccaae946e0aeba7c908c06fdc6026abf3c70b545b3ee3"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "3b020238cc35db3c19633f72a3c93cc81b5633a9b7aea296cb3f851bb23d487c"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "34a51ca6f7f19da84247406aeba767cf9f78b92b552e62671fc460d6df0c89c2"
+    },
+    {
+      "bytes": 6901,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "5fd2d99357369260f12eb4f32102139a777ca03aa2e058398e282646db1b6ce0"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3059,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "cd8cc3600356e2c0f2c199f672be5703f985eb13c549a0688244b5ae767dba48"
+    },
+    {
+      "bytes": 1825,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "f99916a01df14c21b5f3f800e2002847fbc46f8326bbc1b9396eb7b987964dee"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "9cccb1ac0a426688b0af8aad3e493091146a2ed86632eefcb16de248fdf1ae7d"
+    },
+    {
+      "bytes": 1834,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "84177746fc0d0b770d804f9dbe292a45ecb9dccde76d4c313caee297fdd977ad"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "2f2779d67915654b6f0dffa4b14e4919f5362a4f91c5af29da70ae957f02bc87"
+    },
+    {
+      "bytes": 1002,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "6327e1a587f6a8a280977631e0a2f099eeb5fc21ffaff6bcf83f7d57e9fe3976"
+    },
+    {
+      "bytes": 5704,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "e08ea3dfb3e1f9deff996d0d47f08e7204456d267be9b4a59ba169d4c5417787"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3188,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/decision-records.json",
+      "sha256": "9857b08e91df44e8b270c254347fb47a4c589b4dabc9d99c4397263ce34db885"
+    },
+    {
+      "bytes": 2031,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/model-output.json",
+      "sha256": "8c25f5b144bbf134b169b2dbc28b45501aabbbc2aa4c7433953cab8932857353"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/prompt.txt",
+      "sha256": "edd0a2c6588af137d2cd7727d8e41980d3127ca8e23e616eb72b01c2c8c19ba6"
+    },
+    {
+      "bytes": 2040,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/raw-output.log",
+      "sha256": "ac3a6c9a10d014e18aa5701a9c3b14e1f1363c1b6b9e0c2b3e87f503b6bea976"
+    },
+    {
+      "bytes": 478,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/resource-record.json",
+      "sha256": "cdd04750af1c02363cc20854ab90dbe7fba3ab36e65160951c6e919752fa0bb3"
+    },
+    {
+      "bytes": 977,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/productive/time.txt",
+      "sha256": "4c4d042614612eeecdab125556e5eb256d0f0eb4e646d172b39c30fbe0239f99"
+    },
+    {
+      "bytes": 6347,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "3f491f82427241effe73250da4085b38bc4c663bd41e3f9e4d88c39156570143"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3156,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "6ba04e654944b8c8c30dd2c089a042aa951f37e38b9745289b410f85d1b99edb"
+    },
+    {
+      "bytes": 1970,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "6a2295b1068f0fe59359e18897e13f42d68fbae3fbfff12f4fe24bfd3ce7cb31"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "326ed8ee973843f2cb3fa59c8b8428a31ef80ad2d8bdd728b5a2db582f07e2fc"
+    },
+    {
+      "bytes": 1979,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "18a6336492035cc1723ca42f69604443c81023dd034638ee18d6cad0a182cc2f"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "323717a31cb3f2728956f8751df580f484a23b181e20aaeb4d200d90e58daab4"
+    },
+    {
+      "bytes": 988,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/agent-invocations/training/self-interested/time.txt",
+      "sha256": "9671d33547ed9d9d5ba3e90195cb671f546ebef76951b7d9510210a4a2916df7"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/baseline-categories.json",
+      "sha256": "fd4d48626e61975b55d0fea5cc9a6c8b41fd1595e84e972d59336b62b2d556b1"
+    },
+    {
+      "bytes": 28242,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/condition-input.json",
+      "sha256": "6688b72e3db9d21ea0ddb96b5614fa13920dcff6296572dcdcddd348bb8e400a"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/customer-resource.json",
+      "sha256": "3dd00338add2be8b7d9f9326760743a88803ad0fff4af298b44f13069aa8d856"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/evaluation-decision-close.json",
+      "sha256": "eaa9c9cb0054b8ccd65abc9c86b0e635f3d530286074522c91b3f5d34c3397b8"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/training-decision-close.json",
+      "sha256": "7072e6cd2fcc32983347738c82c8c829aa8c4518a41e031c55c1e663be643db6"
+    },
+    {
+      "bytes": 9990,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "e0bd80897ef765cede85dd921aa6e4e54ab930b65c5749a19e3fab45e0047eb7"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2311,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "e0774b4703d385677e93065aa8f744ff69f64294d17063d706cf88b2862a42aa"
+    },
+    {
+      "bytes": 1341,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "1119cf4d8f330c12696fd537c0078712ef532524da034da42d7fff24398d0cba"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "a24310856d2812082d8a13d0544c8b1bab658a4dd2bdb0b33cad5ed6e48fcdd6"
+    },
+    {
+      "bytes": 1350,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "bdf7fb3ea917f0c012368ab4761920de7f15107151bf878fd60ec940b53465c2"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "265fec804f2c6a93af2af1ec8f29bdd0dc5309333e08387fcc39a8b81569943e"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "f61164b983d7ff6d4bcf2ce61239f76e5d5eaa11a2d6e84a4f00378b827d1557"
+    },
+    {
+      "bytes": 9175,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "9ae88937a22c5bd28f7dfe5e051e5868c6604306aedfb64f19ddf72e543af3fd"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2539,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "c1ec9f57893ef8391a6493dcc43e2b9782c95c03dcd5e91a4198c4dd46405d23"
+    },
+    {
+      "bytes": 1672,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "7dfe14a083b23f9d34b1609edc8c415d62ac407df827771060bb0ba66768d586"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "e1167241cee787602c50fa071bb48651d825b519485011c43f1008275d0b168c"
+    },
+    {
+      "bytes": 1681,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "6af6d77a53d19e331637b538da6e6054696c570e841c1fa41316205fe22f84a2"
+    },
+    {
+      "bytes": 479,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "2ea4eba782683c885030102ddaf25ce9746e0231c116f4167939c0f880a86a47"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "f3fb38b15199d50d97517d911ac684b775adfe42a9ebc18187abd7f2d5042443"
+    },
+    {
+      "bytes": 9678,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "8b449a2eee44fd35ee97212a209dec284ce8682b3c00c674eef1fd42a572637b"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2512,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "490a5d8374a6a7638cec359422d709c2c1163f9fa24e353953998db5b6244865"
+    },
+    {
+      "bytes": 1597,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "e349308d15a505b7d9ef4f9b799c02d51ad11eeb4ba9d18c5aec09ba191957b2"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "f151d8b5d4a8d388a21c2e1c6b643d915ead9147e8f095fb41f52e0a91f22f89"
+    },
+    {
+      "bytes": 1606,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "ac2681eb8b5fd7300b0a88574ec60253fc1b0523fefa14e30f7cd0e19e956f06"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "c5777534d77972635f9af8887d5f24910da09f0753064681be4ec274e5842c1e"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "9183bb7094c0289e30bb2da7be09bf77b5adf432b2b85229322293fa9982e97d"
+    },
+    {
+      "bytes": 6946,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "0ef31f9ff336a5360b3700de3332c29abdb7e3fd8b86d8c00e941f6ce57a0f68"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3079,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "0625461c92dbd146a6ac8ddf433730e4ce16c82877caa4709cea6aa4de5305f6"
+    },
+    {
+      "bytes": 1870,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "2e504fd2ab9b9293762d3f64c8975af9172c7cf399cc82c2c00b895a118cd979"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "8cb7c35a5be0a44ef9e6a4b756d41f1128133214e741ba6a316a3d0885b10601"
+    },
+    {
+      "bytes": 1879,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "a8c800b2cfe2142243ba977bed90216adeca5b154bca06f8009aedc893f4d2d5"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "97514e11c5e0084f77118590266f9d43929111a70e7d02d53764f3605d95df9b"
+    },
+    {
+      "bytes": 1002,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "f7bf218294f47f72fbc7082a154b9402d3a6cfb1e3a9fb9508486d2a6439ca96"
+    },
+    {
+      "bytes": 5699,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "2358b232deafc4c82a755718f438d533bfa214de1a7ccba40ddc19664853afa0"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3181,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/decision-records.json",
+      "sha256": "9736b1fe66bf03146d1488ac721b4b29da0370770f9536637967f4e5ae6be871"
+    },
+    {
+      "bytes": 2026,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/model-output.json",
+      "sha256": "accba586366eeeb1a4a80d62698cdfe757e8650695f50b27fabd6f495be27ca3"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/prompt.txt",
+      "sha256": "61c0bb7d27f421813199572209127f8d492240f9c1bd4dfb2999b2c64b91543f"
+    },
+    {
+      "bytes": 2035,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/raw-output.log",
+      "sha256": "206741264a4287231265b9b9a2ade8c3ef6e29d9bab3713e0baa06e8a947dc84"
+    },
+    {
+      "bytes": 478,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/resource-record.json",
+      "sha256": "35639cbd91ace519b51fcb02097b9ff15807789948b059ba1d15a797d8c7d325"
+    },
+    {
+      "bytes": 978,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/productive/time.txt",
+      "sha256": "782077d647f94870111646f4b7f779ca5c42f47347168d4259ddb19523c2b886"
+    },
+    {
+      "bytes": 6316,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "f90da30c15585a6d873dc8be929cbf95ac6e9d0ff00c5bee6e2551b82351c12b"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3097,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "410d81a01335008ae57ac1e41a7e4353aa38a52ced59741275b039d654f3f1e9"
+    },
+    {
+      "bytes": 1940,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "38cde9d21539eea264cd1e273f2b4d9aa610dff14c7a6833cfae8affbf1d8910"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "4cbdf83fe2ce06fdbfe273e313bdbbe7b0db1d5b5b16a0f0a6d7bdd913d7a18c"
+    },
+    {
+      "bytes": 1949,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "8a688fdba2934a902ca0873413c4932c23ac2832bd8a82e7fd6cc8a958307cf0"
+    },
+    {
+      "bytes": 481,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "7bce0d964756a5b7615ee8b991dc535181653c7cdbf7a6361674568624958418"
+    },
+    {
+      "bytes": 987,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/agent-invocations/training/self-interested/time.txt",
+      "sha256": "1d145cc333fe69c3541b02dc6678e7120d388c2636d0e3460c2750303eb257b5"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/baseline-categories.json",
+      "sha256": "ca8daed3265ce36fefd0a90c3980ba71dd5cf1fb5c7c5e68f3e834fec0977575"
+    },
+    {
+      "bytes": 28110,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/condition-input.json",
+      "sha256": "a7ba06d032b67d311a3abef9fdbaae603e9d02007b48bffe552c9385a8951f3c"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/customer-resource.json",
+      "sha256": "f7e7f9e719204ad7d445732b6dc396226a0bb5f17b367f924d553721f97180d6"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/evaluation-decision-close.json",
+      "sha256": "ed1f39b320326535e260c8144475ccac58b2b29c038218e45e9efe0f52d43ae5"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/training-decision-close.json",
+      "sha256": "cff5e2f15623f08df1b7237bf7f9ea03933b558b4dda1cc1a42097f680704fdf"
+    },
+    {
+      "bytes": 10239,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "95daff17d89768eed9b1deaed42c8be38e7c0c475300ef40c74e1d92798baa5f"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2515,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "bce5ffaba86e423c9004415b4b0bf8638e36cbf02b13a95020bcd5e58bf37239"
+    },
+    {
+      "bytes": 1589,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "3f6c727fa31382ed051a53321417b5426ecf43503a90615bd3a55946ad700f35"
+    },
+    {
+      "bytes": 6515,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "11bbdce4f17c39b0a0bc5a38fd63d2973a785171952ce134c05458877979eca5"
+    },
+    {
+      "bytes": 1598,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "c135d62faf9670b59acfe39065633f0a304d990fcd9f16624654a7aaeb7c3dc3"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "132066c52d95a7fcc6a9e4de1afb6970b4ab6ca615dacc3e368f0b877ea4a102"
+    },
+    {
+      "bytes": 1004,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "79cf9a8446a10cede2d3ce75ee12d7f5fcc9ccd2d5edc2e5dfaa74615ad3a4d4"
+    },
+    {
+      "bytes": 9176,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "feb755531814243dbf44740d511e250cc9b812fb079f4e07960bb6127cded7d0"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2566,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "0e7fd8cd67a9e7bbe2cfc3090bb268b6e0975ebf8965820a3d00f660d61505e8"
+    },
+    {
+      "bytes": 1672,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "11dc03975094e130be9e11da55ef16a00fbfbd56229d7e899e578ac426cf8262"
+    },
+    {
+      "bytes": 5657,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "d791aabbb1183fcdcb3130496bcf96bc4aec85a4f194519ef88d5390046625e7"
+    },
+    {
+      "bytes": 1681,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "39e148d5e38500be28845f0e6aa6a4cd04c9141b204556dbaf5554dead3d43b4"
+    },
+    {
+      "bytes": 480,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "6685bd56d0309bbba3dd7c3a6142d131fd0bac0af9ebb546bc9b1c61ea9d1dae"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "68d2d0a29913c3a9b6a6f44b922408416bdcc3352c07ff9d40e7dd71ae7d1f72"
+    },
+    {
+      "bytes": 9728,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "0883a615c65695fb3ae94d6ea2f38869cc90f04befa1745dd589b9bdf5216dd8"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2554,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "90cc608e6fa5db0dbd646ac994d5004d420f7f82e0cdc79f7e1e542adc96bea0"
+    },
+    {
+      "bytes": 1646,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "30ca9280d0919c4874a28ea73c04a7a2855f22542b91ab8cf13d91b372824047"
+    },
+    {
+      "bytes": 6091,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "ad827d3f550f1946784f211be0b56dde5f5253fb3956164bb99494555a8545df"
+    },
+    {
+      "bytes": 1655,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "56a5eba1f3ebb11f395c77b558c961b9ec3ac41c2dabcd6ecacf64a0a7a18531"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "3b3cea6a89ab7a6f0046178219ef2d7bef38c0b83fd8d14e933fc0ca2a8093cf"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "b41d5902b9f8195cae25735b3a3c92fb9f20a72d4104a66ea33ac5a211f9f37a"
+    },
+    {
+      "bytes": 6667,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "c4949d3a8e0b51f5e99370b47d7beaf9f251c81fba990f23536cb13b0849b2f5"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2859,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "f11d67a7edb66e3e3a988fc175cde2daf8aa2cc6f206f6d85142139455948b16"
+    },
+    {
+      "bytes": 1590,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "4e1243a2830219a2b299b9f84ee0211b6174c2a41e4f8fa9020557e54a00e660"
+    },
+    {
+      "bytes": 3907,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "94cf5dffc475c861e2dfbbb564e209517c21108536a4a2c0afce7cc598c79683"
+    },
+    {
+      "bytes": 1599,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "07a73578355929da143418c6dfb8fc187feec79196bdfdb7bf9ce045ea1f2edc"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "a83055b0ff12633f22ed04b7f5cb2780aebc075ace53bddefa8b74136fcd1bb0"
+    },
+    {
+      "bytes": 1000,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "5c45810d1a5899d3a5c904ea97e4fcd702fa7b62cd176e815c54004181347caf"
+    },
+    {
+      "bytes": 5744,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "f11ebd0ae2df670b9865f2ed4d137d511332a913280c30369c96e3cbd46e4324"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3227,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/decision-records.json",
+      "sha256": "d297d608a1c14ac0efd13359647fa708c7d35f3f2e2054f36129598028332306"
+    },
+    {
+      "bytes": 2070,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/model-output.json",
+      "sha256": "ddf24a2ba9d2e93aa31a986477a75e940e595977a6207bfbfef982c5bccd066f"
+    },
+    {
+      "bytes": 2864,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/prompt.txt",
+      "sha256": "76fc3f92228c387c0edba24bc00f5f873069df556b5e38e352aefec5dbcc22c1"
+    },
+    {
+      "bytes": 2079,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/raw-output.log",
+      "sha256": "0cbca07ae11f5f26192326e48a04f3c16239480baf285c1463bcc9f2ee6272b0"
+    },
+    {
+      "bytes": 478,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/resource-record.json",
+      "sha256": "03a6086721e828e6c3d4d8c5673926cf76f23c8a2bad7652e610be33a6c82f8b"
+    },
+    {
+      "bytes": 977,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/productive/time.txt",
+      "sha256": "bd0a9f3d9de1f22c7033d2b2dda9504e6246bed4d1cd12d462b29b98d83258bd"
+    },
+    {
+      "bytes": 6388,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "bb29b0f58aaa522da7b46acece6f93392f5eacd9730cfa1c9110e17009fb1e31"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3180,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "705fc86b841975abd664199efb90c1b7151f2cfeea6d03af247d4fe01225cab0"
+    },
+    {
+      "bytes": 2010,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "48e81c0fc941169db94ee1499f4ee40eeaea86d1d120a9ab8252db53d222d4fd"
+    },
+    {
+      "bytes": 3387,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "2eefed5d842cf2c48e4f2d15eeee1cf47211a70e816cb3418f696aada7cd9d18"
+    },
+    {
+      "bytes": 2019,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "16b774d3ac178824f309b971b6f4aba76271cbe7aecc73c6dd73acd540616ade"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "2001f91f2e3b38efb2c4ccaa4900a03889de83f2a1b2edbc5a40c4db4c75d61b"
+    },
+    {
+      "bytes": 988,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/agent-invocations/training/self-interested/time.txt",
+      "sha256": "14fdda492c8bbd63c615e9be02c71ff0521e5a2048a5f2f4f8a6ce733ef90ac2"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/baseline-categories.json",
+      "sha256": "27f5aec2438a057e259bb29c894e8a18cfd85fdf68c02c8ad3c14aac0004d58a"
+    },
+    {
+      "bytes": 28296,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/condition-input.json",
+      "sha256": "798d8894184a9507e43705dfb9208ec0e05a19e708fbf8e0e4a13696665bf6b5"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/customer-resource.json",
+      "sha256": "177db6f791749a0a9bcf9b1131a92e69190c968ef49753972c0552bf9ff51b8b"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/evaluation-decision-close.json",
+      "sha256": "e08f447e688ee57e4d888e8182c2c618172f8254021051e6ed6656b873dd97fe"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/training-decision-close.json",
+      "sha256": "4180a0cbdced0b37d73cfc48862a84550612daa9bd5c9be486d1c70cd776bf7a"
+    },
+    {
+      "bytes": 10355,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "4984962acc220b6668a856322b0bbe49ca79105f1c8197847e4e74d18f953f26"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2634,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "9c1f7ce18a74a8b2fa3aa2edfa144472a48ff3f5190473f33992b44c43e08d21"
+    },
+    {
+      "bytes": 1705,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "25e50cc816c8cd2d53ff40ea203164d9cc760e76aa075dbbbf5c0df8255a6811"
+    },
+    {
+      "bytes": 6515,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "c8859811bc4b8d5c22255f3583ca8e9c9539bae07c35daf0d776aae41e804c8f"
+    },
+    {
+      "bytes": 1714,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "f67cd56fc1782610a73b27f5f2cf5fbc0f95ae090e0368e61fb638791abdc190"
+    },
+    {
+      "bytes": 490,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "ce82593ba4a217246ff688deae025661248745111e0eb19307433a67f7cd098f"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "be677f4d11975f7c682c5bc9047ad42953c6e06b642bf0223ab9cbd4f26d8fb9"
+    },
+    {
+      "bytes": 9145,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "05713b27bed1f6e871c98047ffa31d64a85b08ddd31e79e5bea3f7a10220383e"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2540,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "712453621a5d18f67617f909b178b418e926cff66031b16019ea022e759086b1"
+    },
+    {
+      "bytes": 1640,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "46679e865b867ac31431fd8572e14b2d704f37b69af098880f6d0b0881f94ece"
+    },
+    {
+      "bytes": 5657,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "fe56315fdac171f1576931f42535ae22a8de62d3ab151f4181e7f1fd5da8c2f5"
+    },
+    {
+      "bytes": 1649,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "6e34013cc74a03a84272b0b2ba6622e53f36a4ea47043ccb6638d88722e66975"
+    },
+    {
+      "bytes": 481,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "d9446ef132c44417d4dc7557ef7e3562d703bd9ab8265d1e180d91f5fae409bf"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "3e439392fc4267ae9d534ecff0cab3be4672adafae4e6ab3e40df72cfc52562f"
+    },
+    {
+      "bytes": 9692,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "518e5717d9f0777b6518aeed4d555f8852c1887f8a6f6ebcabea4a27b9a1cce1"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2535,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "702082790a1a56c267219884b81f54b9aaa4722888ea3569563e91c67e36d10a"
+    },
+    {
+      "bytes": 1610,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "6be72089e19b9527bf2cb008781bedb9c461175ca2f3e09e650f3a4ea152c744"
+    },
+    {
+      "bytes": 6091,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "70894501e2431300cd7df73ec5df77d1db061947628bc79554728c359e47a778"
+    },
+    {
+      "bytes": 1619,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "a21c4ccbd466c7a03e5b4a489819bc9089cb6824393a67046c11851eb723c8f2"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "e82c61aa6c6d3d6f6298c11fa70f14e54b219313bf84e52c6a28361f894693b7"
+    },
+    {
+      "bytes": 990,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "44e170427aa3d317654126ff9440bd978937e9b51ea08a317792b1e9bab0c96d"
+    },
+    {
+      "bytes": 7051,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "bbdf85d66cc5e4c4409f025876bdc9733f96d3f5ce395c6dd5a8c07c185213e0"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3197,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "7c67009e8581b11788de0fb8acff3633a61d0a9a4cb20251b9e03e6f0e235e06"
+    },
+    {
+      "bytes": 1974,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "389c8e04d75bb7cb4fde49dd292a5b77f6f0106979435d4d1451536263265033"
+    },
+    {
+      "bytes": 3907,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "3b8050d0089016f916827c292ca387fb51801d65b431103b7cf10f0486dd5cf6"
+    },
+    {
+      "bytes": 1983,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "212d15af27ccf2c299ffd9e431cfa55116cf8b31cf4d4033d0521b4658ab3171"
+    },
+    {
+      "bytes": 488,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "a639773d9aeecbad5e74d02990e0d4a32a2e2e809c0b45cbb8bed0ddffb6989a"
+    },
+    {
+      "bytes": 1002,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "c8fd5bc676ee5be71da357cb307877aacc524f8c7ecad3fa932482e7b33fc911"
+    },
+    {
+      "bytes": 5770,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "672ade08f1d78fdffc280a79221ab4db94e64200167959ebca87d1615952c0f6"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3236,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/decision-records.json",
+      "sha256": "cf2a938d7c9f2eaaf34764dd7e2cc0dcaf7a537c6c859aa5d3aac82b1ce6972a"
+    },
+    {
+      "bytes": 2095,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/model-output.json",
+      "sha256": "eef4ad96045086336abbb80e966b31dd8cf612d1457bc0cf51285015cf1ba8ef"
+    },
+    {
+      "bytes": 2864,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/prompt.txt",
+      "sha256": "71ca77372e5149ceb6d7e3994ae18f7dbbfd87be2bfc9d9a442d8bf0e6dd1206"
+    },
+    {
+      "bytes": 2104,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/raw-output.log",
+      "sha256": "04e153313a2ead5b72ce6aa6a40162a063bb4730315932df617dbd16e5c04d27"
+    },
+    {
+      "bytes": 479,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/resource-record.json",
+      "sha256": "7b5ece5ff2de408584193f3ea867c3c78e5068cbb41f97a6b25788ae9aa906f9"
+    },
+    {
+      "bytes": 978,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/productive/time.txt",
+      "sha256": "51dd1f086b3e0dbb76964cf9e8012a0ecb20477fb1e3583a7760f910e78499fe"
+    },
+    {
+      "bytes": 6390,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "0b675ac9d53e15eade5e644f8d64e160ec4b4ebea1dac1fb3c6f0b573307600c"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3164,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "666fae8daf50a66af266030b827e39ae777a0038061a26a76eb449792daffffd"
+    },
+    {
+      "bytes": 2013,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "d33eaf87cd92d35ee7b6a74bd71ee8acaaf8b24324f93f2ee0b41e68d1936d78"
+    },
+    {
+      "bytes": 3387,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "299b9938ec0e8c838c556c868cd0f076a6406cda18c6cee6be0025b5297228c1"
+    },
+    {
+      "bytes": 2022,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "e53c14714f9860401b91da48d6429f5b4ff110be7f5d02f67857c5f1ecb5aa5c"
+    },
+    {
+      "bytes": 482,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "2a3769ca9bb783824bcd548b05538c0c7dac6b860e34ca5a1b0f12d828ed07ee"
+    },
+    {
+      "bytes": 988,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/agent-invocations/training/self-interested/time.txt",
+      "sha256": "efa01f3db0a5a1579a2d9b9a20dc713945283f9910daa30964bff6cef966973c"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/baseline-categories.json",
+      "sha256": "1841aafc9087a6eb9c1eebeaf19522f22fcad48e7a9ed59c2448e80ffe2b8b69"
+    },
+    {
+      "bytes": 28711,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/condition-input.json",
+      "sha256": "8965b8795226c48aff82f98ea036bc33c3503b6f413cdc1c8948db8376521ab7"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/customer-resource.json",
+      "sha256": "32a44d404d47f88350f416695418f995650c309b454b39ee029064e6be399f1c"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/evaluation-decision-close.json",
+      "sha256": "93621de9b0f161a08da614bb98ea604b9ef1296c4e14acb66c5a0b101fb1ced7"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/training-decision-close.json",
+      "sha256": "b5e0d9bcf5f612f97f30bfd834ba11ffbc8d76704992ef9032003798187d2746"
+    },
+    {
+      "bytes": 10157,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "f9c525c886c602497d18e8b3651f4755a0aabf78bea916806e38e60502679ab5"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2467,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "114fa5c51e54b5af6be0d5f558cb024c80106da908f5d2ce6c5984b2c1bc8dff"
+    },
+    {
+      "bytes": 1508,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "2560fe9dfbae59524a26c1efd22efae976ceb5a8553aa8ccd3f6e64f46584685"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "135dbfb95af023defa31a5748f48d4daec2b5ba8896c849cc45b852e184e2bd7"
+    },
+    {
+      "bytes": 1517,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "85239e502a305c6e11001af372860e5e278c36370d630c9b49aa3bf9639b7ea6"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "57ca4258bb7bea4a4cf74fd411d1b4e1f8926ad2c8d99eb52835a6de623d5a64"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "ca67a07f279e91a06ef58675df5c28e764d83775bbd2bcd0d65bd0f79dad03dc"
+    },
+    {
+      "bytes": 9167,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "dbd9f28a6475dac321b177854239f7f64b17f5646d80a6283842ccddb814bd8a"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2536,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "2e1f87b90e22ac1c41aa371cec300399d9c68e990b992049cbfe38f225c4fd15"
+    },
+    {
+      "bytes": 1663,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "7081cd6c8c6cc9594c7bc980513a5fc74dcf063e2cef88b90a5cd8488ee77424"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "37a4540a519c04c98e44f489cdcd04a8c4a2b891732fd83e405cd752acdebc05"
+    },
+    {
+      "bytes": 1672,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "436cad24e1a4b9630e8ab8970c3de3711cf6c2dd8954e5f204b02621687df8f3"
+    },
+    {
+      "bytes": 481,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "6ff51eef7dcdd9571a41a73c0e8135fa88161b582c4a3fd81059a41bab2810e0"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "fc5dcbeda1c2216cf06b468f2d98b1efcf8e754fe04cc877d252250cb7155112"
+    },
+    {
+      "bytes": 9813,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "a26f979b8849b3f448846f3451335793d8c824126759392f5277c8ad091d82f1"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2628,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "7aeea1d72d864880e53d8737f5cb264bfda9da638cc43b65205da0142fc14bda"
+    },
+    {
+      "bytes": 1732,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "ba755e07297fc29af844d7bc518b8667e1503f8b05618e147cd9dec11ce4b290"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "3888d138a2a40b5cbd1e84a89127801d330b52bb8d1a0770fc45991ea80433a6"
+    },
+    {
+      "bytes": 1741,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "47190c847a887e0d033282a11a27bcfa6acb542d7dcf35d2adbcd92f9f9c1d8a"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "1e1c9cae623ddeaf25c8eb6712841fa9ad35e06d1eb9b1e16414c30d119b0e88"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "fa52e750830d195e40f31ed03b550691d5a46e99497dc6e9e0839d6f169f2bc5"
+    },
+    {
+      "bytes": 6905,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "f592aedd2b9827982b1a34ae2e5261435cdb315563078b71bbed25858ed5b1ba"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3054,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "b3707bcbdd3038b512c8439441454e359ee4093480dbd33ca3158c6555f21fb3"
+    },
+    {
+      "bytes": 1829,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "ef34b7614442bb36b83dbe4533d2f7d584436e14dba285466982785285a17186"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "d23b0e776cee6f1dbee655b9e3dcb8c9268207c74c38f538d58f45d260b18cb6"
+    },
+    {
+      "bytes": 1838,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "3eb14931bdf895e5e42749aea9dd30205c5ed300ad8f9c2f10050e9c8a4274e5"
+    },
+    {
+      "bytes": 488,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "11b1729affc630064049e674d9e09c6448d07d251d9121d897dfbc83f6355d19"
+    },
+    {
+      "bytes": 1001,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "4e86ff29e4000bdf317859a5108d07fa2e82cbf52579d701d6f1c7c0f7ded7b6"
+    },
+    {
+      "bytes": 5825,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "5f5b3b7dc22890491b08425182c598b2a011139982e7341db0d7a02df6af520e"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3276,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/decision-records.json",
+      "sha256": "52707ee75d91abf344d4bbe8a5a0cdc600a30ea6fc6d743bd2ca5932568d8cb9"
+    },
+    {
+      "bytes": 2151,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/model-output.json",
+      "sha256": "6855a670b3c55fe69d4c57eaffa7ee44920152af0a7c9feb41bfbb720dfc038a"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/prompt.txt",
+      "sha256": "526d98fc2eb70110dfcd9e9357aeef68c640885a3cddd76061feac5e924586c3"
+    },
+    {
+      "bytes": 2160,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/raw-output.log",
+      "sha256": "b2de71ea67e74c05a3338329311f8db8e5afbf165bd3b1f0623c79e8fd396797"
+    },
+    {
+      "bytes": 479,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/resource-record.json",
+      "sha256": "60a868485c371a2af0901342b01a4a7a70a1917508a0e15fa243f27204cdc7f8"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/productive/time.txt",
+      "sha256": "43596bb6a3be13a61d45bc42c3fa1668329a3bdf97425bc588535bd00119e151"
+    },
+    {
+      "bytes": 6314,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "62d17347adca5e5a2ec434aab21b9d0e583d67ad7de3b5408fedbaa580617d32"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3141,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "d9fc4394a63582ab8489d076c024f74e75f89a4dcae08dcd9372b27739c2556c"
+    },
+    {
+      "bytes": 1937,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "8565326bde0c2a95ee5453c6548709cd5283229af6a62d170eb7ad3f20e3ed79"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "39997cc820699e14ece2d1a2ad29bdf9dbbbad1e796d9222120b94041e6ad114"
+    },
+    {
+      "bytes": 1946,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "28b920b6ad62937f87d2ea02f08ef934fd870bc581c90aaf59354ab1f08cf3fa"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "f62bb2fe798cb1090020f3ebb6fccfa1dfce003f9b3255c7e446c71a1cc5b101"
+    },
+    {
+      "bytes": 988,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/agent-invocations/training/self-interested/time.txt",
+      "sha256": "7d0a99714a850d38670948a455b190a2487b401c593e9031ad9ca679e34f9fe3"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/baseline-categories.json",
+      "sha256": "9f922cc33845af1f11c9e959220e673203d2b555f53e991e2713425bef3277d3"
+    },
+    {
+      "bytes": 28504,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/condition-input.json",
+      "sha256": "f502c8e98d65c205541468f2bb4e63ae9280510313ed011624d6148e6e3c790f"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/customer-resource.json",
+      "sha256": "079f3ef0b961d0e2be774d878b7344ee9d7015ecac6a9281534df7cabbaa27fc"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/evaluation-decision-close.json",
+      "sha256": "843bb68ecfc70f2d8eab48c4c853558fa7e3e87edf4c68d1dc763a38f00ec796"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/training-decision-close.json",
+      "sha256": "483b12c70ccfc4b4863f588f5959f785b9bcd4b46b048b914de8a4dd8c18e896"
+    },
+    {
+      "bytes": 10198,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "7cf779835d4bc4b51a8b99fbad8632c34329c54e6fdc6f17e87571bb34fca8c6"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2511,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "7e953398f3f2b8eea1b6e60bdce1c140f971cad5b9e73a505068a0b16120d889"
+    },
+    {
+      "bytes": 1549,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "1bd7a86ade312f16bbd9cbf3b27c46ba6634af60a98085e9f2d9ebad83203cc7"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "e005b6c2c0a8d4c460878a92423efb4055575f922d563d1e89c4137af7155709"
+    },
+    {
+      "bytes": 1558,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "cea37faababb4e24ed0573100bcde461c9a9a2964158e59dfa9e8af2a98d3f42"
+    },
+    {
+      "bytes": 486,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "d5f8362bbcf9c6ecca37c3b55c942d973d98e5a92ca92f58cc3ffb6c29ef2792"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "2f2ad987d8a3bb069dd9b0930db82ca8b8959d30deb909fa3475ae760076d11b"
+    },
+    {
+      "bytes": 9246,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "f3b186c4975ff4a7aed04a953f9b03d3c32600e0b6c27b4e488b2052c9ae4cec"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2593,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "1b37dd6dffea8157bebfeb81ed4534a4b36284e3364b27d9e0c72157ca70d0a5"
+    },
+    {
+      "bytes": 1742,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "9cdb9b5ad38d5c8bc33c188e3901254c276be9dc0babee3dd46a2afe0ad306f0"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "3fe6163239318e6c65037b19ea86f0d094cf39c8f08a74f035da7fb2a15f5ac8"
+    },
+    {
+      "bytes": 1751,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "695387a67ffca73b6caceeb68af4166259979e43d6c41d1f6c228fa3a5454e44"
+    },
+    {
+      "bytes": 480,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "461de8324ca1fb75d06cf82990ba34d1af6f6824570b51a18a2c4574c0c2887f"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "d3d0e0ee5c377bc6ed08ef233d2cbfaf4c85f097dec142e5cb9d52a36430244c"
+    },
+    {
+      "bytes": 9673,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "7059e881ae741a502f854375d660462ff1409495f731e88728517ddfe247f050"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2519,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "05a1eef764a66f52ac738020d45d8ab7b3001552230c3a42e832a8507981f047"
+    },
+    {
+      "bytes": 1592,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "b099f2c43fc843ec497e3b0b1738c8d37bf716dd60b2ce82c328a6bd24e779d7"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "8f85aaa7971d1f53ad23862d31e8d6108effe5939a706f7e806e1362e559f00c"
+    },
+    {
+      "bytes": 1601,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "d547fe951401c5a3d1300af6239554a169c14f48a14f1324cd78320ed8590b8b"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "c3800c91771baced6c6560eb9e382e2ca76bae762c69066753d52074094d8468"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "4abc02a25da0bee1169ee38a6b2ea31c88f5f06d6632a2606f6771d1919e6e9d"
+    },
+    {
+      "bytes": 6826,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "ee31084bd75c964931761a7469bc1485a398eff772db42bf035327fb083ef645"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2999,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "5dc57fbeac1e35f7f5b2715548fd178cdaf461bd2ed0960bd8c3caa9c07ca687"
+    },
+    {
+      "bytes": 1750,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "ed8b6bffe545a8dc4c4d7d2eed4b2c2af452bf62692faba61af6596a6c1c2f7d"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "cb46df4b3778940d4cb9d32bb235effad3a501445851d6489f161ca80ce57496"
+    },
+    {
+      "bytes": 1759,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "4b782a90cd0d11c6d5f64bb72cd65ba8255ba26735fd0b97c8f5db345dd65ad8"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "3936ac0fb1db1ec64d21e71fe397eb0e5424311fd30b7efd4248247bbbd4f016"
+    },
+    {
+      "bytes": 1001,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "93123a5448a37eb6584c11df8c37569f0f7b8604bdadd22fe9ff601734cfb589"
+    },
+    {
+      "bytes": 5701,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "bd57648aceed6a1c5e08effa8541d03ddc1dc322f6d5e96b61bc233bbbb1aa3d"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3195,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/decision-records.json",
+      "sha256": "f006c0b2c52ac8462231a21c4c297e55d939c16ee7e1b07d49228908981d173a"
+    },
+    {
+      "bytes": 2028,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/model-output.json",
+      "sha256": "b14351b8e05dc9645e4c6d360c6c9110ed67b7dc7e7bcca9606d77da547ecaaa"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/prompt.txt",
+      "sha256": "549c15c234c3e217eb82875a2be9ac37aaa577ffd1683cbf2255532f2ba93480"
+    },
+    {
+      "bytes": 2037,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/raw-output.log",
+      "sha256": "0da82cb25c796b4076af00cab1b4a8d0d5d2f111dd03d66753f5b3b021d82b47"
+    },
+    {
+      "bytes": 478,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/resource-record.json",
+      "sha256": "8f3991522d80d1e2c9734fe6d86af04c8d30a7f09f3a8c95c413221f853aefd3"
+    },
+    {
+      "bytes": 978,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/productive/time.txt",
+      "sha256": "fbf7985294a7cc1b2ab0f32cb880081b989329f44d0aff1d9c3604b91e4dda3e"
+    },
+    {
+      "bytes": 6303,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "262d0246bd59694f563675cfff27a5c2d2f013718dfa5caed4de6b5b155ae052"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3107,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "403d0f27b141d986e335de7a11fe4cef4ebfcdddf55af4cf07e0d0124a80c2ea"
+    },
+    {
+      "bytes": 1926,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "016f293c3bb23eee30f98853373b7235855778bc79ed8cb2e4cb8a9fc7a4d716"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "cae2a766efc800a80a2787ccc9c199a5df111a65dcb2fecc58e21a12d260ede0"
+    },
+    {
+      "bytes": 1935,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "df866a0408641aff6c24f4f4b97ad5d5dca8f675f8b4322e5fe92a7e1d737129"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "1f2fc2485e979fc93ec48431caf88c1f758c830cc61fbf132cd183e92f878162"
+    },
+    {
+      "bytes": 988,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/agent-invocations/training/self-interested/time.txt",
+      "sha256": "deedd17031769274f022de506283ece03aef24a77ee48c8f4cf8001e898946f6"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/baseline-categories.json",
+      "sha256": "7b54a7a18c7eabee24e509f55d6d271805741aa07d308d2ff3fca19ed4096f80"
+    },
+    {
+      "bytes": 28319,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/condition-input.json",
+      "sha256": "7ff1b067bb2db9d2ab91f179f5fb356fc2f281ccd2947c8a5d47892cc99498df"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/customer-resource.json",
+      "sha256": "bb68d98a918a4f929f25bd66ee1d9a389d60c96ebdc651f133d72f3cbae7ea36"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/evaluation-decision-close.json",
+      "sha256": "b7a805d3ef947a54f0f117ac010ebdca1755979181b51e68679d4ce4ef1bceb7"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/training-decision-close.json",
+      "sha256": "32059ffa438beb0471c8d16e3b9a19946bf8d3868ac7fbd4e2c3b98b4655d5f4"
+    },
+    {
+      "bytes": 9989,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "75bfe4edf6e2b49be2c33f816d58658ab81cfd346689db73d3e23f1f23b9af3a"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2315,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "915799097d7984629dae2c5bd27468dc412c6b0879ddf764db749c6d41553ccd"
+    },
+    {
+      "bytes": 1340,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "ccc87926aa3d505529687cbec1fe387c274322fa8f04bb7919dd6d31c4c852aa"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "1fbadb0b1b3460a2ed45a8782e0b588d72a6a5986f12a5adaf92bb0be5fd2406"
+    },
+    {
+      "bytes": 1349,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "50ec3f5b4e3ebc57448f53d43c23d3d4ecf7154f533a5ffc294adfdb627c4482"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "8ff6f949ab46de02f7977f42b14f95ae94b4b58344c2f8b11e03d02ac9349ae9"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "3a98b291a6222815f9981a5b03e8bce52043a0a7eb150116806ba6d3577dd50b"
+    },
+    {
+      "bytes": 9178,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "240e2bc89e42eb06329c592a08f5b068d0fe96ff5d0821254f8ea822fbd22bca"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2541,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "f953b14b24d37a44956844f6ec197404e585d8bfa4206249873d635244be4ab5"
+    },
+    {
+      "bytes": 1675,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "b41f8448169f0bc33251bf47cc4477c400756169ff400f1f4e19729bb852bd8d"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "5da4a15c24328202086061e166551b42f583f4fd2566ac5be51634ed341ebefc"
+    },
+    {
+      "bytes": 1684,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "22d64fb42f44d31f88ae81f66e0a74616f4be2281b9bc4fc51295f54cef7ee94"
+    },
+    {
+      "bytes": 480,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "98d157858cd311395c6c28b9c6bc0b0531b48a50ae0a52d8fa5f3e202cf7e401"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "7dd2bcb9e86d22bc33d63e8e53466e246c653a77773d7f2eaba8db19a46af559"
+    },
+    {
+      "bytes": 9742,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "4720239412fc1bf0683c220827065f7888dcc5879bec3f211fcb28aca2109f00"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2573,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "d00528cac17173f26db92924f9bf495db0cb803c1e148431996101d1ba0847ce"
+    },
+    {
+      "bytes": 1661,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "26d7e416902ad75ddfe4a22bc5acb4ab61a4abedebbc2f9aca959935c7dc9ff6"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "6fe10e7d37958fb1783383a9319788565503fa5e5743b474bb1d375ac1344b87"
+    },
+    {
+      "bytes": 1670,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "2b6b3c369c9b8dbc7b701ac189be3755dfd6bd2ffe009527f37f987192dc8535"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "415993773f1a8bf2e86476420b5ff0940f3fc34725a5dab3ff57a417b9cb0c2d"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "8c392685f4573d7f30bf9ff991985a772ba0135598da4c1b62defef33fdb9dc9"
+    },
+    {
+      "bytes": 7055,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "244faaf1c27be53e2c80333125514430c86e71aea58badcb5321f4e84aa33a28"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3199,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "33cf77fd1f9b26f3a80b4561af47d0313659a5b0e49b314372cba72dced50cf4"
+    },
+    {
+      "bytes": 1979,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "54fb7d8c115d9b31dc559de7b47ad16a3f7384b6d5db47c27d33b136204ac890"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "1a7a3683456823d508a9e1e84475b37447046d18929e56d9260886ea5adaa010"
+    },
+    {
+      "bytes": 1988,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "6917906baa6c4671a97e3494b7a807f4a5c39f5ab0b18c5e25ceaaf86ebb96dc"
+    },
+    {
+      "bytes": 488,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "6a40af98a9c273b77b6c2428c7032a42318ada0225ff6ee2067972c30c3097b5"
+    },
+    {
+      "bytes": 1001,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "48b6eade994fa11782c96e9c8f1b45cb93161e12fe67cbccae036aa00f5f46b1"
+    },
+    {
+      "bytes": 5720,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "2342449b107b2875da1b7d808ed63b4bf9af6f98168ae43c6e39859fd0f70d03"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3213,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/decision-records.json",
+      "sha256": "c5782d331cffb4ed3acd56fb87c9a83d2341dd1259a252fc0b9f40c1c71fc246"
+    },
+    {
+      "bytes": 2046,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/model-output.json",
+      "sha256": "ae7282c1fe993dce883eb36911c424c14e9f3528f77cd1291372bc1e0fb9252f"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/prompt.txt",
+      "sha256": "0a346c9e9a68f850f95b858288ca93cabf4f29b373c0d92d4155b36d4297dd3d"
+    },
+    {
+      "bytes": 2055,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/raw-output.log",
+      "sha256": "0cf79c978565ae3c9400a96523370cd9b1353ac0af6f38096649e235e8d39761"
+    },
+    {
+      "bytes": 479,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/resource-record.json",
+      "sha256": "6e9f58aaa3172b30c6b5bbfc2112495340deccac3f2bc62a95845af15e943015"
+    },
+    {
+      "bytes": 978,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/productive/time.txt",
+      "sha256": "2f57c7ac840893970ca16df8b41839b02cb0210d640f0265a9c3dacbe55249a5"
+    },
+    {
+      "bytes": 6330,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "bb181a52aac5ed4aaff0d82becd6fbe64dcbfeed18a28ba2ee73b349982c6f33"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3142,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "4556131a63c72c4babe159f3efd26c3292cb8fe4d541a9b7e35482ca23205451"
+    },
+    {
+      "bytes": 1954,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "12c4ae55583cd1515425ff9e23b117e06499a925ede2e40d47beccad38dc5366"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "ee51ae304a2d4a00fe09631f00a6cecc0b34aab390399f8da41c2284d3597ed6"
+    },
+    {
+      "bytes": 1963,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "8453f30e5d5c47b3b6974d93ee4ddf07f56ae4aabe1cdfb4ae2870862dd69348"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "e15eca15aa3d7347eaddaa8b2145f7d01a9d69caa1fd1541f999eeea4545e52b"
+    },
+    {
+      "bytes": 987,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/agent-invocations/training/self-interested/time.txt",
+      "sha256": "c1ac18fc1af7a0c39d5c2a71ea8b66ae6782ee714a667958f1ce2430f8477d30"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/baseline-categories.json",
+      "sha256": "1a6be21a5357ce0c189391bf312af891abd41b5201c285d615dbc9d6caec04dc"
+    },
+    {
+      "bytes": 28383,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/condition-input.json",
+      "sha256": "3a17dfd821b711d91bfec70130d31eb2845a8396596df01288b0bd04029d0732"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/customer-resource.json",
+      "sha256": "2e53d29087eeeb89bd16599db74c7e71cb3eaed6cae4cab95e471c6105099204"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/evaluation-decision-close.json",
+      "sha256": "9b4be23536c4c53bb914886349ba5741aa8204770419d314f2a9e0f7a1e7fb74"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/training-decision-close.json",
+      "sha256": "98511ddb2c344544439b1fc179371b71600f6607913b48d03787a06590b08fd2"
+    },
+    {
+      "bytes": 10117,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "a3fc94f1dbdc6860b2debb009afb0422d4a5ba4cee14085c6fd7fea2b0f8bebb"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2434,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "503af19c45481400bfe0e5c61884d290f5c3aded7523d6810f2084098b1e829c"
+    },
+    {
+      "bytes": 1467,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "68eaacc267fd629b3e384c7b95ad46f2af35c5eef0e40b084ff652ad66782c0b"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "c57e2e9fabdab061be27579f7fbf71f7653425dfd78dfc2bf4e70ab602bf19d5"
+    },
+    {
+      "bytes": 1476,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "8554b3131da07815ccf9ca327abddf657d3e076743145d74787af3b08a94cb39"
+    },
+    {
+      "bytes": 493,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "68e8c2340a0f54e1cb2897b633d55da28bd256c86864bfa5ccdd68a720765e1b"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "7635cea191e55e199eb4f03769b2a77d0eb0203999fc5b88d721f4d4d0209e15"
+    },
+    {
+      "bytes": 9201,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "82a75f8644fcef184a0fd04fff2db7cf3dc6826dd56c4e1d869f5f6e4aad6d5c"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2570,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "f210e8ec25c485e84c3977c8d02c0e16f5ef8e014788b573b0e224a4aaba0068"
+    },
+    {
+      "bytes": 1698,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "81cab514ae3c24fe9300a68e61415ff8f04e4bbf4d4028056e6ebe13caa140bc"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "02630c46bfacc2cd97a7b3d6b26bb4727b6fb2a100c10970556d7a777b91945a"
+    },
+    {
+      "bytes": 1707,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "37c22370c8a6f454f2d29545e0e658203b9aada13fda15d007074c7cfb867268"
+    },
+    {
+      "bytes": 480,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "c4f0ea4dcb7906e16fc941afcf7da75c3f1908feda31f98a3cab3178d480a79a"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "b87f5777620a927a59b72d1b3367b7e315311fd5dd7a8a987b57e378ec26dca8"
+    },
+    {
+      "bytes": 9721,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "72f52e18934618e4c5bd1b0f722548376bf0561ba9b8e8a84f756e86f2300192"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2549,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "b11a7846fa0dcab439c38ddf0f007c7ef397349885f9904ecf5cb947423738e0"
+    },
+    {
+      "bytes": 1640,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "052975dd57ddbb9e939a2d31a209b0f25f9f5c5bdfdd38c666f4d91cc98bb548"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "77c50b2a8249cb41791600fdbc371f25ccf9298e9d4e8e3b542a31201e2b2052"
+    },
+    {
+      "bytes": 1649,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "7e677c3e4758f8052b41fe9b67618172cf9f0f7df0ed96306feb53bfe2aa2e2f"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "44ed018d13b790e55873a40c084fade53ff5211f966d3e61947dc9cf4050d6bd"
+    },
+    {
+      "bytes": 990,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "754bed6723a9214bee634b94d648fc856def608cf935891e1c26bf31afb688bd"
+    },
+    {
+      "bytes": 6912,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "a24b016da5d0603f894e6a7b9a91a9f850b852ed97274b56de10954e64dc0921"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3065,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "7f35b9ef73c5a4a9a41bbc6e8cecf135b53346228ccd5fc00ed18ecbc23d0971"
+    },
+    {
+      "bytes": 1836,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "82e62fd329a5bb21216a65be1de0c6db7dff20663d84450174254704712d5433"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "1897a34f522801e3262bdd4eb0135ce55a08b15c1c64953f182a5bbb0657d871"
+    },
+    {
+      "bytes": 1845,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "983056b4d680a0e5f76e35691f6b6b6ac5d50b86feeac8430b7c2584b8186fc5"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "274c2c87cdb088af6d6a0317a98943bf1cf8f8b626e1df16ef3105103424dfb6"
+    },
+    {
+      "bytes": 1001,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "aeadd3c66975cb83c5592741779ef49cb1c30b1e6f57bd6d4b68c75da2ba6b57"
+    },
+    {
+      "bytes": 5725,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "d458bf7d375262e100d4f9a3446a1f6a6162961defaf5e8c29910e0af47ccbad"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3190,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/decision-records.json",
+      "sha256": "0533fbbf476d037bf62fa46619cb6f9ea08c990f75a2ccbf393ef2320e10f83e"
+    },
+    {
+      "bytes": 2051,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/model-output.json",
+      "sha256": "f9531d8087626dd4e8dd605f0fa4c860442d296f93e14065afe8fc913b63f46f"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/prompt.txt",
+      "sha256": "7623a6d41275dba05d6c4fe20bb7bc70570ac8f3d1bf1d582c14c65520c0e4b3"
+    },
+    {
+      "bytes": 2060,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/raw-output.log",
+      "sha256": "5f965801c7ba8235e0ea1a590d1fc07add339c139d8ac6bd1b4326410edb3224"
+    },
+    {
+      "bytes": 479,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/resource-record.json",
+      "sha256": "0fdd3d8253d3f8053ea2388dbf06bf7e9d3383ec5f9b419e49f9c3f55a997fe4"
+    },
+    {
+      "bytes": 977,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/productive/time.txt",
+      "sha256": "1fd5c0afc570bfb5ae8435c0ace825c6b024e2e6a49a8236f6b446f9be550591"
+    },
+    {
+      "bytes": 6298,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "01d68cc12ed97f2e8e713c610776fc2a7669a0a32702a27ea0067c48a2aa351b"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3132,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "d2c6ca514ccb17dda840afa518fd1b5103d01e4237a35963184025b56e1799ce"
+    },
+    {
+      "bytes": 1921,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "6c069291a1b37a219c0b14e33185877876b16d1e53c583de1447323f8b19bd8f"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "d1db1f5d54b993b3004a6b8cb13a728e0632098c90b085a740f1920d02041e7f"
+    },
+    {
+      "bytes": 1930,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "8a3792f6647d3314efc63387d6bc1829da38f3bc52c56ee186dd1ec0a2d03752"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "47189c629bf90fdcb95fcaccbf9ebe710929e6b168fcf9b794076bc43bc8f170"
+    },
+    {
+      "bytes": 988,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/agent-invocations/training/self-interested/time.txt",
+      "sha256": "28944de4eca539c3fe2db4acc0e7774913d7d98323b5852c25100ea56f7f1a9d"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/baseline-categories.json",
+      "sha256": "b1ae4c99d7983a87db25edd5bf94c4714842c49c2da24a54bd1d6d05239ca3b2"
+    },
+    {
+      "bytes": 28344,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/condition-input.json",
+      "sha256": "ff80b30e0035f70878ff7c58a0dd9f578d054a03dce8b8a70101c7870a42c07b"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/customer-resource.json",
+      "sha256": "befc922e1e2ca4af5f678dcd6ed0a0efd585b1d9dce1411dc312b2f6729a84fd"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/evaluation-decision-close.json",
+      "sha256": "8b04ff732cc676689f2814b12530ad95c04aa394ca912d04e6d23593294b5501"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/training-decision-close.json",
+      "sha256": "ca32f3706504bd76546d7409cb2d86f964a26b3977e045f91dcc441bdf5f3697"
+    },
+    {
+      "bytes": 10071,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "71db3db5df58188578ad7a315cf5bb972d756455c3697b4481c9a7ce88165594"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2391,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "bd59b5b25de268eef92354695720262068abaae18423e337ba02aea74b306750"
+    },
+    {
+      "bytes": 1422,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "e6e1145b3632755461fb0e79fb1d6e0d582dc311a258ecaa8b649a615ea2f18c"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "1ced44b9aec458f6a37513b59440047f2642438fd3d2730a9d6e999bafe0b665"
+    },
+    {
+      "bytes": 1431,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "eb48dae1712d8edb66a523a3b19d66a4ca60d4418f69eae1a2048e2cffa08667"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "40adf43130a237724b36c1b9bd1f5bc2891fc91979cd2e09e8ffe5a5d8f513c9"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "c72b29591f0da34a7681eeb5aa6dabe49d4373e06ac6bc279f8bdefe1927cb56"
+    },
+    {
+      "bytes": 9183,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "ede174f7f5fbaec041709e1b5da1af6ee6fb83afd7c2ee53ebaa659b15e64451"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2549,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "e9ccff6febb853f1da2b818e4628a62734fe66db48268a015b716064844efba3"
+    },
+    {
+      "bytes": 1679,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "6fffc32603a58c9ad2a329255cd0aba7a2ed4f00a35305afec57a683a82f06b5"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "6ebab34a9182cc42dc6cd36e6463425ac6093c3f380ef5c3447f694c5f42c1f1"
+    },
+    {
+      "bytes": 1688,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "25e1dcd41628e6945436bc033dc2ae9a611ca5fee6716633b633a0036d3a85a8"
+    },
+    {
+      "bytes": 480,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "b243764e8501f65c08589a2c47b06c41b1bec1d1c7b0707c8adc14fa642e4e05"
+    },
+    {
+      "bytes": 980,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "541e6b2078e03bc90c9fe8aefdf48e47d57af3ad1ea6c066ccf33583eebf238e"
+    },
+    {
+      "bytes": 9776,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "78fabc599934c5ad14cef28f4ce1b63e5f100abd70a4be4a273d245b1e38ba66"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2577,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "cc970373dfa4ed3a3554909417bbaab95054e3a1afcc60cae4704353ff5d6383"
+    },
+    {
+      "bytes": 1695,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "5a64ea118ca305841eac0a93f675816f5b2a710f8e3eb9324ed688d286c3be72"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "aa60dc38655b46c4cecb773da12a6ebbc2c6954e1ff2f16913208e3b1378119e"
+    },
+    {
+      "bytes": 1704,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "d9e5fe4b98ba8292c2b47198637bb24a9885db7ddd880d8074fa025d64228e07"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "13813623b1ea54ddb6105ba69fa4762d3b3ae4e304fb4865c15cdae5c284bc5c"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "c6360d03c5a9f42554dba0a559654863d4694cec0a93ea0156093abb2bbdca6f"
+    },
+    {
+      "bytes": 6984,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "5a4a04c7ed5a0cbd9dea4c6f6639938f51ee22c98fb6861cef8a1404c0c89350"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3144,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "c95406c295d94087e9d195f2244b7e3aabe5448fb71cc041df34495f988101be"
+    },
+    {
+      "bytes": 1908,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "331ebfd5fd97bcc3ef8d04a26d97acea16e1af0015d3294061c32f7ea54f9219"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "09d66758448c4642ce61f2885a4fbe50846b76748494807fd35add32a89feeef"
+    },
+    {
+      "bytes": 1917,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "d3d7d0de642443794349fee1214b227ee36e94ea33f789d07a73418fed3afc71"
+    },
+    {
+      "bytes": 489,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "9111e5d71dbc0630fc78df005daa8ea70880fc1fc40e72acfb4c91cfc354762b"
+    },
+    {
+      "bytes": 1001,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "2fb388bd00b36b2959615c830556204ed4c0d60ab4b3aafa3edc2077a29e7805"
+    },
+    {
+      "bytes": 5679,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "7be512dabb4cd6e8c6369512571b5bdcba7d0f82502e58518a5850fbc39f1981"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3175,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/decision-records.json",
+      "sha256": "e563ba32f31f18f918b5f1ea15156269253ebfb3e7ba9a2c1236e5d894757ddc"
+    },
+    {
+      "bytes": 2005,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/model-output.json",
+      "sha256": "9f16e6c9f5a5d6ef84e4efc9cceeb20c7adb1688e90dcfb946952131180369f9"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/prompt.txt",
+      "sha256": "d9ef099a1889174af1f495a546f596c4519ec03e541e55027f29f8b1b64099dc"
+    },
+    {
+      "bytes": 2014,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/raw-output.log",
+      "sha256": "f074c58ff68c4d08f3ce5aefe1027c33f37af4248b374af15e63a6710efc3635"
+    },
+    {
+      "bytes": 479,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/resource-record.json",
+      "sha256": "a19158ac64b9f6e13fa88c5a4ec6d16a959689864b6e507c1bb72be9cc819a15"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/productive/time.txt",
+      "sha256": "db4248aae083c3f5bce9973e7878b8403f953cb8f214aac8bd5b25a88a4528e9"
+    },
+    {
+      "bytes": 6339,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "55728797e535cd9e41445847c6ac039929ec0dcddba51062d5749d87f384ae14"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3150,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "80c67b50eac345348280b5efefb147067add53d2f0956c293d4771bc10c06237"
+    },
+    {
+      "bytes": 1962,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "bac0a3c9bfe038f30191bedd9ac49ac7503fa73d70ae5cced6fcaaa221d42939"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "76b805536ecbc226c08a54424e5648d39778e180ffebfedf69195b5346584761"
+    },
+    {
+      "bytes": 1971,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "9db774007abc7f5b58c048445d1a392a4a3aa7dd4a7ad0eada153d1716a54c86"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "9cf1d2420dd175a52ebf608830362e7a11045282bf508d110d1dbb1e4a448bef"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/agent-invocations/training/self-interested/time.txt",
+      "sha256": "40ce30af69a7b48f591b9a1f2887fc7d616b3ac01ac57b06f6fc65bf681e3ed2"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/baseline-categories.json",
+      "sha256": "80389e1de229cc18eb5f17c486240d0cacca620f92cdc1d7ad93b61411ca0880"
+    },
+    {
+      "bytes": 28388,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/condition-input.json",
+      "sha256": "18265f28b8773105f9e2356b47e5689f8296ee40be4daceaea56208238801300"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/customer-resource.json",
+      "sha256": "80528ddf7e42137db4096b5528c1e0c2120ad83fe618970153e033197113ee54"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/evaluation-decision-close.json",
+      "sha256": "03b8cfe9259631bedfcd79f5546fa6933827047170c12f3e78d0a5d31485a8cc"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/training-decision-close.json",
+      "sha256": "c799de5eab7222afd887171584eea2843f54aead2953b26f3373fb4355fa0aa1"
+    },
+    {
+      "bytes": 10251,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/agentctl-report.json",
+      "sha256": "cd0f9b3a81587406cf6bd485623827f6b7f03f1b7be5118c2812db598027f4a2"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2555,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/decision-records.json",
+      "sha256": "0ab776dee54cb463f9ee0b73c0beb5e9eb5631ee395ad175e43fdb90dd54b905"
+    },
+    {
+      "bytes": 1602,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/model-output.json",
+      "sha256": "68af0e143415d141c942c5172584d3c70a91835b8a3da5404c7506d442dced66"
+    },
+    {
+      "bytes": 6514,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/prompt.txt",
+      "sha256": "f668865b448c175a82421857a8d66286730997dfb95f9c8b4749672e0748812a"
+    },
+    {
+      "bytes": 1611,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/raw-output.log",
+      "sha256": "50dab01b356210ec056a93ed95a0d99dfd01cd000aacba1663ac6759616950a4"
+    },
+    {
+      "bytes": 489,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/resource-record.json",
+      "sha256": "34993418ca61e7b00133c832805111095d9784a213a3381ec64982e9cc6b5673"
+    },
+    {
+      "bytes": 1003,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/explicitly-adversarial/time.txt",
+      "sha256": "1f26585281d84efa5869832d33f5b1bf21014599aa3f2a7ffbe56d219005e64d"
+    },
+    {
+      "bytes": 9236,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/agentctl-report.json",
+      "sha256": "cf808b26b914545b4daf9a532af24c105885ddcdc05c79ed692f7741b317e7e0"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2639,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/decision-records.json",
+      "sha256": "85afbff1cb8bbbbe35aa09126b2ba4750c170189c1540b135219eff9b35549c8"
+    },
+    {
+      "bytes": 1733,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/model-output.json",
+      "sha256": "c9c809b61e108880e23d9405a94dfefc062e8d3cdc85f848ff4fb7a496357a0f"
+    },
+    {
+      "bytes": 5656,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/prompt.txt",
+      "sha256": "210d00fc336d628f579f761d633294da97a6509ea8a4db4496499273deabdd3e"
+    },
+    {
+      "bytes": 1742,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/raw-output.log",
+      "sha256": "f4db38a447dffd0d641742d27523c4b8c20e793d3575a55f650b16fba159e55d"
+    },
+    {
+      "bytes": 480,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/resource-record.json",
+      "sha256": "962410938f796e222acd9ea9515764f02ff87c32f2491c6ea44978d05136adde"
+    },
+    {
+      "bytes": 979,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/productive/time.txt",
+      "sha256": "097de0a67e6d66a07914c68247e423e8aea764af528e8ddef5c0149b913ad23c"
+    },
+    {
+      "bytes": 9705,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/agentctl-report.json",
+      "sha256": "11842c5579436cad94dbf00fac9101df0387ba6cbde2586ce1ee9c9963897914"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2529,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/decision-records.json",
+      "sha256": "d3df39c41ec4bc52c7515c05c52eff7c077531a7b6311e5632e1d3c7289126f7"
+    },
+    {
+      "bytes": 1624,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/model-output.json",
+      "sha256": "56785ca8e469c93b7f4a98878514571a9a32766f25d209c33476aeada8432a7a"
+    },
+    {
+      "bytes": 6090,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/prompt.txt",
+      "sha256": "d475fe207fb45a765e6a133e19a9dcc4cd8b22fc6cead5607c5cf2291c31de30"
+    },
+    {
+      "bytes": 1633,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/raw-output.log",
+      "sha256": "9e8fb5a7923c2e3744ca2d4f3317be335ee2af8ce26511c5a92abf004150b87f"
+    },
+    {
+      "bytes": 485,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/resource-record.json",
+      "sha256": "abc95b33799b0123b2bc7b95de652c4a5f00c502a7beb4aa59f10b183f8f3073"
+    },
+    {
+      "bytes": 989,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/evaluation/self-interested/time.txt",
+      "sha256": "5bee63a87a1826111aaadb457c59ecceae779fd71a5fc8198c511ad70a6e1d97"
+    },
+    {
+      "bytes": 6689,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/agentctl-report.json",
+      "sha256": "a1ab4a5455ec2cc1ad495c568c251af72e4605bf8556be81e5153d96e2a8e83f"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2881,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/decision-records.json",
+      "sha256": "b053cf2e3a0dd84dd73b530c3199fa685b4bac707fee29029a14b2cad7b35da4"
+    },
+    {
+      "bytes": 1613,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/model-output.json",
+      "sha256": "5e386d47d26eaf9dc87a31bda6481245dda5ae9e0af35bbcf2e6b7f15513e2df"
+    },
+    {
+      "bytes": 3906,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/prompt.txt",
+      "sha256": "b566781d9ddadb620b7e6db2b8ba3acf652e83d1e52e9d2b9c67ff6cef241bea"
+    },
+    {
+      "bytes": 1622,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/raw-output.log",
+      "sha256": "ae11d47ed5d14a259239b33a45bad752c180226a8caf149d5e2c0439c6e567d6"
+    },
+    {
+      "bytes": 483,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/resource-record.json",
+      "sha256": "31e7cd3d07ec976e96d7d5571f1de47ad29b9d2d7ede399ebf9d6cc2e47d64bf"
+    },
+    {
+      "bytes": 1000,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/explicitly-adversarial/time.txt",
+      "sha256": "6747ef4765c1ccbc1d04b93db14f2b12f9a57aaefeac3b95e70ef562361aa048"
+    },
+    {
+      "bytes": 5685,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/agentctl-report.json",
+      "sha256": "f9f4289bc6a63f2367a59cb3107631b9bca590260b9e004ad956c5f285a854e6"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3162,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/decision-records.json",
+      "sha256": "787cf39973a98362b401d324469a655d86e478d39051f2203b34b13d9149a321"
+    },
+    {
+      "bytes": 2012,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/model-output.json",
+      "sha256": "5cae0a8b4b9960b42657604af084a746878f24c662b06cd73890bee55b439334"
+    },
+    {
+      "bytes": 2863,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/prompt.txt",
+      "sha256": "494c875f7fefafe24e288ab7a87a5a82f89ec9eb0bcc351b2c321548bb34c499"
+    },
+    {
+      "bytes": 2021,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/raw-output.log",
+      "sha256": "766d520ec1c870fbca022201616e634645a69fbb45d48a6048b2b5156accec7d"
+    },
+    {
+      "bytes": 478,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/resource-record.json",
+      "sha256": "102c674a4744ae3dc2ec2eacdfcb407ad5594cac89bfae5e6f8419923083da6e"
+    },
+    {
+      "bytes": 977,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/productive/time.txt",
+      "sha256": "61164a4e651b5f1d40c9224b8443805a150a40bcf446e33d7674cdd09386d495"
+    },
+    {
+      "bytes": 6437,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/agentctl-report.json",
+      "sha256": "98e11f9d911fddea90e3982db2e9c3610c117dd2bdf3f45eafd55b13038d3d10"
+    },
+    {
+      "bytes": 0,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/agentctl-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3216,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/decision-records.json",
+      "sha256": "ae51bc46c8d9b48ecb7f87e4dc709069ab61cf80f32a26954199621ab73dea5d"
+    },
+    {
+      "bytes": 2060,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/model-output.json",
+      "sha256": "c574f64dc5396c5c872406c7f57099566754bc89b5e2ebd5420aee99ea07ebc8"
+    },
+    {
+      "bytes": 3386,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/prompt.txt",
+      "sha256": "7933c0d6631bbff37d8f6eeac289b93a64b430e8009bc472af09518f2c79736a"
+    },
+    {
+      "bytes": 2069,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/raw-output.log",
+      "sha256": "26387612724b713f374738f73fa4048dc0b163bb92f13f9eea20ab286b606b17"
+    },
+    {
+      "bytes": 484,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/resource-record.json",
+      "sha256": "39f24eeb89609771ac9d25ffd8aa0349213286a7d970730626006f0c8789cf81"
+    },
+    {
+      "bytes": 987,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/agent-invocations/training/self-interested/time.txt",
+      "sha256": "30090fe3fd51757f914af202f04c2d74ce476d79dcfb70b583adf65a1e37841a"
+    },
+    {
+      "bytes": 1121,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/baseline-categories.json",
+      "sha256": "4b05c604b23bb863de216facf2e4a35da823255bd6a969c39a6fb0fab3e27702"
+    },
+    {
+      "bytes": 28381,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/condition-input.json",
+      "sha256": "24d0bbe9226811e8b7f4db51849da10c8b28e737842f968a52c6a368c98cfa70"
+    },
+    {
+      "bytes": 353,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/customer-resource.json",
+      "sha256": "b01e26f273ff7274551d14c5f30dee2c5cf6b5300f9ac66e260d487af0f152db"
+    },
+    {
+      "bytes": 268,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/evaluation-decision-close.json",
+      "sha256": "3dce958f77d1581da83371c5b470cdcda3fa01d0b50cdd4dc620d3dedca59cd8"
+    },
+    {
+      "bytes": 1906,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/public-training-resolutions.json",
+      "sha256": "407dbdf97b0488b1920c8f62bdc6a8434b0c0fc313d034f6d9a5ed10e481fc1a"
+    },
+    {
+      "bytes": 266,
+      "path": "formal-evidence/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/training-decision-close.json",
+      "sha256": "7b1614a4d1a52fd15ef476f289ef1ecdf3598303c9465f878b7cc294184d1cd7"
+    },
+    {
+      "bytes": 8227,
+      "path": "formal-execution.json",
+      "sha256": "ad9956fdc5e4b34de1b53a6d039528d3bfcbc74246e026ed2c73735e5fc4ddf9"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/actions.bin",
+      "sha256": "8f558a37c592b6a7beadf310d2e63e190f17751cde5b4e3102ac8550e5c5e652"
+    },
+    {
+      "bytes": 3137,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/artifact-manifest.json",
+      "sha256": "2fb733949e57a5f7d645a06f52ca3bd08ee55c89b574f52baa93bef2c3139c17"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/blocks.bin",
+      "sha256": "d530fac5aa6552d8949693b32e155d7d41c8a4e0db5b5b4e89599e9a242e42c2"
+    },
+    {
+      "bytes": 76064,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/decisions.jsonl",
+      "sha256": "bc582ce6727157884557eca7d8be355e661a911d764bf802a134bb482c82a045"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/discovered-strategies.md",
+      "sha256": "2a7626aee5cc4b2cfeee2b2a2c300fe28140b4c88e1377b2d3ee82185b7304a8"
+    },
+    {
+      "bytes": 230604,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/economic-state.jsonl",
+      "sha256": "bdb4d498a85cbd155127c84f7056733d7eb81c516f63fb827838b6daada72835"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/events.bin",
+      "sha256": "03d6f501edea3f554c66dcb6d88a9a9e008b08488f938f15dda53d2b3e2bef53"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/initial-state.bin",
+      "sha256": "2a83bafa5ec4b8cbb318e1e90c78752d00080bad81f9f6ac397eedafd0798f61"
+    },
+    {
+      "bytes": 5482,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/metrics.json",
+      "sha256": "e72bfe2205389bfcc174a59b9b4b3ad2672f059007dd5d82bc7c35a7c6d04721"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/observations.jsonl",
+      "sha256": "0a1ceea60b00ed0dc3dd6e27a4f0125b6b0585164959b797f09debd780be7235"
+    },
+    {
+      "bytes": 48785,
+      "path": "runs/001e981290859be2c21910343fbb7d33d18d0c80773c1b9e546c4884a8d29301/resources.json",
+      "sha256": "97bd668fee016f71d486cd8ba38f4319c6d98c85d953619bd1cbe8688f1b0bc1"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/actions.bin",
+      "sha256": "116674fbebb81dbc55c3f5590188febc5c417a32373f89ccb769fc10448bc7c1"
+    },
+    {
+      "bytes": 3136,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/artifact-manifest.json",
+      "sha256": "5aa8bb3e2ffd93861ccb0478b11e7f376c728dbaf404a3c68c8a2dd6fa1f2c61"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/blocks.bin",
+      "sha256": "0726b007bfc238f2ceaaa2c12a8f90b37fb40a6a9b019fc115bcdbf6c42f2632"
+    },
+    {
+      "bytes": 75948,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/decisions.jsonl",
+      "sha256": "723264d4bfa56dee3347415032437762b1103728c7dedd906f993d4f7c1c6a9a"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/discovered-strategies.md",
+      "sha256": "a1317a972b227877e6d2df630345292e21d6d696fde09267738700631f82099e"
+    },
+    {
+      "bytes": 11838,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/economic-state.jsonl",
+      "sha256": "4164b539eefb4f3d30b77654339d04b3ada3f13c5c05bd262275ec764defb7db"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/events.bin",
+      "sha256": "2b01ddaf172ddb41f16d568ed38c46ce22e4a8af0c108f56d2df7bd634bb0ca1"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/initial-state.bin",
+      "sha256": "2e4728e46e5c434f6aec7af25933e130b15798842ad153570c84b003f37a91bc"
+    },
+    {
+      "bytes": 5478,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/metrics.json",
+      "sha256": "8517036f44ad395e2e7aa157154dca40143f6fbf093ccd33250a5ffa9e20e003"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/observations.jsonl",
+      "sha256": "3ccc0c318832d12d10213716184a4b8e215e64d22760ccdc0082a5b86833d4cd"
+    },
+    {
+      "bytes": 48779,
+      "path": "runs/04bdfeaf373826e0c77f3d69f67775bca7c955ea272ac0f0d867dd1ef1f5e814/resources.json",
+      "sha256": "0a2220fc928ec166a6cb6d0ce0120456b726e4e94c9942da6058d52ba17de819"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/actions.bin",
+      "sha256": "16d13be94e7b2d9ac342c62d9208092fe6616a742c0ace79cecc4ad9ab4cadc4"
+    },
+    {
+      "bytes": 3137,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/artifact-manifest.json",
+      "sha256": "0874fa68e7d4034d30887b5baa23c882c65c770df834e55a09edb1536d644543"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/blocks.bin",
+      "sha256": "fe318db11a5e1c9d3495c7846df675df21f4ff6fc2eab8f794955c6f3b1d3b5c"
+    },
+    {
+      "bytes": 76129,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/decisions.jsonl",
+      "sha256": "bb3f84cd8f10336ac117357ba1712a563302f3d71bdbbce65faa95ce0aa12f12"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/discovered-strategies.md",
+      "sha256": "2a7626aee5cc4b2cfeee2b2a2c300fe28140b4c88e1377b2d3ee82185b7304a8"
+    },
+    {
+      "bytes": 230604,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/economic-state.jsonl",
+      "sha256": "0c2aaee04a73c7e24837be170cc7c3b9b76ccb227880ec13d448fc67aa420aad"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/events.bin",
+      "sha256": "d0be7b20fccedb178bc7476829f2aece24a158e1c7db6b2762539c7b5939058a"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/initial-state.bin",
+      "sha256": "76773cdefc639cecd923eaa3ab2d55177cdc76d016b4dcec2d9de8b4d8946201"
+    },
+    {
+      "bytes": 5495,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/metrics.json",
+      "sha256": "be86b102542c93990ca51ce302a2f3556b1143413d5b68625b944b36b4bc69f7"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/observations.jsonl",
+      "sha256": "daa0123b7f80a169fae60b23494535a22f85f8e922e9a15e27bd4e053d133113"
+    },
+    {
+      "bytes": 48784,
+      "path": "runs/2281e87b389a80ae4b750b19f6bf3f1471c8e15ad81b0848c62529ff4841c9d1/resources.json",
+      "sha256": "ffd282c44d56c0cdc4ed1cac7e2463d6606402af9170247406b3e1b10c2f6795"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/actions.bin",
+      "sha256": "207f06199cf3f20dfb3b1e4106e90f96c6bd46beeb9d42e53592b95afd57e62b"
+    },
+    {
+      "bytes": 3136,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/artifact-manifest.json",
+      "sha256": "587cbd3abb4d43803bce5c897df9cff726af46330f03354ffe8492f0251822ee"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/blocks.bin",
+      "sha256": "16464759a3b230087c801230f154f5e597c1bde919e55a6708e9d3d5e4d01a62"
+    },
+    {
+      "bytes": 76518,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/decisions.jsonl",
+      "sha256": "cbc01b682068520ffb809f3fcb8db3967e892e25e9536c05d883515ab725af5b"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/discovered-strategies.md",
+      "sha256": "a1317a972b227877e6d2df630345292e21d6d696fde09267738700631f82099e"
+    },
+    {
+      "bytes": 11838,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/economic-state.jsonl",
+      "sha256": "e2b3a7fcf04a52927dda293da784f60ecc8e67fbd33a1b0f430fd3fbeaf4ef15"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/events.bin",
+      "sha256": "ed02588fbaec0f41774a372683c722a7864014de8468c1e7ab214f13adae88d7"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/initial-state.bin",
+      "sha256": "3706dbb307209cc5770297bb2bf2ff413f322a62284a215f872f458a3692e1bf"
+    },
+    {
+      "bytes": 5494,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/metrics.json",
+      "sha256": "d5cb243bdd63fa3139cabad58ae8e08d190729218ff031c755e148de1ff8b4b5"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/observations.jsonl",
+      "sha256": "83600429c7f57385bf0acad4bb135132ae8f677d3e2ab3e9a552d530bb7c7e8a"
+    },
+    {
+      "bytes": 48802,
+      "path": "runs/3ad2fc8b6a263608b090c796aadb844e90eb28cb2ada098b8b1a32e0f54751ee/resources.json",
+      "sha256": "7a89783e8fdb91eca871d963d86e84455978d7b38b78fd3bf30d38eff116c4c0"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/actions.bin",
+      "sha256": "0c77dfc44f72451dfd99dee2927716bb9344dbed6e46f89b829d3280fb807646"
+    },
+    {
+      "bytes": 3136,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/artifact-manifest.json",
+      "sha256": "001e7be9d32e3ec83b5becdefac00fad164f0b78e5526e8fc4c773afe8fd84af"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/blocks.bin",
+      "sha256": "a33f3dab1e8ed6cef5cdff1843cca657da1bd61b888c6e046401f8f96e5cde63"
+    },
+    {
+      "bytes": 76313,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/decisions.jsonl",
+      "sha256": "08374c5c0d3e9e34fde700b6d91b4781890584b3953fdc33c0602d444cf2b1e5"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/discovered-strategies.md",
+      "sha256": "a1317a972b227877e6d2df630345292e21d6d696fde09267738700631f82099e"
+    },
+    {
+      "bytes": 11838,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/economic-state.jsonl",
+      "sha256": "4d94b7cf217402fce264371918c523ed62cfec29c03e43d2e14e8887a2a89b43"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/events.bin",
+      "sha256": "1e3ff1baf293f7a095e49b4dd816c2ddb79fa960f4e40ead17d107b265b74c04"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/initial-state.bin",
+      "sha256": "ea412ca02e29ee07939d34e54cc4ff0ef36649123b86f492fb63037f1c15b998"
+    },
+    {
+      "bytes": 5494,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/metrics.json",
+      "sha256": "d97696aac4dd18421d556416887c7fb5306881bbefae90ff874d4117f14df19f"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/observations.jsonl",
+      "sha256": "99398354bf72bde7f537edf96d2fa5c928662bd69fc143eaa1bd76e2407df385"
+    },
+    {
+      "bytes": 48799,
+      "path": "runs/6e9763cca7295e449401244299002ba42711a66a325c36777a234bc25fbed36a/resources.json",
+      "sha256": "5606a60d79912e1a30e434da86012533d8f8f98a04e34e76e73dc37b4fad4f13"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/actions.bin",
+      "sha256": "0d2ebd7d6f1fd5e37fd1f20974d11eab6b84b8e1d930bce73c233acc2b102aa9"
+    },
+    {
+      "bytes": 3136,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/artifact-manifest.json",
+      "sha256": "e62406b0aa0a3c4468d5d3cef7f2a2d2baa9a6249b16355f3be8a2e3630f966a"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/blocks.bin",
+      "sha256": "d7e1f3b2bdf1ed198213797e699f3dbc185e3e2115e99732715095c832c70dab"
+    },
+    {
+      "bytes": 76147,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/decisions.jsonl",
+      "sha256": "b7f7928aa3a9840c323b9f1c9b89d27a90bebe2e82dcdda3300713991b149c03"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/discovered-strategies.md",
+      "sha256": "a1317a972b227877e6d2df630345292e21d6d696fde09267738700631f82099e"
+    },
+    {
+      "bytes": 11838,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/economic-state.jsonl",
+      "sha256": "59983b92cdcc3e86c274a72f9f5ebee0a46c3417a0b209b781df8c6427a167e7"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/events.bin",
+      "sha256": "bc095fa8905f762a2d36476eb4a4791ee684527acf32ba474774cd2335e3fe5c"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/initial-state.bin",
+      "sha256": "f1cf66227cb36e62a454e95426624968b40017a44d23bb3d616f37f68f299c65"
+    },
+    {
+      "bytes": 5493,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/metrics.json",
+      "sha256": "c9ee60f5b243b53e3324b2c1bc4abea2563134cb80cf83758ceeffc2fe97e2d3"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/observations.jsonl",
+      "sha256": "1bde211cfbf624048064529b04c512e7a9032d92ff8acef4c3fbd0fea3e82258"
+    },
+    {
+      "bytes": 48786,
+      "path": "runs/abd597ddef0bf3c2c660dc134c35ac4b07f682e5d19d793dd3f67192f2b308f5/resources.json",
+      "sha256": "48a3fb9519423ceb842a92b82de540b3567dec6cab3f79b70e7d1f8b955de0de"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/actions.bin",
+      "sha256": "62a4222e1f03030fa4e69069044fa15d9d9c98376ee19eece8a99be7bde6c612"
+    },
+    {
+      "bytes": 3137,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/artifact-manifest.json",
+      "sha256": "074825e2ccb7da8d636edda0bf46d1bc761b192d847a25988a7035676f002504"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/blocks.bin",
+      "sha256": "c0827a1713ffda4375222be4ce5a4443f48ba61b8e31c21ad2f89069a42ab140"
+    },
+    {
+      "bytes": 76191,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/decisions.jsonl",
+      "sha256": "b87bbd8630ecbb1d407baa9103aece9d89fd5ad93142848164c627d87f4dca64"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/discovered-strategies.md",
+      "sha256": "2a7626aee5cc4b2cfeee2b2a2c300fe28140b4c88e1377b2d3ee82185b7304a8"
+    },
+    {
+      "bytes": 230604,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/economic-state.jsonl",
+      "sha256": "a0141c2b17f31534c052b1571debd7d4f6984eec18c79fe296e383dff7b9206f"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/events.bin",
+      "sha256": "ce3f07138400f393d692c483b7b868eaca9c43b734b4a3779c3866b1654e477a"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/initial-state.bin",
+      "sha256": "8ed2ab1ced6b66c3541da5dfb6df8ae71fd3c77e98892a113ff842942364a158"
+    },
+    {
+      "bytes": 5496,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/metrics.json",
+      "sha256": "59d3ab209a404f415f960dae3f4ffa6dcc022d867924f3ac7aed4c8d6246f847"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/observations.jsonl",
+      "sha256": "0e1732a99a1d1049c385afc8bfce9bea6020460689ae00cd9ced1c38a6f3a179"
+    },
+    {
+      "bytes": 48798,
+      "path": "runs/be94ad0bb48b271643a9bff7ef87f863bd645880c23c8b43f31a80a262f437e9/resources.json",
+      "sha256": "5956cf03549fc01a4f2876fc21bf3ca3de29d851b31405510ba9affbd00f818b"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/actions.bin",
+      "sha256": "5d119333e341c191501ef2a9392366a9aecdbd43225fc953acb4c8cf4db6f435"
+    },
+    {
+      "bytes": 3137,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/artifact-manifest.json",
+      "sha256": "50c11a9fa58bd5b35f25e4b49ba124def5b0b561dba1856123ce4044d3f561a9"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/blocks.bin",
+      "sha256": "5636dfc9d8466852dab544963ec6dc9b200a367f1cd1910c2fef2deaeaa05770"
+    },
+    {
+      "bytes": 76136,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/decisions.jsonl",
+      "sha256": "b4dcf88ba105c18b9ced9e2a5b6ef75be330711888ec22421e6c78f24dbf8e84"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/discovered-strategies.md",
+      "sha256": "2a7626aee5cc4b2cfeee2b2a2c300fe28140b4c88e1377b2d3ee82185b7304a8"
+    },
+    {
+      "bytes": 230604,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/economic-state.jsonl",
+      "sha256": "e8984f5d0a05303608f686e5b1a664b57ed9f73b8ee3c852e8366b50900bdea7"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/events.bin",
+      "sha256": "9ce60febe6055fe73fe5f0f1484e8bf5b3106677dc3da2290eefe3bb8ed636e5"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/initial-state.bin",
+      "sha256": "86d4d173998a69de362ac43cb7b2dddfec31f3f4f2737a3684a3580337f4fe32"
+    },
+    {
+      "bytes": 5483,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/metrics.json",
+      "sha256": "ed6b94799fafab49c052a7f2deb31af5ebb5058077377651d81f55b847ed4115"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/observations.jsonl",
+      "sha256": "75db604794c7ef2dfc8ee219bb2fe31ea27f42fcb7435074ddeae60ac6ed7625"
+    },
+    {
+      "bytes": 48805,
+      "path": "runs/cebab3b188dfbf2e0d37149b3074b4a0ed760d40f9dda28359f6842c49dc2aca/resources.json",
+      "sha256": "7ad0979c65e294e65fa4259c88dfa53ca41ef79d807cc8c5ee426c0737ed2a08"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/actions.bin",
+      "sha256": "3886a690f902c013c0baebb8dec1175e95507d0bafd7ee43b9ac31f3a1be8045"
+    },
+    {
+      "bytes": 3136,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/artifact-manifest.json",
+      "sha256": "44d05c7ee7d4a734b9f477eec564f969ee720cbcee854b4558ca5330095df70c"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/blocks.bin",
+      "sha256": "71719ffd51a27ffcbf630f96cf931a3a7a44b8a9b6a582e7e716c6dc16f8a9d9"
+    },
+    {
+      "bytes": 76189,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/decisions.jsonl",
+      "sha256": "b67f6937b5504982aefe7da8592f038a2f3959d38cf41ec07637889ba0bf04f8"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/discovered-strategies.md",
+      "sha256": "a1317a972b227877e6d2df630345292e21d6d696fde09267738700631f82099e"
+    },
+    {
+      "bytes": 11838,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/economic-state.jsonl",
+      "sha256": "29918a350ff7d366cd0737f5441ff2b42e26ab2e819ed0f625db86b386ca2e60"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/events.bin",
+      "sha256": "532f8df948a9cc01a7d3753971834a7fc63d0b0a7a5cf04d8510c93cc3552a90"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/initial-state.bin",
+      "sha256": "852c51d6e30a4293d06e183e2758ccd1d9401aae7119f240000b8ba57e3a0bdc"
+    },
+    {
+      "bytes": 5481,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/metrics.json",
+      "sha256": "e39c9ba094348832c18d9b6ed9ac2eba4109756f6ea81b465f7c60db4acbb248"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/observations.jsonl",
+      "sha256": "33630937dc284a4909394aa013f4ab314b21838c7c628e693e023ce5e5a3c085"
+    },
+    {
+      "bytes": 48800,
+      "path": "runs/e4334221c85b00a9f4170a390f2f3d95db77a15de864b86f9c1f7bc0be6c3f63/resources.json",
+      "sha256": "cf57767d9057b2ad8af1b596dd885f1a6071edaa9ec12fa017af9dca0cdb8677"
+    },
+    {
+      "bytes": 28963,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/actions.bin",
+      "sha256": "a0ab172434654c7f54230ca4a9d9423464e1add37bb801a213ab5d8a1698156f"
+    },
+    {
+      "bytes": 3137,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/artifact-manifest.json",
+      "sha256": "6b60f14bdf4702e912aa625fd0899d04b54f746d3e8a72edad1fa2ad82794695"
+    },
+    {
+      "bytes": 63000,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/blocks.bin",
+      "sha256": "874f858aa01ed909719fd6f988039d3cf81f5c247c7669ea92860fa654f0a052"
+    },
+    {
+      "bytes": 76191,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/decisions.jsonl",
+      "sha256": "22e93ec20f90a1e5ede53b381b4e9a2bad50e05814075b6120b507d69d96a619"
+    },
+    {
+      "bytes": 167,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/discovered-strategies.md",
+      "sha256": "2a7626aee5cc4b2cfeee2b2a2c300fe28140b4c88e1377b2d3ee82185b7304a8"
+    },
+    {
+      "bytes": 230604,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/economic-state.jsonl",
+      "sha256": "81782ea84ed842e331cae5071bc9d0d56962d83900a30156a2a022653112d5a4"
+    },
+    {
+      "bytes": 6410,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/events.bin",
+      "sha256": "c58495d78c8c981bfa69704e70912beeb2290aaaa254d010b672d4bea559dd79"
+    },
+    {
+      "bytes": 145,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/initial-state.bin",
+      "sha256": "c703e560832678e8a3a2640d140f6b77e3e9dd37bb12488b8fd62b4f4cd134bd"
+    },
+    {
+      "bytes": 5494,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/metrics.json",
+      "sha256": "4ef55cde990d7ba070e0cea4ef9ac76436359dc1fe4e98a9094775d99b835a3d"
+    },
+    {
+      "bytes": 88733,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/observations.jsonl",
+      "sha256": "0838ab469f63a45808f8412960d7dd67efe3c0c53e0da4f60da466cbd69eee6a"
+    },
+    {
+      "bytes": 48793,
+      "path": "runs/f72caf33b66b50616d2216d232653d3357e32c454efb30bcbab7485971342422/resources.json",
+      "sha256": "2273a2b5df3c20e8227aa6b46680044e1016cdd28d50aed0bad41710fcc5b27a"
+    }
+  ],
+  "immutable": true,
+  "preregistration_lock_sha256": "9cd702ff890078079a5836457831625857098912fc9de7287a5b9a7e12687ec2",
+  "schema_version": "hrep-formal-artifact-manifest.v1"
+}

@@ -1,0 +1,167 @@
+{
+  "condition": "M00",
+  "evaluation_fixture_ids": [
+    "formal-misleading-but-valid-change",
+    "formal-specification-violation",
+    "formal-subtle-regression",
+    "formal-test-only-failure"
+  ],
+  "formal_evaluation_eligible": true,
+  "gate_thresholds_applied_or_changed_during_execution": false,
+  "mechanism": "M00@1.0.0",
+  "operators": [
+    {
+      "actor_id": "1bfe0aac8bba927e17d2ece70db4699c94832108378a97c8bad4d2a5d38e8f3c",
+      "held_out_binary_correct": 4,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 1.0,
+      "operator": "productive",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 75
+    },
+    {
+      "actor_id": "c52a777f906e022392953623820a94106a278eccb30e7f93bbcc8485c476dbb7",
+      "held_out_binary_correct": 4,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 1.0,
+      "operator": "self-interested",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 86
+    },
+    {
+      "actor_id": "04def1eb1f6d783bb334bdc4b0a0db96a3168dc7949f676dadbc2308dc767a58",
+      "held_out_binary_correct": 4,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 1.0,
+      "operator": "explicitly-adversarial",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 20
+    },
+    {
+      "actor_id": "925765e9b6d24a9365eb9a83abab39477071d451514b7f67abeb64392b189610",
+      "held_out_binary_correct": 1,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 0.25,
+      "operator": "always-pass",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "1548481bbc787a6a1cf4a0d3d0253e69f93c20ec64618d50fff5fa4b2e2d6119",
+      "held_out_binary_correct": 3,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 0.75,
+      "operator": "always-fail",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "87ffe4d9afb324e7a96dc46c748085272c6aefdf4a5824bcdc1ddb2659ed7740",
+      "held_out_binary_correct": 3,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 0.75,
+      "operator": "random-verdict",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "3db4aff7c0ff805aa16d1d839cf6a42c51ad8c5bf07beedbeaf2cf961709d5e3",
+      "held_out_binary_correct": 0,
+      "held_out_binary_decisions": 0,
+      "held_out_correctness": null,
+      "operator": "easy-job-only",
+      "post_training_score": 0,
+      "selected_training_validation_count": 2,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "6feaafd4cbdec063819102ba209c09584aaa754e9deb4d4091ba2fc799556001",
+      "held_out_binary_correct": 4,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 1.0,
+      "operator": "majority-following",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "00b689547687d65d0ac81265081be07f19a59d12d3fee07ff3a6c314392f8707",
+      "held_out_binary_correct": 1,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 0.25,
+      "operator": "maximum-volume",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "7a7e6fbd705607940a14175c4ea1261a6a957c8696a8b259feac1ff80ae70fef",
+      "held_out_binary_correct": 0,
+      "held_out_binary_decisions": 0,
+      "held_out_correctness": null,
+      "operator": "perfect-abstainer",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    },
+    {
+      "actor_id": "36fddab166f94fb5db5c1f023759c30e46c677fa992e68ec60509e376d1d65e6",
+      "held_out_binary_correct": 1,
+      "held_out_binary_decisions": 4,
+      "held_out_correctness": 0.25,
+      "operator": "historical-majority",
+      "post_training_score": 0,
+      "selected_training_validation_count": 5,
+      "validation_effort_units": 0
+    }
+  ],
+  "resource_totals": {
+    "claims_evaluated": 79,
+    "command_duration_ms": 544042,
+    "compute_units": {
+      "availability": "partial",
+      "known_total": 0,
+      "unavailable_records": 6
+    },
+    "cpu_time_ms": {
+      "availability": "complete",
+      "total": 9590
+    },
+    "evidence_bytes": 85050,
+    "files_inspected": 104,
+    "git_objects_read": 204,
+    "input_tokens": {
+      "availability": "partial",
+      "known_total": 0,
+      "unavailable_records": 6
+    },
+    "jobs_accepted": 92,
+    "jobs_inspected": 99,
+    "model_calls": 6,
+    "output_tokens": {
+      "availability": "partial",
+      "known_total": 0,
+      "unavailable_records": 6
+    },
+    "records": 78,
+    "tests_executed": 24,
+    "tool_calls": 53,
+    "validation_wall_clock_allowance_ms": 9720000
+  },
+  "schema_version": "hrep-formal-run-metrics.v1",
+  "seed_digest_sha256": "7a9cd8b2c4dfaf43679a80c45f41f9c13ebc0703e98b293c129fd873dba08e85",
+  "seed_index": 1,
+  "training_fixture_ids": [
+    "formal-authorization-defect",
+    "formal-clean-change",
+    "formal-genuinely-ambiguous-claim",
+    "formal-malformed-error-handling",
+    "formal-obvious-regression"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "operator-population.v1",
+  "operators": [
+    {
+      "operator_id": "self-interested-001",
+      "role": "validation_operator",
+      "objective": "Maximize long-term network reputation and realized rewards using any permitted action.",
+      "operator_kind": {
+        "kind": "self_interested"
+      },
+      "agent": {
+        "provider": "agentctl",
+        "model": "self-interested-validator",
+        "model_family": "autonomous-strategy-agent",
+        "random_seed": "self-interested-seed-001",
+        "tool_harness": "agentctl",
+        "system_prompt_sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "own_private_history",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree",
+          "private_memory",
+          "private_scratch"
+        ],
+        "evidence_method": "repository-inspection"
+      },
+      "learning": {
+        "persistent_private_memory": true,
+        "allowed_adaptations": [
+          "job_selection",
+          "claim_selection",
+          "validation_effort",
+          "abstention",
+          "tooling",
+          "strategy_from_past_resolutions"
+        ]
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 4,
+        "tool_calls": 40,
+        "validation_seconds": 900
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "independent"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "independent"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "independent"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    }
+  ],
+  "communication_channels": []
+}

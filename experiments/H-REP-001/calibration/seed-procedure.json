@@ -1,0 +1,12 @@
+{
+  "calibration_replicates_per_intelligent_population": 3,
+  "calibration_seeds": [
+    8200401,
+    8200402,
+    8200403
+  ],
+  "formal_generation_proposal": "SHA256('H-REP-001/formal-seed/v1' || uint64_be(run_index) || locked_held_out_private_manifest_hash); first 8 digest bytes interpreted unsigned big-endian",
+  "minimum_formal_seeds": 5,
+  "schema_version": "hrep-calibration-seeds.v1",
+  "selection_rule": "Commit every index, digest, and integer before formal outputs; never discard a seed based on outcome."
+}

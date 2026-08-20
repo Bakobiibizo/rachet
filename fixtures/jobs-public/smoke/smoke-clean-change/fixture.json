@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-clean-change",
+  "class": "clean_change",
+  "repository": {
+    "path": "smoke-clean-change",
+    "base_commit": "c496e540e6859b5dbb3f2a06ad71cc64b46e76eb",
+    "candidate_commit": "82457e0fdec969465c10f96e61e8c09100bf367c",
+    "integrity_sha256": "cbc0fe203dbb36a6b371ebd36e621cf43c50b6c7e551c400757b8622df35f8b4"
+  },
+  "specification": {
+    "artifact_id": "specification",
+    "path": "smoke-clean-change/specification.md",
+    "media_type": "text/markdown",
+    "sha256": "824ed2262be6d93f47f89a1771c9f8b006cd93b0ec40074a0083dd4e1f47f0f3"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "validation-input",
+      "path": "smoke-clean-change/validation.md",
+      "media_type": "text/markdown",
+      "sha256": "9d1a9c1d08edba97ec002d2cc10b07873c1598e3c52faaf5b1dea5338f64c88c"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim/candidate-satisfies-specification",
+      "statement": "The candidate commit satisfies the supplied specification and its committed test suite passes."
+    }
+  ],
+  "permitted_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "c496e540e6859b5dbb3f2a06ad71cc64b46e76eb",
+        "82457e0fdec969465c10f96e61e8c09100bf367c"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "c496e540e6859b5dbb3f2a06ad71cc64b46e76eb",
+        "82457e0fdec969465c10f96e61e8c09100bf367c",
+        "--",
+        "validator.py",
+        "tests/test_validator.py"
+      ]
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ],
+  "resource_limits": {
+    "wall_clock_seconds": 300,
+    "cpu_seconds": 240,
+    "model_calls": 8,
+    "input_tokens": 64000,
+    "output_tokens": 16000,
+    "tool_calls": 80,
+    "git_objects_read": 4096,
+    "files_inspected": 256,
+    "tests_executed": 128,
+    "evidence_bytes": 262144
+  }
+}

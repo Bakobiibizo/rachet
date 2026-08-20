@@ -1,0 +1,86 @@
+schema_version = 1
+mechanism_id = "M00"
+version = "1.0.0"
+canonical_config_hex = ""
+config_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+economic_state_entries = 0
+
+[[event]]
+name = "job-created"
+mutation_count = 0
+
+[[event]]
+name = "claim-created"
+mutation_count = 0
+
+[[event]]
+name = "evidence-registered"
+mutation_count = 0
+
+[[event]]
+name = "attestation-submitted"
+mutation_count = 0
+
+[[event]]
+name = "commitment-created"
+mutation_count = 0
+
+[[event]]
+name = "commitment-revealed"
+mutation_count = 0
+
+[[event]]
+name = "commitment-expired"
+mutation_count = 0
+
+[[event]]
+name = "challenge-created"
+mutation_count = 0
+
+[[event]]
+name = "claim-resolved-pass"
+mutation_count = 0
+
+[[event]]
+name = "claim-resolved-fail"
+mutation_count = 0
+
+[[event]]
+name = "claim-resolved-unresolved"
+mutation_count = 0
+
+[[event]]
+name = "claim-reopened"
+mutation_count = 0
+
+[[event]]
+name = "challenge-resolved-upheld"
+mutation_count = 0
+
+[[event]]
+name = "challenge-resolved-rejected"
+mutation_count = 0
+
+[[event]]
+name = "job-resolved"
+mutation_count = 0
+
+[[event]]
+name = "job-closed"
+mutation_count = 0
+
+[[event]]
+name = "epoch-changed"
+mutation_count = 0
+
+[[epoch]]
+epoch = "0"
+mutation_count = 0
+
+[[epoch]]
+epoch = "1"
+mutation_count = 0
+
+[[epoch]]
+epoch = "18446744073709551615"
+mutation_count = 0

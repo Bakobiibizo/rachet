@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-authorization-defect",
+  "class": "authorization_defect",
+  "repository": {
+    "path": "smoke-authorization-defect",
+    "base_commit": "bfd6c2ea7210e75cd601aedb6abfb8537c8b50ef",
+    "candidate_commit": "8c85159ed503c73decf5f1bf5ec9b5604bbcdc43",
+    "integrity_sha256": "b6b0ba823e1cfd66e16a6905b5bfc728dac7b6f0e09d4477f4d1fd77affd272f"
+  },
+  "specification": {
+    "artifact_id": "specification",
+    "path": "smoke-authorization-defect/specification.md",
+    "media_type": "text/markdown",
+    "sha256": "a0a9cf0d3c07416a5ce5ea967f7393343db0ed1657717f13a84a70d7117519fa"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "validation-input",
+      "path": "smoke-authorization-defect/validation.md",
+      "media_type": "text/markdown",
+      "sha256": "477558e0ba6f8af495336d38c2de00d0150dc3eeb6c5e54ea1fd898fc3f2b181"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim/candidate-satisfies-specification",
+      "statement": "The candidate commit satisfies the supplied specification and its committed test suite passes."
+    }
+  ],
+  "permitted_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "bfd6c2ea7210e75cd601aedb6abfb8537c8b50ef",
+        "8c85159ed503c73decf5f1bf5ec9b5604bbcdc43"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "bfd6c2ea7210e75cd601aedb6abfb8537c8b50ef",
+        "8c85159ed503c73decf5f1bf5ec9b5604bbcdc43",
+        "--",
+        "validator.py",
+        "tests/test_validator.py"
+      ]
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ],
+  "resource_limits": {
+    "wall_clock_seconds": 300,
+    "cpu_seconds": 240,
+    "model_calls": 8,
+    "input_tokens": 64000,
+    "output_tokens": 16000,
+    "tool_calls": 80,
+    "git_objects_read": 4096,
+    "files_inspected": 256,
+    "tests_executed": 128,
+    "evidence_bytes": 262144
+  }
+}

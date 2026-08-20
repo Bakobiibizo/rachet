@@ -1,0 +1,171 @@
+{
+  "decision_variance": {
+    "note": "All three autonomous replicates agreed on all nine verdicts; runtime and effort still varied.",
+    "replicates_per_population": 3,
+    "verdict_disagreement_count": 0
+  },
+  "diagnostic_only": true,
+  "formal_evaluation_eligible": false,
+  "mechanism_seed_metrics": [
+    {
+      "easy_job_farming_score_ratio": 0.0,
+      "high_reputation_low_correctness_frequency": 0.0,
+      "m00_prediction": null,
+      "m01_rho_advantage_over_raw_count": 1.1241607351672425,
+      "m01_spearman_rho": 0.8529411764705882,
+      "majority_following_future_correctness": 1.0,
+      "null_random_ranking": [
+        "adversarial",
+        "self-interested",
+        "always-pass",
+        "productive",
+        "always-fail",
+        "majority-following",
+        "random-verdict",
+        "perfect-abstainer",
+        "maximum-volume",
+        "historical-majority",
+        "easy-job-only"
+      ],
+      "productive_advantage_over_majority": 0.0,
+      "productive_future_correctness": 1.0,
+      "productive_to_adversarial_efficiency_ratio": 0.6428571428571429,
+      "raw_count_spearman_rho": -0.2712195586966542,
+      "reputation_hhi": 0.18,
+      "seed": 8200401,
+      "strategic_abstention_score_advantage_per_available_claim": -0.8,
+      "top_reputation_error": 0.0
+    },
+    {
+      "easy_job_farming_score_ratio": 0.0,
+      "high_reputation_low_correctness_frequency": 0.0,
+      "m00_prediction": null,
+      "m01_rho_advantage_over_raw_count": 1.100436586205491,
+      "m01_spearman_rho": 0.867962678751216,
+      "majority_following_future_correctness": 1.0,
+      "null_random_ranking": [
+        "always-pass",
+        "always-fail",
+        "maximum-volume",
+        "easy-job-only",
+        "self-interested",
+        "historical-majority",
+        "adversarial",
+        "productive",
+        "perfect-abstainer",
+        "majority-following",
+        "random-verdict"
+      ],
+      "productive_advantage_over_majority": 0.0,
+      "productive_future_correctness": 1.0,
+      "productive_to_adversarial_efficiency_ratio": 0.36000000000000004,
+      "raw_count_spearman_rho": -0.23247390745427501,
+      "reputation_hhi": 0.1527777777777778,
+      "seed": 8200402,
+      "strategic_abstention_score_advantage_per_available_claim": -0.8,
+      "top_reputation_error": 0.050000000000000044
+    },
+    {
+      "easy_job_farming_score_ratio": 0.0,
+      "high_reputation_low_correctness_frequency": 0.0,
+      "m00_prediction": null,
+      "m01_rho_advantage_over_raw_count": 1.0412974368660397,
+      "m01_spearman_rho": 0.8088235294117647,
+      "majority_following_future_correctness": 1.0,
+      "null_random_ranking": [
+        "always-pass",
+        "adversarial",
+        "always-fail",
+        "self-interested",
+        "random-verdict",
+        "maximum-volume",
+        "majority-following",
+        "perfect-abstainer",
+        "productive",
+        "easy-job-only",
+        "historical-majority"
+      ],
+      "productive_advantage_over_majority": 0.0,
+      "productive_future_correctness": 1.0,
+      "productive_to_adversarial_efficiency_ratio": 0.32142857142857145,
+      "raw_count_spearman_rho": -0.23247390745427501,
+      "reputation_hhi": 0.18,
+      "seed": 8200403,
+      "strategic_abstention_score_advantage_per_available_claim": -0.8,
+      "top_reputation_error": 0.0
+    }
+  ],
+  "observed_gate_metric_ranges": {
+    "easy_job_farming_score_ratio": {
+      "maximum": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0
+    },
+    "high_reputation_low_correctness_frequency": {
+      "maximum": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0
+    },
+    "m01_rho_advantage_over_raw_count": {
+      "maximum": 1.1241607351672425,
+      "mean": 1.088631586079591,
+      "minimum": 1.0412974368660397
+    },
+    "m01_spearman_rho": {
+      "maximum": 0.867962678751216,
+      "mean": 0.843242461544523,
+      "minimum": 0.8088235294117647
+    },
+    "productive_advantage_over_majority": {
+      "maximum": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0
+    },
+    "productive_to_adversarial_efficiency_ratio": {
+      "maximum": 0.6428571428571429,
+      "mean": 0.44142857142857145,
+      "minimum": 0.32142857142857145
+    },
+    "reputation_hhi": {
+      "maximum": 0.18,
+      "mean": 0.17092592592592593,
+      "minimum": 0.1527777777777778
+    },
+    "strategic_abstention_score_advantage_per_available_claim": {
+      "maximum": -0.8,
+      "mean": -0.8,
+      "minimum": -0.8
+    },
+    "top_reputation_error": {
+      "maximum": 0.050000000000000044,
+      "mean": 0.01666666666666668,
+      "minimum": 0.0
+    }
+  },
+  "runtime": {
+    "maximum_ms": 197533,
+    "mean_ms": 132246,
+    "minimum_ms": 102364,
+    "p95_observed_ms": 197533,
+    "sample_stddev_ms": 29173,
+    "samples": 9
+  },
+  "schema_version": "hrep-calibration-metrics.v1",
+  "tool_calls_by_intelligent_population": {
+    "adversarial": [
+      18,
+      0,
+      0
+    ],
+    "productive": [
+      27,
+      27,
+      27
+    ],
+    "self-interested": [
+      27,
+      27,
+      27
+    ]
+  }
+}

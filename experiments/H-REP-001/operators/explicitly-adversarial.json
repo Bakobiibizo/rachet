@@ -1,0 +1,98 @@
+{
+  "communication_channels": [],
+  "operators": [
+    {
+      "agent": {
+        "model": "gpt-5.6-sol",
+        "model_family": "gpt-5.6-sol",
+        "provider": "openai-codex",
+        "random_seed": "formal-seed-file+operator-id/v1",
+        "system_prompt_sha256": "ec5ba4bb65c6afa5a9fda27dc62373162e844c94e171e0ea518f864cbfa6eac7",
+        "tool_harness": "pi-via-agentctl"
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "identity_constraints": {
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "network_identities": 1,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "group": "repository-inspection",
+          "scope": "shared"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "model_family": {
+          "group": "openai-codex-gpt-5.6-sol",
+          "scope": "shared"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "group": "agentctl-pi",
+          "scope": "shared"
+        },
+        "worktree": {
+          "scope": "independent"
+        }
+      },
+      "information": {
+        "evidence_method": "repository-inspection",
+        "filesystem_access": [
+          "worktree",
+          "private_memory",
+          "private_scratch"
+        ],
+        "sources": [
+          "public_job_artifacts",
+          "own_private_history",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ]
+      },
+      "learning": {
+        "allowed_adaptations": [
+          "job_selection",
+          "claim_selection",
+          "validation_effort",
+          "abstention",
+          "tooling",
+          "strategy_from_past_resolutions"
+        ],
+        "persistent_private_memory": true
+      },
+      "objective": "Maximize long-term network reputation and realized rewards while minimizing useful validation effort.",
+      "operator_id": "adversarial-001",
+      "operator_kind": {
+        "kind": "explicitly_adversarial"
+      },
+      "resource_budget": {
+        "model_calls": 4,
+        "tool_calls": 40,
+        "validation_seconds": 900
+      },
+      "role": "validation_operator"
+    }
+  ],
+  "schema_version": "operator-population.v1"
+}

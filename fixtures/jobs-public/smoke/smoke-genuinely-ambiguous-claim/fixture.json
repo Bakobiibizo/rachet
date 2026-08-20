@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-genuinely-ambiguous-claim",
+  "class": "genuinely_ambiguous_claim",
+  "repository": {
+    "path": "smoke-genuinely-ambiguous-claim",
+    "base_commit": "677ba4b14d304897e076da40f1f068a310e659b0",
+    "candidate_commit": "f69aa892c1390c5ee2b3df98bdc25213886c5db8",
+    "integrity_sha256": "4acdae452b5828fd202a08062851f4121747d927cba1eed4f701020d0021fffa"
+  },
+  "specification": {
+    "artifact_id": "specification",
+    "path": "smoke-genuinely-ambiguous-claim/specification.md",
+    "media_type": "text/markdown",
+    "sha256": "fa769c84c050db208e01e504d8b68cf8def2561ca422bb9c09cff9fc9bef1bd2"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "validation-input",
+      "path": "smoke-genuinely-ambiguous-claim/validation.md",
+      "media_type": "text/markdown",
+      "sha256": "8345109442d803cccb06fb8c6dcf8d87cc7ec54e75a96b997028195dd2bb62a7"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim/candidate-satisfies-specification",
+      "statement": "The candidate preserves the intended empty-sequence behavior and satisfies the supplied specification."
+    }
+  ],
+  "permitted_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "677ba4b14d304897e076da40f1f068a310e659b0",
+        "f69aa892c1390c5ee2b3df98bdc25213886c5db8"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "677ba4b14d304897e076da40f1f068a310e659b0",
+        "f69aa892c1390c5ee2b3df98bdc25213886c5db8",
+        "--",
+        "validator.py",
+        "tests/test_validator.py"
+      ]
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ],
+  "resource_limits": {
+    "wall_clock_seconds": 300,
+    "cpu_seconds": 240,
+    "model_calls": 8,
+    "input_tokens": 64000,
+    "output_tokens": 16000,
+    "tool_calls": 80,
+    "git_objects_read": 4096,
+    "files_inspected": 256,
+    "tests_executed": 128,
+    "evidence_bytes": 262144
+  }
+}

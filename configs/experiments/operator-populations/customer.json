@@ -1,0 +1,86 @@
+{
+  "schema_version": "operator-population.v1",
+  "operators": [
+    {
+      "operator_id": "customer-001",
+      "role": "customer",
+      "objective": "Create jobs from the declared controlled fixture set.",
+      "operator_kind": {
+        "kind": "customer",
+        "controlled_fixture_set": "initial-public-fixtures"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "controlled-fixture-customer",
+        "model_family": "controlled-fixture-customer",
+        "random_seed": "customer-seed-001",
+        "tool_harness": "rachet-customer-fixture",
+        "system_prompt_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "information": {
+        "sources": [
+          "controlled_fixture_set",
+          "declared_resource_limits"
+        ],
+        "filesystem_access": [
+          "worktree",
+          "private_scratch"
+        ],
+        "evidence_method": "controlled-fixture-submission"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": [
+          "controlled_fixture_selection"
+        ]
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 10,
+        "validation_seconds": 300
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "validation_operator"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "independent"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "independent"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "independent"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    }
+  ],
+  "communication_channels": []
+}

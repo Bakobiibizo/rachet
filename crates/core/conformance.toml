@@ -1,0 +1,27 @@
+["conformance::ActionReceipts"]
+n_cases = 32
+hash = "e41e84909b4d060e718cd4aa3c9497cc87b0bdd306f4e28142002e8a7618d04e"
+
+["conformance::BlockHeaders"]
+n_cases = 32
+hash = "b7e7216db4a0b883d4cf95128c683a3a2ba799866d26ea2ceee47b1167285cb2"
+
+["conformance::CanonicalActions"]
+n_cases = 32
+hash = "a5552688bcd5f39347e837b490d1334ccac85753cc18da14ab1fd862d2fc22f2"
+
+["conformance::CanonicalEvents"]
+n_cases = 32
+hash = "c3ef4f3e0b9e188a2c93c5fec671efe5bd09966d61b645bfdcb2056531b27d6f"
+
+["conformance::GenesisConfiguration"]
+n_cases = 1
+hash = "eb911825e34c12608bf0e338b10618c43964b190254c053e5939cf1bbd539661"
+
+["conformance::MechanismSetIdentity"]
+n_cases = 1
+hash = "432e44da74fb0fbe41a7b8658b1fcc471232b3555e82c80c98e75914c152a4e0"
+
+["conformance::StateKeys"]
+n_cases = 32
+hash = "6a6f810122214a9f1fc701e249094d5222daf5ec07b487b4de146773f2fb4f60"

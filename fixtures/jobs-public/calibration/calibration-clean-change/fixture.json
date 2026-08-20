@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "fixture_id": "calibration-clean-change",
+  "class": "clean_change",
+  "repository": {
+    "path": "calibration-clean-change",
+    "base_commit": "9ca1eee699734e2ca114877ee034e238cdcebd52",
+    "candidate_commit": "5226512048d9d2ac17e8552ba708b959c9513b29",
+    "integrity_sha256": "aca3fa9af14acc0e2896deccc86c525ca415ac719e258c84ed731cfe271d16d8"
+  },
+  "specification": {
+    "artifact_id": "specification",
+    "path": "calibration-clean-change/specification.md",
+    "media_type": "text/markdown",
+    "sha256": "872c3bbb936ff6d1ebb2c10ebff67d6852eb0334968d559dfedd4b8ae0b450af"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "validation-input",
+      "path": "calibration-clean-change/validation.md",
+      "media_type": "text/markdown",
+      "sha256": "f186113a79f28aaa3ca633f5fd0b8e35f389b28e0e56d8e4488c5d97ae764763"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim/candidate-satisfies-specification",
+      "statement": "The candidate commit satisfies the supplied specification and its committed test suite passes."
+    }
+  ],
+  "permitted_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "9ca1eee699734e2ca114877ee034e238cdcebd52",
+        "5226512048d9d2ac17e8552ba708b959c9513b29"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "9ca1eee699734e2ca114877ee034e238cdcebd52",
+        "5226512048d9d2ac17e8552ba708b959c9513b29",
+        "--",
+        "validator.py",
+        "tests/test_validator.py"
+      ]
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ],
+  "resource_limits": {
+    "wall_clock_seconds": 300,
+    "cpu_seconds": 240,
+    "model_calls": 8,
+    "input_tokens": 64000,
+    "output_tokens": 16000,
+    "tool_calls": 80,
+    "git_objects_read": 4096,
+    "files_inspected": 256,
+    "tests_executed": 128,
+    "evidence_bytes": 262144
+  }
+}

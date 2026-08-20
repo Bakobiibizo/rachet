@@ -1,0 +1,8 @@
+{
+  "schema_version": "operator-decision.v1",
+  "decision": "wait",
+  "resource_report": {
+    "model_calls": 0,
+    "tool_calls": 0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "operator-observation.v1",
+  "experiment_id": "experiment-003",
+  "epoch": 12,
+  "height": 1240,
+  "operator": {
+    "actor_id": "actor-validation-01",
+    "role": "validation_operator",
+    "objective": "maximize_long_term_reputation"
+  },
+  "economic_state": {
+    "mechanism_set": ["M01@1.0.0"],
+    "reputation": 14
+  },
+  "resource_budget": {
+    "remaining_model_calls": 4,
+    "remaining_tool_calls": 40,
+    "remaining_validation_seconds": 900
+  },
+  "available_jobs": ["job-001", "job-002"],
+  "public_history_ref": "history/public/epoch-12.json",
+  "private_operator_history_ref": "history/operators/actor-validation-01/epoch-12.json"
+}

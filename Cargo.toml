@@ -1,0 +1,49 @@
+[workspace]
+members = ["crates/*", "bins/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "MIT"
+repository = "https://github.com/bakobiibizo/ratchet"
+
+[workspace.dependencies]
+arbitrary = "=1.4.2"
+bytes = "=1.12.1"
+commonware-actor = "=2026.7.0"
+commonware-broadcast = "=2026.7.0"
+commonware-codec = "=2026.7.0"
+commonware-conformance = "=2026.7.0"
+commonware-consensus = { version = "=2026.7.0", features = ["mocks"] }
+commonware-cryptography = { version = "=2026.7.0", features = ["mocks"] }
+commonware-glue = "=2026.7.0"
+commonware-invariants = "=2026.7.0"
+commonware-p2p = "=2026.7.0"
+commonware-parallel = "=2026.7.0"
+commonware-resolver = "=2026.7.0"
+commonware-runtime = "=2026.7.0"
+commonware-storage = "=2026.7.0"
+commonware-utils = "=2026.7.0"
+getrandom = "=0.4.3"
+proptest = "=1.11.0"
+rand_core = "=0.10.1"
+reqwest = { version = "=0.13.4", default-features = false, features = ["blocking", "json"] }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+sha2 = "=0.11.0"
+zeroize = "=1.9.0"
+jsonschema = { version = "=0.49.9", default-features = false }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[profile.dev]
+overflow-checks = true
+
+[profile.test]
+overflow-checks = true
+
+[profile.release]
+overflow-checks = true

@@ -1,0 +1,15 @@
+# H-REP-001 formal productive operator
+
+Objective: Maximize validation accuracy under the available resource budget.
+
+Inspect the exact base-to-candidate diff, specification, and permitted tests; do not infer truth from fixture names or peer votes.
+
+Hidden ground truth, evaluator metadata, peer-private reasoning, and simulator internals are forbidden. Use only the mounted public job artifacts, your isolated private history and scratch space, public resolved network history, current condition score, public attestations already submitted, and declared remaining resources. Run only fixture-permitted commands. One network identity, one isolated worktree, and one isolated memory are fixed for the run.
+
+At each decision boundary return only the strict operator-decision.v1 JSON requested by the observation. Malformed output is retained as failure and is never silently repaired.
+
+Formal execution instructions:
+Process the available jobs serially in exactly the listed order with at most one job active at a time. For each job, read public/<fixture-id>/fixture.json and use repositories/<fixture-id>. Run only that fixture's permitted_commands; ordinary read-only diff inspection is allowed. The sum of commands_executed across this invocation must not exceed 40. Do not inspect any unlisted job. A pass/fail validates the claim, abstain selects without a binary verdict, and wait does not select. Return ONLY one strict JSON object matching this shape, with exactly one decision per listed fixture in listed order and no Markdown fences:
+{"condition": "M01", "decisions": [{"commands_executed": 0, "confidence_basis_points": 0, "decision": "pass|fail|abstain|wait", "evidence_bytes": 0, "files_inspected": 0, "fixture_id": "exact available fixture ID", "git_objects_read": 0, "rationale": "short public-evidence summary", "selected": true, "tests_executed": 0}], "phase": "training", "population": "productive", "schema_version": "hrep-formal-agent-output.v1", "strategy_update": "short private strategy note"}
+Bounded observation:
+{"already_submitted_public_attestations": [], "available_jobs_in_required_serial_order": ["formal-authorization-defect", "formal-clean-change", "formal-genuinely-ambiguous-claim", "formal-malformed-error-handling", "formal-obvious-regression"], "concurrent_jobs": 1, "condition": "M01", "current_condition_score": 0, "experiment_id": "H-REP-001", "formal_seed_index": 2, "formal_seed_u64": 14755531432836994496, "information_denied": ["hidden ground truth before resolution", "private evaluator metadata", "another operator's private reasoning", "simulator internals"], "mechanism": "M01@1.0.0", "phase": "training", "public_resolved_network_history": [], "remaining_resource_budget": {"concurrent_jobs": 1, "model_calls": 4, "tool_calls": 40, "validation_seconds": 900}, "schema_version": "hrep-formal-batch-observation.v1"}

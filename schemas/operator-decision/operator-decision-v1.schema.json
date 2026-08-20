@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rachet.invalid/schemas/operator-decision/operator-decision-v1.schema.json",
+  "title": "Rachet operator decision v1",
+  "$comment": "Strict host JSON encoding only; this is not a consensus encoding and malformed output must not be repaired.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "decision", "resource_report"],
+  "properties": {
+    "schema_version": { "const": "operator-decision.v1" },
+    "decision": { "enum": ["validate", "abstain", "challenge", "wait"] },
+    "job_id": { "$ref": "#/$defs/identifier" },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 128,
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "resource_report": { "$ref": "#/$defs/resourceReport" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "decision": { "const": "validate" } } },
+      "then": { "required": ["job_id", "claims"] }
+    },
+    {
+      "if": { "properties": { "decision": { "const": "challenge" } } },
+      "then": { "required": ["job_id", "claims"] }
+    },
+    {
+      "if": { "properties": { "decision": { "const": "abstain" } } },
+      "then": {
+        "required": ["job_id"],
+        "not": { "required": ["claims"] }
+      }
+    },
+    {
+      "if": { "properties": { "decision": { "const": "wait" } } },
+      "then": {
+        "not": {
+          "anyOf": [
+            { "required": ["job_id"] },
+            { "required": ["claims"] }
+          ]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[^\\s]+$"
+    },
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "verdict",
+        "confidence_basis_points",
+        "evidence_refs"
+      ],
+      "properties": {
+        "claim_id": { "$ref": "#/$defs/identifier" },
+        "verdict": { "enum": ["pass", "fail", "abstain", "indeterminate"] },
+        "confidence_basis_points": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000
+        },
+        "evidence_refs": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/reference" }
+        }
+      }
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "pattern": "^[^\\u0000-\\u001f]+$"
+    },
+    "resourceReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_calls", "tool_calls"],
+      "properties": {
+        "model_calls": { "$ref": "#/$defs/nonNegativeInteger" },
+        "tool_calls": { "$ref": "#/$defs/nonNegativeInteger" }
+      }
+    }
+  }
+}

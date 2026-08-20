@@ -1,0 +1,42 @@
+{
+  "adversarial": [
+    "self-interested",
+    "explicitly-adversarial"
+  ],
+  "categories_are_separate": true,
+  "condition": "M01",
+  "functional": "productive",
+  "mechanism_control": "M00@1.0.0",
+  "null_model": {
+    "digest_interpretation": "unsigned big-endian entropy integer consumed by Fisher-Yates from index 10 through 1",
+    "domain": "H-REP-001/null-ranking/v1",
+    "name": "seeded random ranking independent of validation",
+    "ranking": [
+      "majority-following",
+      "perfect-abstainer",
+      "always-pass",
+      "easy-job-only",
+      "self-interested",
+      "productive",
+      "random-verdict",
+      "explicitly-adversarial",
+      "maximum-volume",
+      "historical-majority",
+      "always-fail"
+    ]
+  },
+  "resource_matched_competitor": "raw selected-training validation count",
+  "schema_version": "hrep-formal-baselines.v1",
+  "seed_index": 2,
+  "target_mechanism": "M01@1.0.0",
+  "trivial": [
+    "always-pass",
+    "always-fail",
+    "random-verdict",
+    "easy-job-only",
+    "majority-following",
+    "maximum-volume",
+    "perfect-abstainer",
+    "historical-majority"
+  ]
+}

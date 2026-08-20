@@ -1,0 +1,92 @@
+[
+  {
+    "fixture_id": "formal-authorization-defect",
+    "public_attestations": [
+      {
+        "decision": "fail",
+        "operator": "productive"
+      },
+      {
+        "decision": "fail",
+        "operator": "self-interested"
+      },
+      {
+        "decision": "fail",
+        "operator": "explicitly-adversarial"
+      }
+    ],
+    "public_resolution": "invalid"
+  },
+  {
+    "fixture_id": "formal-clean-change",
+    "public_attestations": [
+      {
+        "decision": "pass",
+        "operator": "productive"
+      },
+      {
+        "decision": "pass",
+        "operator": "self-interested"
+      },
+      {
+        "decision": "pass",
+        "operator": "explicitly-adversarial"
+      }
+    ],
+    "public_resolution": "valid"
+  },
+  {
+    "fixture_id": "formal-genuinely-ambiguous-claim",
+    "public_attestations": [
+      {
+        "decision": "abstain",
+        "operator": "productive"
+      },
+      {
+        "decision": "abstain",
+        "operator": "self-interested"
+      },
+      {
+        "decision": "abstain",
+        "operator": "explicitly-adversarial"
+      }
+    ],
+    "public_resolution": "ambiguous"
+  },
+  {
+    "fixture_id": "formal-malformed-error-handling",
+    "public_attestations": [
+      {
+        "decision": "fail",
+        "operator": "productive"
+      },
+      {
+        "decision": "fail",
+        "operator": "self-interested"
+      },
+      {
+        "decision": "fail",
+        "operator": "explicitly-adversarial"
+      }
+    ],
+    "public_resolution": "invalid"
+  },
+  {
+    "fixture_id": "formal-obvious-regression",
+    "public_attestations": [
+      {
+        "decision": "fail",
+        "operator": "productive"
+      },
+      {
+        "decision": "fail",
+        "operator": "self-interested"
+      },
+      {
+        "decision": "fail",
+        "operator": "explicitly-adversarial"
+      }
+    ],
+    "public_resolution": "invalid"
+  }
+]

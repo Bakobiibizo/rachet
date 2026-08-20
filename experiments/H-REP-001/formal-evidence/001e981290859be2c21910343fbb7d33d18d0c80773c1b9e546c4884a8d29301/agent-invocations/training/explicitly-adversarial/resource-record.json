@@ -1,0 +1,20 @@
+{
+  "claims_evaluated": 4,
+  "command_duration_ms": 42539,
+  "cpu_time_ms": 1160,
+  "evidence_bytes": 0,
+  "files_inspected": 5,
+  "git_objects_read": 0,
+  "input_tokens": null,
+  "invocation_status": "completed",
+  "jobs_accepted": 5,
+  "jobs_inspected": 5,
+  "max_rss_kib": 172572,
+  "model_calls": 1,
+  "operator": "explicitly-adversarial",
+  "output_tokens": null,
+  "phase": "training",
+  "tests_executed": 0,
+  "tool_calls": 0,
+  "validation_wall_clock_allowance_ms": 900000
+}

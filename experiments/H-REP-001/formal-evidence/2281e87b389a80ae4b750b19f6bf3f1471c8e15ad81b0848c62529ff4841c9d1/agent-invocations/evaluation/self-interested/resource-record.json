@@ -1,0 +1,20 @@
+{
+  "claims_evaluated": 4,
+  "command_duration_ms": 89709,
+  "cpu_time_ms": 1560,
+  "evidence_bytes": 13200,
+  "files_inspected": 20,
+  "git_objects_read": 32,
+  "input_tokens": null,
+  "invocation_status": "completed",
+  "jobs_accepted": 4,
+  "jobs_inspected": 4,
+  "max_rss_kib": 186044,
+  "model_calls": 1,
+  "operator": "self-interested",
+  "output_tokens": null,
+  "phase": "evaluation",
+  "tests_executed": 5,
+  "tool_calls": 8,
+  "validation_wall_clock_allowance_ms": 900000
+}

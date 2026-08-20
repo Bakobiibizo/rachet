@@ -1,0 +1,16 @@
+[package]
+name = "rchtctl"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+commonware-codec.workspace = true
+rachet-client = { path = "../../crates/client" }
+rachet-core = { path = "../../crates/core" }
+serde_json.workspace = true
+
+[lints]
+workspace = true

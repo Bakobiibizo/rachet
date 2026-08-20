@@ -1,0 +1,670 @@
+{
+  "schema_version": "operator-population.v1",
+  "operators": [
+    {
+      "operator_id": "always-pass",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "always_pass"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "always_pass",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-001",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0101010101010101010101010101010101010101010101010101010101010101"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "always-fail",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "always_fail"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "always_fail",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-002",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0202020202020202020202020202020202020202020202020202020202020202"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "random-verdict",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "random_verdict"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "random_verdict",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-003",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0303030303030303030303030303030303030303030303030303030303030303"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "trivial-only",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "validate_only_trivial_jobs"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "validate_only_trivial_jobs",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-004",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0404040404040404040404040404040404040404040404040404040404040404"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "consensus-follower",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "consensus_follower"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "consensus_follower",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-005",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0505050505050505050505050505050505050505050505050505050505050505"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "maximum-volume",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "maximum_volume_operator"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "maximum_volume_operator",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-006",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0606060606060606060606060606060606060606060606060606060606060606"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "perfect-abstainer",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "perfect_abstainer"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "perfect_abstainer",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-007",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0707070707070707070707070707070707070707070707070707070707070707"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    },
+    {
+      "operator_id": "historical-majority",
+      "role": "validation_operator",
+      "objective": "Execute the declared fixed heuristic without adaptive reasoning.",
+      "operator_kind": {
+        "kind": "fixed_heuristic",
+        "heuristic": "historical_majority_follower"
+      },
+      "agent": {
+        "provider": "scripted",
+        "model": "historical_majority_follower",
+        "model_family": "fixed-heuristic",
+        "random_seed": "fixed-seed-008",
+        "tool_harness": "pure-rust-policy",
+        "system_prompt_sha256": "0808080808080808080808080808080808080808080808080808080808080808"
+      },
+      "information": {
+        "sources": [
+          "public_job_artifacts",
+          "public_resolved_network_history",
+          "current_reputation",
+          "declared_resource_limits",
+          "revealed_public_attestations"
+        ],
+        "filesystem_access": [
+          "worktree"
+        ],
+        "evidence_method": "none-fixed-heuristic"
+      },
+      "learning": {
+        "persistent_private_memory": false,
+        "allowed_adaptations": []
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 0,
+        "validation_seconds": 60
+      },
+      "identity_constraints": {
+        "network_identities": 1,
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "customer"
+        ]
+      },
+      "independence": {
+        "model_family": {
+          "scope": "shared",
+          "group": "fixed-heuristic-family"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "shared",
+          "group": "fixed-policy-harness"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "shared",
+          "group": "fixed-no-evidence"
+        },
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        }
+      }
+    }
+  ],
+  "communication_channels": []
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-obvious-regression",
+  "public_fixture_sha256": "0abcea0003c1cad243251ee3fb124c00a28c99c907dadcb5eaccf2372a5c29fa",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "The candidate negates every nonzero total.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The contract test reports -10 instead of 10."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "obvious",
+        "expected_validation_seconds": 30,
+        "skill_tags": [
+          "python",
+          "unit-tests"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

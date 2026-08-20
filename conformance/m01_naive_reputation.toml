@@ -1,0 +1,113 @@
+schema_version = 1
+mechanism_id = "M01"
+version = "1.0.0"
+canonical_config_hex = ""
+config_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+[[case]]
+name = "pass-pass"
+score = 1
+correct = 1
+incorrect = 0
+abstained = 0
+unresolved = 0
+state_hex = "00000000000000010000000000000001000000000000000000000000000000000000000000000000"
+
+[[case]]
+name = "fail-pass"
+score = -1
+correct = 0
+incorrect = 1
+abstained = 0
+unresolved = 0
+state_hex = "ffffffffffffffff0000000000000000000000000000000100000000000000000000000000000000"
+
+[[case]]
+name = "abstain-pass"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 1
+unresolved = 0
+state_hex = "00000000000000000000000000000000000000000000000000000000000000010000000000000000"
+
+[[case]]
+name = "indeterminate-pass"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 1
+unresolved = 0
+state_hex = "00000000000000000000000000000000000000000000000000000000000000010000000000000000"
+
+[[case]]
+name = "pass-fail"
+score = -1
+correct = 0
+incorrect = 1
+abstained = 0
+unresolved = 0
+state_hex = "ffffffffffffffff0000000000000000000000000000000100000000000000000000000000000000"
+
+[[case]]
+name = "fail-fail"
+score = 1
+correct = 1
+incorrect = 0
+abstained = 0
+unresolved = 0
+state_hex = "00000000000000010000000000000001000000000000000000000000000000000000000000000000"
+
+[[case]]
+name = "abstain-fail"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 1
+unresolved = 0
+state_hex = "00000000000000000000000000000000000000000000000000000000000000010000000000000000"
+
+[[case]]
+name = "indeterminate-fail"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 1
+unresolved = 0
+state_hex = "00000000000000000000000000000000000000000000000000000000000000010000000000000000"
+
+[[case]]
+name = "pass-unresolved"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 0
+unresolved = 1
+state_hex = "00000000000000000000000000000000000000000000000000000000000000000000000000000001"
+
+[[case]]
+name = "fail-unresolved"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 0
+unresolved = 1
+state_hex = "00000000000000000000000000000000000000000000000000000000000000000000000000000001"
+
+[[case]]
+name = "abstain-unresolved"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 0
+unresolved = 1
+state_hex = "00000000000000000000000000000000000000000000000000000000000000000000000000000001"
+
+[[case]]
+name = "indeterminate-unresolved"
+score = 0
+correct = 0
+incorrect = 0
+abstained = 0
+unresolved = 1
+state_hex = "00000000000000000000000000000000000000000000000000000000000000000000000000000001"

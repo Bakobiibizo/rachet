@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "set": "calibration",
+  "fixtures": [
+    {
+      "fixture_id": "calibration-authorization-defect",
+      "path": "calibration-authorization-defect/fixture.json",
+      "sha256": "01ddeb1aea71adceee7c57634858986eee577a724c651f3443dae1f475675ab9"
+    },
+    {
+      "fixture_id": "calibration-clean-change",
+      "path": "calibration-clean-change/fixture.json",
+      "sha256": "194a2344062b4a4042bf2e6558f7f577c535867af3b708f63792825877b07948"
+    },
+    {
+      "fixture_id": "calibration-genuinely-ambiguous-claim",
+      "path": "calibration-genuinely-ambiguous-claim/fixture.json",
+      "sha256": "f6e2874c90020e87f46a22a3741d4897ffb938835fdac5ba262882035c35dcaa"
+    },
+    {
+      "fixture_id": "calibration-malformed-error-handling",
+      "path": "calibration-malformed-error-handling/fixture.json",
+      "sha256": "1e251f0fc3c425416e1de74a3b3c5104f77d987a8b33821a7efa813b41a938e7"
+    },
+    {
+      "fixture_id": "calibration-misleading-but-valid-change",
+      "path": "calibration-misleading-but-valid-change/fixture.json",
+      "sha256": "566f2386a753e99a5dbbaf8b405ac78ce65ed5366fa57939325a05487bb3f589"
+    },
+    {
+      "fixture_id": "calibration-obvious-regression",
+      "path": "calibration-obvious-regression/fixture.json",
+      "sha256": "1c88f38d2a8098026d81c6d2ca8a49a3117b0b5869e09d34ea6e18886f5e51e8"
+    },
+    {
+      "fixture_id": "calibration-specification-violation",
+      "path": "calibration-specification-violation/fixture.json",
+      "sha256": "76a0c69522e40116f3c3436ab34ec8aee6a31f651e42c245d45d60449e982408"
+    },
+    {
+      "fixture_id": "calibration-subtle-regression",
+      "path": "calibration-subtle-regression/fixture.json",
+      "sha256": "5336872205226c1f49d1258d76385d172ef66b0e2f5107a75b939423b6882f48"
+    },
+    {
+      "fixture_id": "calibration-test-only-failure",
+      "path": "calibration-test-only-failure/fixture.json",
+      "sha256": "d188a9879d829989cb3e85f4ed35c3fdba9731ffff6d45619ee4b4d4c80dad47"
+    }
+  ]
+}

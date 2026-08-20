@@ -1,0 +1,8 @@
+{
+  "derivation": "SHA256(UTF8('H-REP-001/formal-seed/v1') || uint64_be(index) || raw_32_byte_private_manifest_sha256)",
+  "digest_sha256": "4ba21de1f9f3cfd5c201486662543e33c60b9904e19ad4e1ae915008ecf20581",
+  "experiment_id": "H-REP-001",
+  "index": 0,
+  "schema_version": "hrep-formal-seed.v1",
+  "seed_u64_be": 5449951355470073813
+}

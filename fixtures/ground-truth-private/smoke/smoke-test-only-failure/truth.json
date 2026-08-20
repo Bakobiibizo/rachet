@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-test-only-failure",
+  "public_fixture_sha256": "8456c6bcd86ff3e33e650a453d9bac731666fc9f547e956c5036c01cd401e85c",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "Only the test changed, introducing an assertion that contradicts the specified behavior.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The candidate suite fails because true readiness is asserted false."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "obvious",
+        "expected_validation_seconds": 30,
+        "skill_tags": [
+          "test-review",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

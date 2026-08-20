@@ -1,0 +1,14 @@
+{
+  "claims_created": 9,
+  "condition": "M01",
+  "declared_tool_call_ceiling": 10,
+  "jobs_created": 9,
+  "model_calls": 0,
+  "operator": "customer-001",
+  "role": "customer",
+  "schema_version": "hrep-formal-customer-resource.v1",
+  "seed_index": 2,
+  "signed_create_job_actions": 9,
+  "tool_calls": 0,
+  "validation_wall_clock_allowance_ms": 300000
+}

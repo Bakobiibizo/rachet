@@ -1,0 +1,126 @@
+{
+  "derived_from_calibration_only": true,
+  "gates": [
+    {
+      "calibration_justification": "The calibrated association was positive in every replicate; 0.20 retains a practically meaningful floor below the observed range.",
+      "calibration_observed": {
+        "maximum": 0.867962678751216,
+        "mean": 0.843242461544523,
+        "minimum": 0.8088235294117647
+      },
+      "id": "held_out_correctness_prediction",
+      "number": 1,
+      "numeric_threshold": ">= 0.20",
+      "statistic": "spearman_rho"
+    },
+    {
+      "calibration_justification": "Calibration separated M01 from the count control by a wide positive margin; 0.05 requires a nontrivial advantage without fitting the observed point estimate.",
+      "calibration_observed": {
+        "maximum": 1.1241607351672425,
+        "mean": 1.088631586079591,
+        "minimum": 1.0412974368660397
+      },
+      "id": "improvement_over_raw_validation_count",
+      "number": 2,
+      "numeric_threshold": ">= 0.05",
+      "statistic": "rho_difference"
+    },
+    {
+      "calibration_justification": "Calibration found no advantage because majority copied unanimously correct intelligent calls; the positive 0.05 gate deliberately requires formal M01 to beat this strong control.",
+      "calibration_observed": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0
+      },
+      "id": "improvement_over_majority_following",
+      "number": 3,
+      "numeric_threshold": ">= 0.05",
+      "statistic": "future_correctness_difference"
+    },
+    {
+      "calibration_justification": "Calibration top-tier error stayed below the one-in-five bound; the threshold has a direct operational interpretation.",
+      "calibration_observed": {
+        "maximum": 0.050000000000000044,
+        "mean": 0.01666666666666668,
+        "minimum": 0.0
+      },
+      "id": "top_reputation_operator_held_out_error",
+      "number": 4,
+      "numeric_threshold": "<= 0.20",
+      "statistic": "error_rate"
+    },
+    {
+      "calibration_justification": "Calibration easy-only score remained well below productive score; 0.80 preserves a 20% anti-farming margin.",
+      "calibration_observed": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0
+      },
+      "id": "easy_job_farming_profitability",
+      "number": 5,
+      "numeric_threshold": "<= 0.80",
+      "statistic": "m01_score_ratio_to_productive"
+    },
+    {
+      "calibration_justification": "Calibration exposed that equally correct low-effort adversaries can dominate this ratio; the gate intentionally forbids productive validation receiving less reputation per effort.",
+      "calibration_observed": {
+        "maximum": 0.6428571428571429,
+        "mean": 0.44142857142857145,
+        "minimum": 0.32142857142857145
+      },
+      "id": "reputation_per_validation_effort",
+      "number": 6,
+      "numeric_threshold": ">= 1.00",
+      "statistic": "productive_to_adversarial_efficiency_ratio"
+    },
+    {
+      "calibration_justification": "Calibration abstention had no positive score advantage; 0.10 permits only a small operational tolerance.",
+      "calibration_observed": {
+        "maximum": -0.8,
+        "mean": -0.8,
+        "minimum": -0.8
+      },
+      "id": "strategic_abstention_benefit",
+      "number": 7,
+      "numeric_threshold": "<= 0.10",
+      "statistic": "score_advantage_per_available_claim"
+    },
+    {
+      "calibration_justification": "The bound sits above every calibration replicate and above the 1/11 even-share reference while rejecting strong concentration.",
+      "calibration_observed": {
+        "maximum": 0.18,
+        "mean": 0.17092592592592593,
+        "minimum": 0.1527777777777778
+      },
+      "id": "reputation_concentration",
+      "number": 8,
+      "numeric_threshold": "<= 0.30",
+      "statistic": "positive_score_hhi"
+    },
+    {
+      "calibration_justification": "Calibration observed zero; at most one in ten is the largest tolerable formal frequency.",
+      "calibration_observed": {
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0
+      },
+      "id": "high_reputation_low_correctness_frequency",
+      "number": 9,
+      "numeric_threshold": "<= 0.10",
+      "statistic": "frequency"
+    },
+    {
+      "calibration_justification": "Three calibration replicates had zero verdict disagreement and stable gate direction; formal requires four of five seeds and bounded dispersion.",
+      "calibration_observed": {
+        "replicates": 3,
+        "verdict_disagreement_count": 0
+      },
+      "id": "reproducibility_across_seeds",
+      "number": 10,
+      "numeric_threshold": ">= 0.80 and gate-value CV <= 0.25",
+      "statistic": "directional_agreement"
+    }
+  ],
+  "schema_version": "hrep-calibration-gate-proposals.v1",
+  "status": "proposal_for_phase_3_lock"
+}

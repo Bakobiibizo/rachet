@@ -1,0 +1,17 @@
+{
+  "schema_version": "operator-decision.v1",
+  "decision": "challenge",
+  "job_id": "job-001",
+  "claims": [
+    {
+      "claim_id": "claim-001",
+      "verdict": "fail",
+      "confidence_basis_points": 9100,
+      "evidence_refs": ["evidence-001", "evidence-002"]
+    }
+  ],
+  "resource_report": {
+    "model_calls": 3,
+    "tool_calls": 24
+  }
+}

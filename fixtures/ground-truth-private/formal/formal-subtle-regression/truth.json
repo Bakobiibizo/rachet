@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "formal-subtle-regression",
+  "public_fixture_sha256": "d27e61197ba70b0cc1d5ece6ab07a1c00330aa1011f0abc1c6362116435c0704",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "The inclusive boundary was changed to an exclusive comparison.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The equality boundary assertion fails."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "subtle",
+        "expected_validation_seconds": 180,
+        "skill_tags": [
+          "boundary-analysis",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

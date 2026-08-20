@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-misleading-but-valid-change",
+  "public_fixture_sha256": "bd595ac50e21919b320fd0cf28049ad6162305cb466830e70d7a5e59fa7ed3c8",
+  "claims": [
+    {
+      "verdict": "valid",
+      "seeded_defect_description": null,
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "Boundary and interior examples pass; median selection is equivalent for ordered bounds."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "subtle",
+        "expected_validation_seconds": 180,
+        "skill_tags": [
+          "equivalence",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

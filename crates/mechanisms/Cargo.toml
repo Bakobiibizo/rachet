@@ -1,0 +1,20 @@
+[package]
+name = "rachet-mechanisms"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+commonware-codec.workspace = true
+rachet-core = { path = "../core" }
+
+[dev-dependencies]
+arbitrary.workspace = true
+commonware-conformance.workspace = true
+commonware-cryptography.workspace = true
+commonware-invariants.workspace = true
+
+[lints]
+workspace = true

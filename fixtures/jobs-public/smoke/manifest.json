@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "set": "smoke",
+  "fixtures": [
+    {
+      "fixture_id": "smoke-authorization-defect",
+      "path": "smoke-authorization-defect/fixture.json",
+      "sha256": "f1f6e742aac332eacfabe124ea7c28603914aeca2e6977aef0ce5f0cb8e74cd8"
+    },
+    {
+      "fixture_id": "smoke-clean-change",
+      "path": "smoke-clean-change/fixture.json",
+      "sha256": "caf3e44d5b755e53b3fc104fc9702d8e0e451a1ed380b880dc582bca1301da1a"
+    },
+    {
+      "fixture_id": "smoke-genuinely-ambiguous-claim",
+      "path": "smoke-genuinely-ambiguous-claim/fixture.json",
+      "sha256": "45793f0791901916a65f840c260ed0abb215714a7f8db119b0499b26dc49c059"
+    },
+    {
+      "fixture_id": "smoke-malformed-error-handling",
+      "path": "smoke-malformed-error-handling/fixture.json",
+      "sha256": "502a8d29b5deb60a11f9696878cc00d93557d44bed8f0d1352be7d0b54c28cfb"
+    },
+    {
+      "fixture_id": "smoke-misleading-but-valid-change",
+      "path": "smoke-misleading-but-valid-change/fixture.json",
+      "sha256": "bd595ac50e21919b320fd0cf28049ad6162305cb466830e70d7a5e59fa7ed3c8"
+    },
+    {
+      "fixture_id": "smoke-obvious-regression",
+      "path": "smoke-obvious-regression/fixture.json",
+      "sha256": "0abcea0003c1cad243251ee3fb124c00a28c99c907dadcb5eaccf2372a5c29fa"
+    },
+    {
+      "fixture_id": "smoke-specification-violation",
+      "path": "smoke-specification-violation/fixture.json",
+      "sha256": "6cf0e7a81659002da10ce9e372cc071ba7552253efdd5c3266fe3cad313976d2"
+    },
+    {
+      "fixture_id": "smoke-subtle-regression",
+      "path": "smoke-subtle-regression/fixture.json",
+      "sha256": "8b28de0678057c3312a4efba175fa28f432c0dc34073ec840ab0c352682703e8"
+    },
+    {
+      "fixture_id": "smoke-test-only-failure",
+      "path": "smoke-test-only-failure/fixture.json",
+      "sha256": "8456c6bcd86ff3e33e650a453d9bac731666fc9f547e956c5036c01cd401e85c"
+    }
+  ]
+}

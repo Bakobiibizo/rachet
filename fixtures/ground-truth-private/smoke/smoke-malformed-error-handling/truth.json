@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-malformed-error-handling",
+  "public_fixture_sha256": "502a8d29b5deb60a11f9696878cc00d93557d44bed8f0d1352be7d0b54c28cfb",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "Malformed input is converted to the sentinel 0 instead of raising ConfigError.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The malformed-input assertion observes no ConfigError."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "moderate",
+        "expected_validation_seconds": 90,
+        "skill_tags": [
+          "error-handling",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

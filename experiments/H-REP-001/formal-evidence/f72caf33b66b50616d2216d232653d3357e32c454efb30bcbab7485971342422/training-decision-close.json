@@ -1,0 +1,9 @@
+{
+  "condition": "M01",
+  "decision_count": 15,
+  "decision_sha256": "a3cb4973a1a5c22fa2edd12e230846d7a29f14a04a0f5adb0ec18c9c73851e09",
+  "phase": "training",
+  "private_truth_loaded": false,
+  "schema_version": "hrep-formal-decision-close.v1",
+  "seed_index": 0
+}

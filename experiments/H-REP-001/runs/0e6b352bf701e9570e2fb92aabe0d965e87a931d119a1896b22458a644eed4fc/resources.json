@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "records": [],
+  "totals": {
+    "records": 0,
+    "model_calls": 0,
+    "input_tokens": {
+      "availability": "complete",
+      "total": 0
+    },
+    "output_tokens": {
+      "availability": "complete",
+      "total": 0
+    },
+    "tool_calls": 0,
+    "command_duration_ms": 0,
+    "cpu_time_ms": {
+      "availability": "complete",
+      "total": 0
+    },
+    "validation_wall_clock_allowance_ms": 0,
+    "git_objects_read": 0,
+    "files_inspected": 0,
+    "tests_executed": 0,
+    "jobs_inspected": 0,
+    "jobs_accepted": 0,
+    "claims_evaluated": 0,
+    "evidence_bytes": 0,
+    "compute_units": {
+      "availability": "complete",
+      "total": 0
+    }
+  },
+  "by_operator": []
+}

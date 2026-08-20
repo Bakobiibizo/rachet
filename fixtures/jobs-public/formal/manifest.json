@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "set": "formal",
+  "fixtures": [
+    {
+      "fixture_id": "formal-authorization-defect",
+      "path": "formal-authorization-defect/fixture.json",
+      "sha256": "74c12b4d85e26ebc12f5e17a3351e00ccb279adcf1342cc803eb718736f9fb8d"
+    },
+    {
+      "fixture_id": "formal-clean-change",
+      "path": "formal-clean-change/fixture.json",
+      "sha256": "36455b2fe894e6c75aa55a4ebecc15066591a45d7dcbb9cabe88bbe160f3418f"
+    },
+    {
+      "fixture_id": "formal-genuinely-ambiguous-claim",
+      "path": "formal-genuinely-ambiguous-claim/fixture.json",
+      "sha256": "0a380eac4a7e161562919a022d1eebd7b4ea64b915ab3035f21bf2e958657c92"
+    },
+    {
+      "fixture_id": "formal-malformed-error-handling",
+      "path": "formal-malformed-error-handling/fixture.json",
+      "sha256": "476b3da5c5db40415044864daf4f4f7e2b31465015cd4d5893b028db71de9166"
+    },
+    {
+      "fixture_id": "formal-misleading-but-valid-change",
+      "path": "formal-misleading-but-valid-change/fixture.json",
+      "sha256": "fb8968e3a78d196ae918594d119fe3de0b3df84982cc23ad5df0d317c91a1561"
+    },
+    {
+      "fixture_id": "formal-obvious-regression",
+      "path": "formal-obvious-regression/fixture.json",
+      "sha256": "669a5c887cff883cab924437dc4060e0e3aa50ccb6b38632f1086797853b8393"
+    },
+    {
+      "fixture_id": "formal-specification-violation",
+      "path": "formal-specification-violation/fixture.json",
+      "sha256": "59f9f0317517334ef5b700488ddb343068b616af89708bc37a0850c53d5a2950"
+    },
+    {
+      "fixture_id": "formal-subtle-regression",
+      "path": "formal-subtle-regression/fixture.json",
+      "sha256": "d27e61197ba70b0cc1d5ece6ab07a1c00330aa1011f0abc1c6362116435c0704"
+    },
+    {
+      "fixture_id": "formal-test-only-failure",
+      "path": "formal-test-only-failure/fixture.json",
+      "sha256": "1ef8acb9c61f68cc702378cfb82f35d587a55d4257e1831ab4a9a50827a32602"
+    }
+  ]
+}

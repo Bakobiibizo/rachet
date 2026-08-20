@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rachet.invalid/schemas/experiment/private-fixture-v1.schema.json",
+  "title": "Rachet evaluator-private fixture v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_id", "public_fixture_sha256", "claims"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "fixture_id": { "$ref": "#/$defs/identifier" },
+    "public_fixture_sha256": { "$ref": "#/$defs/sha256" },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id", "verdict", "seeded_defect_description",
+          "reproduction_procedure", "expected_evidence", "ambiguity", "difficulty"
+        ],
+        "properties": {
+          "claim_id": { "$ref": "#/$defs/identifier" },
+          "verdict": { "enum": ["valid", "invalid", "ambiguous"] },
+          "seeded_defect_description": {
+            "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/text" }]
+          },
+          "reproduction_procedure": {
+            "type": "array", "minItems": 1, "maxItems": 10000,
+            "items": { "$ref": "#/$defs/command" }
+          },
+          "expected_evidence": {
+            "type": "array", "minItems": 1, "maxItems": 10000,
+            "items": { "$ref": "#/$defs/text" }
+          },
+          "ambiguity": {
+            "enum": [
+              "none", "specification_incomplete", "environment_dependent",
+              "evidence_insufficient", "multiple_reasonable_interpretations"
+            ]
+          },
+          "difficulty": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tier", "expected_validation_seconds", "skill_tags"],
+            "properties": {
+              "tier": { "enum": ["obvious", "moderate", "subtle", "expert"] },
+              "expected_validation_seconds": { "type": "integer", "minimum": 1 },
+              "skill_tags": {
+                "type": "array", "maxItems": 10000, "uniqueItems": true,
+                "items": { "$ref": "#/$defs/identifier" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string", "minLength": 1, "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._/-]+$"
+    },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "text": { "type": "string", "minLength": 1, "maxLength": 1048576 },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["argv"],
+      "properties": {
+        "argv": {
+          "type": "array", "minItems": 1, "maxItems": 256,
+          "items": { "$ref": "#/$defs/text" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+["rachet_mechanisms::m00_record_only::tests::M00Outputs"]
+n_cases = 1
+hash = "9fb43e75d1cf243a092376bfd62567bf8d336c7382120f4b46a5842a9bd1176d"
+
+["rachet_mechanisms::m01_naive_reputation::tests::M01Updates"]
+n_cases = 16
+hash = "8f4440ee71dfac33d1ace3f49b512c109600c3ad4e4c2e4c1d8210e99a0ed626"

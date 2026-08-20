@@ -1,0 +1,867 @@
+{
+  "schema_version": 1,
+  "diagnostic_only": true,
+  "resource_use": {
+    "records": 73,
+    "model_calls": 0,
+    "input_tokens": {
+      "availability": "complete",
+      "total": 0
+    },
+    "output_tokens": {
+      "availability": "complete",
+      "total": 0
+    },
+    "tool_calls": 0,
+    "command_duration_ms": 0,
+    "cpu_time_ms": {
+      "availability": "complete",
+      "total": 0
+    },
+    "validation_wall_clock_allowance_ms": 4380000,
+    "git_objects_read": 0,
+    "files_inspected": 0,
+    "tests_executed": 0,
+    "jobs_inspected": 73,
+    "jobs_accepted": 65,
+    "claims_evaluated": 65,
+    "evidence_bytes": 0,
+    "compute_units": {
+      "availability": "complete",
+      "total": 0
+    }
+  },
+  "validation": {
+    "overall": {
+      "evaluated": 65,
+      "binary_decisions": 34,
+      "correct": 15,
+      "incorrect": 19,
+      "false_passes": 15,
+      "false_fails": 4,
+      "abstentions": 9,
+      "indeterminate": 18,
+      "unresolved_truth": 7,
+      "decisive_on_unresolved": 4,
+      "correctness": {
+        "status": "defined",
+        "numerator": 15,
+        "denominator": 34
+      },
+      "error_rate": {
+        "status": "defined",
+        "numerator": 19,
+        "denominator": 34
+      },
+      "false_pass_rate": {
+        "status": "defined",
+        "numerator": 15,
+        "denominator": 43
+      },
+      "false_fail_rate": {
+        "status": "defined",
+        "numerator": 4,
+        "denominator": 15
+      },
+      "abstention_quality": {
+        "status": "defined",
+        "numerator": 1,
+        "denominator": 9
+      },
+      "unresolved_abstention_coverage": {
+        "status": "defined",
+        "numerator": 1,
+        "denominator": 7
+      }
+    },
+    "by_operator": [
+      {
+        "operator": "always-fail",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 8,
+          "correct": 6,
+          "incorrect": 2,
+          "false_passes": 0,
+          "false_fails": 2,
+          "abstentions": 0,
+          "indeterminate": 0,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 1,
+          "correctness": {
+            "status": "defined",
+            "numerator": 6,
+            "denominator": 8
+          },
+          "error_rate": {
+            "status": "defined",
+            "numerator": 2,
+            "denominator": 8
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 2,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "always-pass",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 8,
+          "correct": 2,
+          "incorrect": 6,
+          "false_passes": 6,
+          "false_fails": 0,
+          "abstentions": 0,
+          "indeterminate": 0,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 1,
+          "correctness": {
+            "status": "defined",
+            "numerator": 2,
+            "denominator": 8
+          },
+          "error_rate": {
+            "status": "defined",
+            "numerator": 6,
+            "denominator": 8
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 6,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "consensus-follower",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "false_passes": 0,
+          "false_fails": 0,
+          "abstentions": 0,
+          "indeterminate": 9,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 0,
+          "correctness": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "error_rate": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "historical-majority",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "false_passes": 0,
+          "false_fails": 0,
+          "abstentions": 0,
+          "indeterminate": 9,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 0,
+          "correctness": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "error_rate": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "maximum-volume",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 8,
+          "correct": 2,
+          "incorrect": 6,
+          "false_passes": 6,
+          "false_fails": 0,
+          "abstentions": 0,
+          "indeterminate": 0,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 1,
+          "correctness": {
+            "status": "defined",
+            "numerator": 2,
+            "denominator": 8
+          },
+          "error_rate": {
+            "status": "defined",
+            "numerator": 6,
+            "denominator": 8
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 6,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "perfect-abstainer",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "false_passes": 0,
+          "false_fails": 0,
+          "abstentions": 9,
+          "indeterminate": 0,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 0,
+          "correctness": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "error_rate": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "defined",
+            "numerator": 1,
+            "denominator": 9
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 1,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "random-verdict",
+        "summary": {
+          "evaluated": 9,
+          "binary_decisions": 8,
+          "correct": 4,
+          "incorrect": 4,
+          "false_passes": 2,
+          "false_fails": 2,
+          "abstentions": 0,
+          "indeterminate": 0,
+          "unresolved_truth": 1,
+          "decisive_on_unresolved": 1,
+          "correctness": {
+            "status": "defined",
+            "numerator": 4,
+            "denominator": 8
+          },
+          "error_rate": {
+            "status": "defined",
+            "numerator": 4,
+            "denominator": 8
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 2,
+            "denominator": 6
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 2,
+            "denominator": 2
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          }
+        }
+      },
+      {
+        "operator": "trivial-only",
+        "summary": {
+          "evaluated": 2,
+          "binary_decisions": 2,
+          "correct": 1,
+          "incorrect": 1,
+          "false_passes": 1,
+          "false_fails": 0,
+          "abstentions": 0,
+          "indeterminate": 0,
+          "unresolved_truth": 0,
+          "decisive_on_unresolved": 0,
+          "correctness": {
+            "status": "defined",
+            "numerator": 1,
+            "denominator": 2
+          },
+          "error_rate": {
+            "status": "defined",
+            "numerator": 1,
+            "denominator": 2
+          },
+          "false_pass_rate": {
+            "status": "defined",
+            "numerator": 1,
+            "denominator": 1
+          },
+          "false_fail_rate": {
+            "status": "defined",
+            "numerator": 0,
+            "denominator": 1
+          },
+          "abstention_quality": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          },
+          "unresolved_abstention_coverage": {
+            "status": "unavailable",
+            "reason": "zero_denominator"
+          }
+        }
+      }
+    ]
+  },
+  "job_selection": {
+    "decisions": 73,
+    "no_selection": 8,
+    "jobs": [
+      {
+        "job": "smoke-authorization-defect",
+        "available_decisions": 9,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 9
+        }
+      },
+      {
+        "job": "smoke-clean-change",
+        "available_decisions": 8,
+        "selections": 8,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 8,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-genuinely-ambiguous-claim",
+        "available_decisions": 8,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-malformed-error-handling",
+        "available_decisions": 8,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-misleading-but-valid-change",
+        "available_decisions": 8,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-obvious-regression",
+        "available_decisions": 8,
+        "selections": 8,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 8,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-specification-violation",
+        "available_decisions": 8,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-subtle-regression",
+        "available_decisions": 8,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 8
+        }
+      },
+      {
+        "job": "smoke-test-only-failure",
+        "available_decisions": 8,
+        "selections": 7,
+        "selection_rate": {
+          "status": "defined",
+          "numerator": 7,
+          "denominator": 8
+        }
+      }
+    ]
+  },
+  "reputation": {
+    "by_epoch": [
+      {
+        "epoch": 0,
+        "operator": "always-fail",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "always-pass",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "consensus-follower",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "historical-majority",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "maximum-volume",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "perfect-abstainer",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "random-verdict",
+        "reputation": 0
+      },
+      {
+        "epoch": 0,
+        "operator": "trivial-only",
+        "reputation": 0
+      }
+    ],
+    "efficiency": [
+      {
+        "epoch": 0,
+        "operator": "always-fail",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 6,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "defined",
+          "numerator": {
+            "negative": false,
+            "magnitude": 0
+          },
+          "denominator": 6
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "always-pass",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 2,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "defined",
+          "numerator": {
+            "negative": false,
+            "magnitude": 0
+          },
+          "denominator": 2
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "consensus-follower",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 0,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "historical-majority",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 0,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "maximum-volume",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 2,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "defined",
+          "numerator": {
+            "negative": false,
+            "magnitude": 0
+          },
+          "denominator": 2
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "perfect-abstainer",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 0,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "random-verdict",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 4,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "defined",
+          "numerator": {
+            "negative": false,
+            "magnitude": 0
+          },
+          "denominator": 4
+        }
+      },
+      {
+        "epoch": 0,
+        "operator": "trivial-only",
+        "reputation": 0,
+        "compute_units": {
+          "availability": "complete",
+          "total": 0
+        },
+        "useful_findings": 1,
+        "reputation_per_compute_unit": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "reputation_per_useful_finding": {
+          "status": "defined",
+          "numerator": {
+            "negative": false,
+            "magnitude": 0
+          },
+          "denominator": 1
+        }
+      }
+    ],
+    "concentration": [
+      {
+        "epoch": 0,
+        "operators": 8,
+        "net_reputation": {
+          "negative": false,
+          "magnitude": 0
+        },
+        "positive_reputation": 0,
+        "nonpositive_operators": 8,
+        "hhi": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        },
+        "largest_operator_share": {
+          "status": "unavailable",
+          "reason": "zero_denominator"
+        }
+      }
+    ]
+  },
+  "counterparty_graph": {
+    "nodes": [
+      "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+      "always-fail",
+      "always-pass",
+      "consensus-follower",
+      "historical-majority",
+      "maximum-volume",
+      "perfect-abstainer",
+      "random-verdict",
+      "trivial-only"
+    ],
+    "edges": [
+      {
+        "source": "always-fail",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "always-pass",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "consensus-follower",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "historical-majority",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "maximum-volume",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "perfect-abstainer",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "random-verdict",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      },
+      {
+        "source": "trivial-only",
+        "target": "4c6de69ed44e6e3f868172a2e69342eba818ec731772be46097972532bb7045a",
+        "interactions": 9,
+        "jobs": 9,
+        "claims": 9,
+        "evidence_bytes": 0
+      }
+    ]
+  },
+  "exploit_profitability": {
+    "overall": {
+      "operator": null,
+      "strategy": null,
+      "attempts": 0,
+      "successes": 0,
+      "revenue_microunits": 0,
+      "cost_microunits": 0,
+      "profit_microunits": {
+        "negative": false,
+        "magnitude": 0
+      },
+      "success_rate": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      },
+      "return_on_cost": {
+        "status": "unavailable",
+        "reason": "zero_denominator"
+      }
+    },
+    "by_operator_and_strategy": []
+  },
+  "challenge_activity": {
+    "total": 0,
+    "open": 0,
+    "resolved": 0,
+    "upheld": 0,
+    "rejected": 0,
+    "upheld_rate": {
+      "status": "unavailable",
+      "reason": "zero_denominator"
+    },
+    "unique_challengers": 0,
+    "unique_targets": 0
+  }
+}

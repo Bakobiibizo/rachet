@@ -1,0 +1,9 @@
+{
+  "schema_version": "operator-decision.v1",
+  "decision": "abstain",
+  "job_id": "job-001",
+  "resource_report": {
+    "model_calls": 1,
+    "tool_calls": 2
+  }
+}

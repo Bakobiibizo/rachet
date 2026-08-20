@@ -1,0 +1,894 @@
+{
+  "format": "ldgr.schedule.v1",
+  "work_items": [
+    {
+      "slug": "core-001-bootstrap-workspace",
+      "title": "Bootstrap the Rust workspace",
+      "description": "Implement Initial Work Item CORE-001 and spec sections 3.7, 3.8, 8, and 53: create the small Rust workspace, prescribed crates/binaries, AGENTS.md, CI, release overflow checks, and basic developer commands without splitting core into extra crates.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "The workspace layout matches section 8; debug/test/release overflow checks are enabled; cargo fmt, clippy -D warnings, and workspace tests pass in CI and locally."
+    },
+    {
+      "slug": "core-002-pin-commonware-dependencies",
+      "title": "Pin the Commonware dependency family",
+      "description": "Complete the dependency portion of CORE-001 per spec section 3.8: pin every listed Commonware crate to 2026.7.0, or one documented matching Git revision if publication makes that impossible, and commit Cargo.lock.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "Cargo resolves reproducibly from Cargo.lock; every Commonware source/revision is exact; any deviation is recorded in docs/commonware-spike.md.",
+      "dependencies": ["core-001-bootstrap-workspace"]
+    },
+    {
+      "slug": "spike-001-build-alto-reference",
+      "title": "Build and run the Alto reference",
+      "description": "Perform Milestone 0's Alto compatibility probe using the exact pinned dependency family. Record build/run commands, observed APIs, and incompatibilities in docs/commonware-spike.md; use Alto only as an integration reference.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "The Alto reference builds and runs locally on Linux/WSL2, and the compatibility report records reproducible commands and observed version/API facts.",
+      "dependencies": ["core-002-pin-commonware-dependencies"]
+    },
+    {
+      "slug": "spike-002-deterministic-runtime-actor",
+      "title": "Prove deterministic runtime actor replay",
+      "description": "Implement the minimal Commonware deterministic-runtime actor test required by Milestone 0 and sections 4 and 19.7. Capture a stable event trace for a declared seed.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "Repeated runs with the same seed produce an identical event trace and the test runs in the normal workspace suite.",
+      "dependencies": ["core-002-pin-commonware-dependencies"]
+    },
+    {
+      "slug": "spike-003-authenticated-p2p",
+      "title": "Prove four-peer authenticated P2P",
+      "description": "Build a minimal four-peer test with commonware_p2p::authenticated::lookup per sections 4 and 19.6, using a fixed known peer set and bounded message exchange.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "All four authenticated peers exchange expected messages; an unknown or unauthenticated peer is rejected; teardown is clean.",
+      "dependencies": ["core-002-pin-commonware-dependencies"]
+    },
+    {
+      "slug": "spike-004-empty-simplex-chain",
+      "title": "Prove an empty Simplex chain",
+      "description": "Build the minimal four-node empty-application chain with Simplex Ed25519 and RoundRobin election described by sections 19.1-19.2 and Milestone 0.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "Four local nodes finalize at least 100 empty blocks with matching finalized histories and no threshold/BLS setup.",
+      "dependencies": ["spike-002-deterministic-runtime-actor", "spike-003-authenticated-p2p"]
+    },
+    {
+      "slug": "spike-005-stateful-qmdb-deferred",
+      "title": "Prove Stateful, QMDB, and Deferred integration",
+      "description": "Implement a minimal proof that commonware_glue::stateful::Stateful wraps marshal::standard::Deferred and one qmdb::current database, including speculative state, merkleization, finalization, and dead-fork pruning.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "A competing-branch test commits the winning QMDB state, prunes the losing branch, and documents the concrete APIs used.",
+      "dependencies": ["spike-001-build-alto-reference", "spike-004-empty-simplex-chain"]
+    },
+    {
+      "slug": "spike-006-shutdown-restart-catchup",
+      "title": "Prove shutdown, restart, and catch-up",
+      "description": "Extend the compatibility spike with clean shutdown and restart: stop one node, continue finalizing, restart it from persisted state, and recover missing ancestry through the selected Commonware path.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "The restarted node catches up without manual state repair and clean shutdown leaves reusable storage.",
+      "dependencies": ["spike-005-stateful-qmdb-deferred"]
+    },
+    {
+      "slug": "spike-007-compatibility-gate",
+      "title": "Close the Commonware compatibility spike",
+      "description": "Consolidate Milestone 0 evidence in docs/commonware-spike.md and tests/commonware_smoke.rs. Reconcile every observed API mismatch with the spec before protocol implementation begins.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-0",
+      "acceptance_criteria": "All Milestone 0 acceptance gates pass; exact revisions and API differences are documented; no economic protocol code was added during the spike.",
+      "dependencies": ["spike-002-deterministic-runtime-actor", "spike-003-authenticated-p2p", "spike-006-shutdown-restart-catchup"]
+    },
+    {
+      "slug": "core-003-canonical-primitives",
+      "title": "Implement canonical identifiers and numeric rules",
+      "description": "Implement section 9 primitive identifiers, domain-separated SHA-256 derivation, protocol/codec version types, checked integer arithmetic, declared rounding helpers, and the prohibition on consensus floating point.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Identifier derivation is deterministic and domain-separated; arithmetic boundary tests pass; consensus crates contain no floating-point state or calculations.",
+      "dependencies": ["spike-007-compatibility-gate"]
+    },
+    {
+      "slug": "core-004-bounded-consensus-types",
+      "title": "Implement bounded consensus containers",
+      "description": "Implement the explicit byte/vector limits in sections 9.3, 12, 15, and 21. Ensure allocation is bounded during decode, not only after construction, and encode genesis protocol limits.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Every variable-length consensus field has a protocol maximum; boundary, oversized, truncation, and allocation-hardening tests pass.",
+      "dependencies": ["core-003-canonical-primitives"]
+    },
+    {
+      "slug": "core-005-git-artifact-model",
+      "title": "Implement immutable Git artifact references",
+      "description": "Implement section 10 GitHash, ContentRef, GitArtifact, immutable job artifact identity, and optional supersedes linkage. Keep repository locators informational and evidence bodies off chain.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "SHA-1/SHA-256 commits and content refs round-trip; changing candidate commit or specification changes job identity; no repository body enters canonical state.",
+      "dependencies": ["core-004-bounded-consensus-types"]
+    },
+    {
+      "slug": "core-006-canonical-codec",
+      "title": "Implement the canonical Commonware codec",
+      "description": "Implement commonware_codec directly for the public consensus primitives and Git types per section 21, with explicit discriminants and no bincode, serde_json consensus encoding, or architecture-dependent layouts.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Round-trip, malformed input, invalid enum, truncation, trailing-byte, and oversized-vector tests pass for all implemented public types.",
+      "dependencies": ["core-005-git-artifact-model"]
+    },
+    {
+      "slug": "core-007-typed-state-keys",
+      "title": "Implement typed canonical state accessors",
+      "description": "Implement the binary namespaced key layout and typed accessors from section 17. Protocol code must not concatenate ad hoc keys or depend on HashMap iteration order.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "All section 17 namespaces have stable lexicographically ordered encodings and typed accessors; checked-in tests lock key bytes.",
+      "dependencies": ["core-006-canonical-codec"]
+    },
+    {
+      "slug": "core-008-in-memory-state-batch",
+      "title": "Implement the in-memory StateBatch",
+      "description": "Define the consensus-independent state interface required by section 16 and provide the in-memory transactional implementation used by pure execution and tests, including deterministic iteration and root-reference hashing.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Batches fork, commit, roll back, and hash deterministically; protocol core has no dependency on Commonware runtime traits.",
+      "dependencies": ["core-007-typed-state-keys"]
+    },
+    {
+      "slug": "core-009-action-envelope-signing",
+      "title": "Implement signed action envelopes",
+      "description": "Implement sections 11 and 45 signature hardening: Ed25519 actor identity, canonical payload signing, protocol and chain binding, exact contiguous nonces, expiry, version checks, and ActionId derivation.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Valid envelopes verify; invalid signatures, duplicate/skipped nonces, expiry, cross-chain replay, cross-version replay, and malformed payloads are rejected with stable errors.",
+      "dependencies": ["core-006-canonical-codec", "core-008-in-memory-state-batch"]
+    },
+    {
+      "slug": "core-010-job-claim-lifecycle",
+      "title": "Implement jobs, claims, and closure",
+      "description": "Implement CreateJob and CloseJob canonical transitions from sections 12.1, 13, and 44, including immutable claims/artifacts, lifecycle windows by height, resolution policy storage, supersession, and role checks.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Success and every invalid lifecycle boundary are tested; job revisions create new IDs; resolution authorities cannot earn validation reputation through role confusion.",
+      "dependencies": ["core-009-action-envelope-signing"]
+    },
+    {
+      "slug": "core-011-evidence-attestation-transitions",
+      "title": "Implement evidence and attestation transitions",
+      "description": "Implement RegisterEvidence and SubmitAttestation from sections 12.2-12.3, preserving off-chain evidence identity, producer uniqueness, claim/job references, verdicts, confidence metadata, and lifecycle limits.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Valid registrations/attestations emit stable objects; missing targets, duplicate evidence, bounds, wrong phase, and invalid actors are rejected by tests.",
+      "dependencies": ["core-010-job-claim-lifecycle"]
+    },
+    {
+      "slug": "core-012-commitment-transitions",
+      "title": "Implement commitment and reveal transitions",
+      "description": "Implement CreateCommitment, RevealCommitment, reveal hash checking, reveal windows, and deterministic expiry events per sections 12.4 and 14 without assigning rewards or penalties.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Correct reveals succeed once; early, late, duplicate, malformed, and hash-mismatched reveals fail; expiry events are deterministic by height.",
+      "dependencies": ["core-010-job-claim-lifecycle"]
+    },
+    {
+      "slug": "core-013-challenge-resolution-transitions",
+      "title": "Implement challenge and resolution transitions",
+      "description": "Implement CreateChallenge, ResolveClaim, ResolveChallenge, claim reopening, job resolution, and ExperimentAuthority authorization per sections 12.5-13. Do not add bonds, bounties, majority truth, or customer acceptance truth.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Authorized resolutions and challenge outcomes update lifecycle state correctly; unauthorized, late, duplicate, and invalid-target actions fail in exhaustive tests.",
+      "dependencies": ["core-011-evidence-attestation-transitions", "core-012-commitment-transitions"]
+    },
+    {
+      "slug": "core-014-events-and-receipts",
+      "title": "Implement canonical events and receipts",
+      "description": "Implement every CanonicalEvent and ActionReceipt in section 14, including bounded per-action events, stable event ordering, epoch changes, and deterministic receipt encoding.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Every successful action has exact event/receipt tests; failed actions emit no partial receipt; receipt bytes are stable across repeated execution.",
+      "dependencies": ["core-013-challenge-resolution-transitions"]
+    },
+    {
+      "slug": "core-015-block-model-and-roots",
+      "title": "Implement blocks and canonical roots",
+      "description": "Implement section 15 BlockHeader, Block, ConsensusContext, deterministic action/receipt/state roots, height-derived epochs, and metadata-only timestamps.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Block codecs and root vectors are stable; economic behavior never reads timestamp_ms; malformed parent, chain, version, epoch, mechanism set, and size fields are rejected.",
+      "dependencies": ["core-014-events-and-receipts"]
+    },
+    {
+      "slug": "mech-001-manifests-catalog-genesis",
+      "title": "Implement mechanism manifests and catalog",
+      "description": "Implement sections 22.1, 23, and 24: manifest/config types, mechanism-set identity, genesis config, and catalog.toml with M00/M01 implement-now and M02-M12 proposed only.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "MechanismSetId commits ordered IDs, versions, and canonical configs; catalog status is locked; selecting M02-M12 returns MECHANISM_NOT_IMPLEMENTED.",
+      "dependencies": ["core-006-canonical-codec", "core-007-typed-state-keys"]
+    },
+    {
+      "slug": "mech-002-registry-isolation-ordering",
+      "title": "Implement the compiled mechanism registry",
+      "description": "Implement sections 22.2-22.6: concrete registry, config validation, topological dependency sorting, declared exports, namespace-isolated mutations, collision detection, and deterministic mechanism/key ordering.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Cycles, proposed selections, undeclared reads, cross-namespace writes, and collisions fail; module order is deterministic and same-event hidden dependencies are impossible.",
+      "dependencies": ["mech-001-manifests-catalog-genesis", "core-008-in-memory-state-batch"]
+    },
+    {
+      "slug": "mech-003-m00-record-only",
+      "title": "Implement M00 record-only",
+      "description": "Implement section 27's M00 mechanism control. It must consume the standard interface while producing no economic state or mutations.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "M00 validates configuration, leaves economic state empty for every canonical event and epoch, and has locked conformance output.",
+      "dependencies": ["mech-002-registry-isolation-ordering"]
+    },
+    {
+      "slug": "mech-004-m01-naive-reputation",
+      "title": "Implement M01 naive reputation",
+      "description": "Implement section 28 exactly: signed checked score and counters updated only against authorized resolutions, with matching +1, contradicting -1, and abstain/indeterminate/unresolved zero. Add no stake, standing, maturity, weighting, transfer, payout, or consensus effect.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "All verdict/resolution combinations and arithmetic bounds are tested; resolution authorities earn no reputation; scores are non-transferable and conformance output is locked.",
+      "dependencies": ["mech-002-registry-isolation-ordering", "core-013-challenge-resolution-transitions"]
+    },
+    {
+      "slug": "core-016-authoritative-execute-block",
+      "title": "Implement the authoritative block executor",
+      "description": "Implement section 16's single execute_block path and exact ten-step order across envelope verification, canonical transitions, events, mechanisms, invariants, merkleization, receipts, and roots. One invalid action invalidates the full candidate block.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "The same parent/context/actions/mechanism set yields identical writes, events, receipts, roots, and errors over 1,000 executions; no catch-and-continue behavior exists.",
+      "dependencies": ["core-015-block-model-and-roots", "mech-003-m00-record-only", "mech-004-m01-naive-reputation"]
+    },
+    {
+      "slug": "core-017-invariant-suite",
+      "title": "Implement core and mechanism invariant checks",
+      "description": "Encode section 44 ledger, role, and mechanism invariants as executable checks around block execution, with property tests for IDs, nonces, roots, role separation, namespace isolation, event immutability, and fixed mechanism sets.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Each invariant has a positive and mutation/failure test; checks run within authoritative execution without nondeterministic inputs.",
+      "dependencies": ["core-016-authoritative-execute-block"]
+    },
+    {
+      "slug": "core-018-conformance-vectors",
+      "title": "Lock protocol conformance vectors",
+      "description": "Use commonware_conformance per sections 21 and 46 to check in TOML vectors and hashes for actions, block headers, events, receipts, state keys, genesis, mechanism-set identity, M00, and M01.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "CI detects any byte/hash drift; every public consensus object is represented; update guidance requires CodecVersion review and retained-trace replay.",
+      "dependencies": ["core-017-invariant-suite"]
+    },
+    {
+      "slug": "core-019-invariant-minifuzz",
+      "title": "Fuzz canonical transition sequences",
+      "description": "Apply commonware_invariants::minifuzz per section 46 to bounded sequences of all core actions and epoch changes, preserving reproducible seeds and shrinking failing traces.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "The configured fuzz smoke budget passes in CI; failures report a replayable seed/sequence; all core/mechanism invariants are checked after steps.",
+      "dependencies": ["core-017-invariant-suite"]
+    },
+    {
+      "slug": "core-020-pure-core-gate",
+      "title": "Validate the pure protocol core milestone",
+      "description": "Run and retain Milestone 1's complete gate: action success/failure suites, codec hardening, 1,000-run deterministic roots, M00/M01 genesis selection, M02-M12 rejection, property tests, fuzz smoke, and dependency-boundary audit.",
+      "priority": "P0",
+      "program": "core-v1",
+      "group": "milestone-1",
+      "acceptance_criteria": "Every Milestone 1 acceptance gate passes and crates/core imports no Commonware consensus/runtime, Git, shell, model, network, filesystem, environment, clock, or internal randomness capability.",
+      "dependencies": ["core-018-conformance-vectors", "core-019-invariant-minifuzz"]
+    },
+    {
+      "slug": "lab-001-fixture-schemas-loader",
+      "title": "Implement public and private fixture loading",
+      "description": "Implement section 35 fixture schemas and integrity hashes for real Git repositories, public artifacts/claims/resource limits, and separate private ground truth/difficulty metadata. Calibration and formal sets must be distinguishable and disjoint.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Valid fixtures load deterministically; malformed/hash-mismatched fixtures fail; the operator-facing API cannot enumerate or read private truth files.",
+      "dependencies": ["core-020-pure-core-gate"]
+    },
+    {
+      "slug": "lab-002-hidden-evaluator",
+      "title": "Implement the hidden evaluator",
+      "description": "Implement the ExperimentAuthority evaluator from sections 13 and 35. It reads private fixtures only after operator decisions close and submits signed claim/challenge resolutions through the canonical action path.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Evaluator resolutions verify as authorized signed actions; no hidden truth appears in observations; evaluator/customer/validator roles remain separate.",
+      "dependencies": ["lab-001-fixture-schemas-loader"]
+    },
+    {
+      "slug": "lab-003-operator-json-contracts",
+      "title": "Implement operator observation and decision schemas",
+      "description": "Implement bounded versioned JSON schemas from sections 31-32 for exact permitted observations, resource budgets, validate/abstain/challenge/wait decisions, claims, evidence refs, and reports. This is host encoding, not consensus encoding.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Schema fixtures validate; unknown/oversized/malformed decisions fail explicitly; observation fixtures prove hidden fields and unrevealed peer decisions are absent.",
+      "dependencies": ["core-020-pure-core-gate"]
+    },
+    {
+      "slug": "lab-004-experiment-identity-layout",
+      "title": "Implement experiment identity and artifact layout",
+      "description": "Implement section 37's experiment/run identity hashing and immutable artifact directory structure, committing protocol revision, Cargo.lock, mechanism/config, fixture manifests, operators, prompts, and seeds.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Equivalent inputs derive identical IDs/layouts; changing any committed input changes identity; existing experiment outputs are never overwritten.",
+      "dependencies": ["lab-001-fixture-schemas-loader", "lab-003-operator-json-contracts"]
+    },
+    {
+      "slug": "lab-005-scripted-operator-policies",
+      "title": "Implement scripted and heuristic operators",
+      "description": "Implement pure deterministic policies from sections 29.1 and 33.4: always PASS/FAIL, random by explicit seed, trivial-job-only, consensus follower, max-volume, perfect abstainer, and historical-majority follower.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Each policy is deterministic for the same observation/seed, respects budgets, and is labeled as a trivial heuristic rather than an intelligent resource-matched baseline.",
+      "dependencies": ["lab-003-operator-json-contracts"]
+    },
+    {
+      "slug": "lab-006-deterministic-runner",
+      "title": "Implement the single-process deterministic runner",
+      "description": "Implement blocks, epochs, scripted decision points, evaluator resolution, and real core/mechanism execution per sections 29 and 38 using commonware_runtime::deterministic. Do not create a toy economy.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "A scripted fixture run completes through canonical actions/blocks/events/state using M00 or M01, with no model call inside deterministic actors.",
+      "dependencies": ["lab-002-hidden-evaluator", "lab-004-experiment-identity-layout", "lab-005-scripted-operator-policies"]
+    },
+    {
+      "slug": "lab-007-simulated-p2p-faults",
+      "title": "Integrate simulated P2P fault controls",
+      "description": "Integrate commonware_p2p::simulated into the lab per sections 19.6 and 29, exposing deterministic latency, jitter, drops, disconnect/reconnect, partition, and supported corrupted-peer behavior.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Declared fault schedules replay identically; each supported fault has an integration test; unsupported corruption modes are documented rather than mocked silently.",
+      "dependencies": ["lab-006-deterministic-runner", "spike-003-authenticated-p2p"]
+    },
+    {
+      "slug": "lab-008-run-artifact-capture",
+      "title": "Capture complete experiment run artifacts",
+      "description": "Persist section 37 initial state, observations, decisions, signed actions, blocks, events, economic state, resources, metrics, seeds, and strategy notes with hashes and append-only semantics.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "A completed and a failed run produce a complete auditable artifact manifest; missing/corrupt artifacts are detected; old outputs are never rewritten.",
+      "dependencies": ["lab-006-deterministic-runner"]
+    },
+    {
+      "slug": "lab-009-trace-replay",
+      "title": "Implement exact action-trace replay",
+      "description": "Implement section 29.1 trace-replay mode from retained initial state and signed actions, without invoking models. Compare blocks, events, roots, M01 scores, and terminal errors byte for byte.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Captured fixture runs replay to byte-identical canonical outputs; tampered input or divergence reports the first exact mismatch.",
+      "dependencies": ["lab-008-run-artifact-capture"]
+    },
+    {
+      "slug": "lab-010-resource-metrics",
+      "title": "Implement resource accounting and laboratory metrics",
+      "description": "Implement sections 36 and 47 counters for model/tool calls, tokens, durations, CPU where available, Git/files/tests/jobs/claims/evidence plus correctness, error rates, abstention, selection, reputation efficiency/concentration, counterparty graph, exploit profitability, and challenge activity.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Resource totals reconcile from raw records; unavailable counters are explicit; metric fixtures have exact expected values and remain diagnostic rather than canonical truth.",
+      "dependencies": ["lab-008-run-artifact-capture"]
+    },
+    {
+      "slug": "lab-011-rcht-lab-cli",
+      "title": "Implement the rcht-lab CLI surface",
+      "description": "Implement section 48's rcht-lab smoke, calibrate, run, replay, compare, audit, exploit promote, and exploit replay commands with --json and stable structured errors, backed by the real lab APIs.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Every command has machine-readable success/failure tests and invokes real runner/replay/audit behavior rather than placeholder output.",
+      "dependencies": ["lab-009-trace-replay", "lab-010-resource-metrics"]
+    },
+    {
+      "slug": "lab-012-deterministic-lab-gate",
+      "title": "Validate the deterministic laboratory milestone",
+      "description": "Run Milestone 2 acceptance with M00/M01 smoke economies, fixture isolation, resource capture, scripted policies, simulated network faults, and replay evidence.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-2",
+      "acceptance_criteria": "Same seed/actions produce byte-identical canonical results; hidden truth is absent from observations; resource accounting is complete; a trivial M01 farming control is represented without being mislabeled discovered.",
+      "dependencies": ["lab-007-simulated-p2p-faults", "lab-011-rcht-lab-cli"]
+    },
+    {
+      "slug": "chain-001-qmdb-state-adapter",
+      "title": "Implement QMDB state schema and batches",
+      "description": "Adapt the typed canonical state interface to one commonware_storage::qmdb::current database per sections 17-18, preserving exact binary keys, batch semantics, and roots used by pure execution.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "The same transition sequence yields equivalent logical state and committed roots through in-memory and QMDB adapters; typed accessors cover every namespace.",
+      "dependencies": ["core-020-pure-core-gate", "spike-007-compatibility-gate"]
+    },
+    {
+      "slug": "chain-002-stateful-genesis",
+      "title": "Implement Stateful application genesis",
+      "description": "Implement section 18 genesis for a cloneable/stateless commonware_glue::stateful::Application: protocol config, chain ID, genesis metadata, mechanism set/config, authorities, and empty canonical/economic namespaces.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Genesis bytes and QMDB root are deterministic and conformance-locked; invalid mechanism/config/authority input fails before node startup.",
+      "dependencies": ["chain-001-qmdb-state-adapter"]
+    },
+    {
+      "slug": "chain-003-stateful-propose",
+      "title": "Implement Stateful proposal construction",
+      "description": "Implement section 18 propose: deterministic bounded pending-action selection, authoritative execution on supplied unmerkleized batch, merkleization, and block/root commitment.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Proposal tests reproduce ordering and roots; invalid pending actions cannot yield a proposal; application mutable state remains in supplied batches.",
+      "dependencies": ["chain-002-stateful-genesis"]
+    },
+    {
+      "slug": "chain-004-stateful-verify",
+      "title": "Implement Stateful block verification",
+      "description": "Implement section 18 verify by validating parent/height/epoch/mechanism/bounds, re-executing actions on the parent batch, recomputing receipts/state, and rejecting every commitment mismatch.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Valid proposals verify; individually corrupted action, receipt, parent, post-state root, and header commitments are rejected without committing a batch.",
+      "dependencies": ["chain-003-stateful-propose"]
+    },
+    {
+      "slug": "chain-005-stateful-apply-sync-recovery",
+      "title": "Implement Stateful apply and sync recovery",
+      "description": "Implement section 18 apply and sync_targets for lazy replay, missing speculative ancestry, QMDB sync targets, winning-branch finalization, and losing-branch pruning after restart.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "A restart test lazily reconstructs missing pending state and syncs the committed target; fork/prune behavior matches verification roots.",
+      "dependencies": ["chain-004-stateful-verify"]
+    },
+    {
+      "slug": "chain-006-bounded-pending-pool",
+      "title": "Implement the bounded pending action pool",
+      "description": "Implement section 20.3 deduplication by ActionId, global/per-actor/byte/nonce-gap limits, expiry, removal on finalization, and deterministic (actor_id, nonce, action_id) candidate selection.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "All bounds, deduplication, expiry, gaps, replacement/finalization behavior, and deterministic ordering have concurrency-safe tests.",
+      "dependencies": ["core-020-pure-core-gate"]
+    },
+    {
+      "slug": "chain-007-action-ingress-forwarding",
+      "title": "Implement validated ingress and peer forwarding",
+      "description": "Implement sections 20.1-20.2 canonical action byte/JSON intake, repeated signature/version/chain/nonce/bound checks, pending insertion, and authenticated forwarding to committee peers.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "A valid action submitted to one node reaches peers; malformed/invalid/oversized actions never enter or forward; consensus verification still repeats all checks.",
+      "dependencies": ["chain-006-bounded-pending-pool", "spike-003-authenticated-p2p"]
+    },
+    {
+      "slug": "chain-008-buffered-broadcast",
+      "title": "Integrate buffered block broadcast",
+      "description": "Integrate commonware_broadcast::buffered per sections 19 and 45 with bounded block caching/dissemination and decode hardening for the canonical Block type.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Valid blocks disseminate among four peers; cache and allocation bounds hold under oversized/duplicate/malformed traffic.",
+      "dependencies": ["chain-005-stateful-apply-sync-recovery"]
+    },
+    {
+      "slug": "chain-009-simplex-consensus",
+      "title": "Integrate Simplex Ed25519 consensus",
+      "description": "Wire commonware_consensus::simplex with attributable Ed25519 certificates and RoundRobin election per sections 19.1-19.2, keeping consensus node keys/types separate from network actors.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "The fixed four-node committee reaches agreement on application blocks; no BLS, stake weighting, committee reconfiguration, or validation-reputation coupling exists.",
+      "dependencies": ["chain-008-buffered-broadcast"]
+    },
+    {
+      "slug": "chain-010-marshal-resolver",
+      "title": "Integrate Deferred marshal and resolver",
+      "description": "Wire marshal::standard::Deferred, never Inline, and TargetedResolver per sections 19.3 and 19.5 for ordered at-least-once finalization, missing block backfill, and state-sync resolution.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Out-of-order/missing ancestry is backfilled and finalized in order; duplicate delivery is safe; targeted resolution is bounded and tested.",
+      "dependencies": ["chain-009-simplex-consensus"]
+    },
+    {
+      "slug": "chain-011-authenticated-committee-network",
+      "title": "Implement live authenticated committee networking",
+      "description": "Configure commonware_p2p::authenticated::lookup for fixed peers declared in genesis, including addresses, consensus identities, channels for blocks/actions/resolution, connectivity lifecycle, and rejection of unknown peers.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Four configured peers connect and exchange typed bounded traffic; unknown/wrong-key peers fail; actor keys are never accepted as consensus peer keys.",
+      "dependencies": ["chain-007-action-ingress-forwarding", "chain-010-marshal-resolver"]
+    },
+    {
+      "slug": "chain-012-node-runtime-assembly",
+      "title": "Assemble the live Tokio node runtime",
+      "description": "Assemble section 19's real pipeline under commonware_runtime::tokio::Runner: authenticated P2P, buffered broadcast, Simplex, Deferred marshal, Stateful application, QMDB, resolver, pending provider, and lifecycle management.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "One process starts/stops cleanly with all actors supervised; no mocked critical-path component is selected in release configuration.",
+      "dependencies": ["chain-011-authenticated-committee-network"]
+    },
+    {
+      "slug": "chain-013-finalization-persistence",
+      "title": "Persist finalized blocks, receipts, and reports",
+      "description": "Implement finalization reporting and local storage per sections 4, 19, and 47 using immutable archives for finalized blocks/certificates and journals for receipts/recovery records, with idempotent at-least-once delivery.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Finalized data survives restart, duplicate reports do not duplicate canonical records, and query indexes reconcile with the finalized QMDB root.",
+      "dependencies": ["chain-012-node-runtime-assembly"]
+    },
+    {
+      "slug": "chain-014-rcht-node-cli-config",
+      "title": "Implement node configuration and rcht-node CLI",
+      "description": "Implement rcht-node init/run/status/inspect-config from section 48 with fixed committee/genesis/storage/RPC settings, startup validation, --json, and stable error codes. Mutable environment is read only during startup configuration.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Each command has JSON tests; init produces valid bounded configuration; inspect redacts private keys; invalid configs fail before actors or storage mutate.",
+      "dependencies": ["chain-013-finalization-persistence"]
+    },
+    {
+      "slug": "client-001-identity-signing-cli",
+      "title": "Implement client identity and signing commands",
+      "description": "Implement the client crate and rchtctl identity create/show/sign from sections 8, 11, and 48, with secure actor-key persistence, public display, chain/version binding, nonce handling, --json, and no consensus-key reuse.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Keys round-trip securely; signed canonical actions verify in core; private material is never printed; stable machine-readable errors cover bad input and storage.",
+      "dependencies": ["core-009-action-envelope-signing"]
+    },
+    {
+      "slug": "chain-015-http-rpc-queries",
+      "title": "Implement action and query RPC",
+      "description": "Implement section 20.1 POST /v1/actions and GET action/job/actor/block/state-root/health endpoints. Keep JSON outside consensus encoding, isolate private keys/hidden labels/prompts/evidence, and return stable error codes.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Endpoint integration tests cover success, not-found, malformed, oversized, unauthorized, and redaction cases against a real node state/query layer.",
+      "dependencies": ["chain-007-action-ingress-forwarding", "chain-013-finalization-persistence"]
+    },
+    {
+      "slug": "client-002-job-cli",
+      "title": "Implement rchtctl job commands",
+      "description": "Implement rchtctl job create/list/show/close with canonical Git artifact/claim/resolution-policy input, client signing, nonce/expiry handling, RPC transport, --json, and stable errors.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Commands submit and query real node actions; malformed bounds and lifecycle failures preserve server error codes; no repository body is uploaded to chain.",
+      "dependencies": ["client-001-identity-signing-cli", "chain-015-http-rpc-queries"]
+    },
+    {
+      "slug": "client-003-evidence-attestation-cli",
+      "title": "Implement evidence, attestation, and commitment commands",
+      "description": "Implement rchtctl evidence register, attestation submit, commitment create, and commitment reveal with content hashes/locator hints, canonical signing, --json, and no evidence-body transfer.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Each command succeeds end to end against a node; bounds, bad refs, reveal hash/window, and nonce errors are represented stably.",
+      "dependencies": ["client-002-job-cli"]
+    },
+    {
+      "slug": "client-004-challenge-resolution-cli",
+      "title": "Implement challenge and resolution commands",
+      "description": "Implement rchtctl challenge create and resolution claim/challenge, including authority identity selection, evidence references, canonical signing, --json, and explicit authorization failures.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Authorized commands finalize through the real node path; unauthorized, malformed, late, and duplicate attempts return stable errors.",
+      "dependencies": ["client-003-evidence-attestation-cli"]
+    },
+    {
+      "slug": "client-005-ledger-inspection-cli",
+      "title": "Implement ledger inspection and replay commands",
+      "description": "Implement rchtctl block show, state root/actor/mechanism, and replay verify using finalized archives and the pure executor, all with --json and explicit mismatch diagnostics.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Queries match committed node state; replay verify reconstructs finalized roots and reports the first divergence for tampered archives.",
+      "dependencies": ["client-004-challenge-resolution-cli", "chain-013-finalization-persistence"]
+    },
+    {
+      "slug": "chain-016-observability-security",
+      "title": "Implement node observability and security gates",
+      "description": "Implement section 47 node metrics and section 45 restrictions: no remote/Git/model/shell/Markdown/floating point/unbounded/timezone/environment behavior in consensus, hardened decoders, key separation, RPC redaction, and hash-only evidence.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "All listed node metrics are exposed; security tests/static audits cover consensus restrictions, decoder abuse, signature replay, RPC leaks, and evidence-body exclusion.",
+      "dependencies": ["chain-014-rcht-node-cli-config", "chain-015-http-rpc-queries"]
+    },
+    {
+      "slug": "chain-017-deterministic-fault-tests",
+      "title": "Implement deterministic Commonware fault tests",
+      "description": "Implement section 46 scenarios with real application execution: four healthy nodes, crash, delay, disconnect/recovery, drops, temporary partition, restart from storage, lazy speculative recovery, and missing-block backfill.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "Every scenario is deterministic/replayable, preserves safety and expected liveness, and uses real Commonware components rather than critical-path mocks.",
+      "dependencies": ["chain-012-node-runtime-assembly", "lab-007-simulated-p2p-faults"]
+    },
+    {
+      "slug": "chain-018-four-node-release-gate",
+      "title": "Validate the stateful four-node chain milestone",
+      "description": "Run Milestone 3's real release gate for 1,000 blocks, one-node action submission/forwarding, identical roots, incorrect-root rejection, finalization archives, crash/restart/catch-up, speculative ancestry recovery, pure replay, RPC/CLIs, and no mocked critical path.",
+      "priority": "P1",
+      "program": "core-v1",
+      "group": "milestone-3",
+      "acceptance_criteria": "All Milestone 3 and section 46 release gates pass with retained logs/configs/hashes, including real P2P, broadcast, Simplex, Deferred marshal, Stateful, resolver, and QMDB.",
+      "dependencies": ["client-005-ledger-inspection-cli", "chain-016-observability-security", "chain-017-deterministic-fault-tests"]
+    },
+    {
+      "slug": "op-001-isolated-operator-homes",
+      "title": "Implement isolated operator identities and worktrees",
+      "description": "Implement sections 30 and 34 per-operator home, actor key, Git worktree, agent config, memory/scratch boundaries, declared communication, and bounded budget. Consensus keys and hidden evaluator paths must be inaccessible.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "At least three operators use distinct keys/homes/worktrees; filesystem and API isolation tests block cross-operator memory and private evaluator access unless explicitly configured.",
+      "dependencies": ["lab-012-deterministic-lab-gate", "chain-018-four-node-release-gate"]
+    },
+    {
+      "slug": "op-002-observation-builder",
+      "title": "Build bounded operator observations",
+      "description": "Build section 31 observations from finalized public state, private per-operator history, mechanism/economic state, budgets, available jobs, and declared information policy, with exact provenance hashes.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Snapshots validate against operator-observation.v1, are bounded/hash-stable, and tests prove no hidden truth, peer private reasoning, or unrevealed decisions leak.",
+      "dependencies": ["op-001-isolated-operator-homes", "lab-003-operator-json-contracts"]
+    },
+    {
+      "slug": "op-003-strict-decision-parser",
+      "title": "Implement strict operator decision parsing",
+      "description": "Parse operator-decision.v1 validate/abstain/challenge/wait outputs into canonical signed actions, enforce schema/resource/evidence/job rules, and capture malformed raw output as failure without silent repair.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Valid fixtures yield expected actions; malformed/extra/oversized/over-budget outputs remain recorded and produce explicit operator failures with no submitted action.",
+      "dependencies": ["op-002-observation-builder"]
+    },
+    {
+      "slug": "op-004-agentctl-process-boundary",
+      "title": "Integrate the agentctl process boundary",
+      "description": "Invoke external coding agents through agentctl per section 30, supplying isolated home/worktree/config and bounded prompt/observation, enforcing model/tool/time budgets and preventing model calls inside deterministic actors.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Successful, timeout, crash, malformed, and budget-exhaustion cases terminate cleanly and preserve raw process evidence without contaminating deterministic execution.",
+      "dependencies": ["op-001-isolated-operator-homes", "op-003-strict-decision-parser"]
+    },
+    {
+      "slug": "op-005-operator-provenance-capture",
+      "title": "Capture complete operator provenance",
+      "description": "Capture every section 30 field: operator/role/objective/model/provider, prompt/observation/raw hashes, parsed decision/action, tools/logs/usage/time, worktree state, and evidence artifacts with immutable references.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Success and failure runs produce complete manifests whose hashes verify; sensitive raw prompts/evidence are not exposed by node RPC defaults.",
+      "dependencies": ["op-004-agentctl-process-boundary", "lab-008-run-artifact-capture"]
+    },
+    {
+      "slug": "op-006-pause-resume-boundary",
+      "title": "Implement deterministic pause/resume decisions",
+      "description": "Implement section 29.2's boundary: deterministic network reaches a decision point, writes observation, invokes the external host, captures raw/parsed decision, signs actions, and resumes from explicit deterministic input.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Pause/resume survives process restart; external timing/model nondeterminism cannot affect replay beyond the captured decision/action; failure states are durable.",
+      "dependencies": ["op-005-operator-provenance-capture", "lab-006-deterministic-runner"]
+    },
+    {
+      "slug": "op-007-closed-loop-trace-replay",
+      "title": "Replay closed-loop runs without models",
+      "description": "Extend trace replay to closed-loop operator runs using captured signed actions and exact initial state, while preserving observations/prompts/raw outputs as audit evidence but never recalling a model.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "A captured multi-operator run reproduces blocks/events/roots/M01 scores byte for byte with model/network access disabled.",
+      "dependencies": ["op-006-pause-resume-boundary", "lab-009-trace-replay"]
+    },
+    {
+      "slug": "op-008-population-manifests",
+      "title": "Implement operator population manifests",
+      "description": "Implement sections 33-34 manifests for productive, self-interested, explicitly adversarial, fixed heuristic, and customer operators, declaring objectives, independence dimensions, information, learning, communication, resources, and identity constraints.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Manifest validation rejects undeclared sharing/access and misleading independence claims; all required population examples instantiate with bounded resources.",
+      "dependencies": ["op-001-isolated-operator-homes"]
+    },
+    {
+      "slug": "op-009-rcht-operator-cli",
+      "title": "Implement the rcht-operator host binary",
+      "description": "Implement rcht-operator lifecycle commands for one network identity, wiring isolation, agentctl invocation, observation/decision contracts, provenance, pause/resume, --json, and stable errors without moving host behavior into consensus.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "The binary executes and resumes one bounded decision, reports machine-readable status/failures, and never exposes signing keys, hidden truth, or other homes.",
+      "dependencies": ["op-003-strict-decision-parser", "op-004-agentctl-process-boundary", "op-005-operator-provenance-capture"]
+    },
+    {
+      "slug": "op-010-autonomous-integration-gate",
+      "title": "Validate autonomous operator integration",
+      "description": "Run Milestone 4 with at least three isolated agents/populations against the lab and live action interfaces; retain raw decisions/resources; include malformed response and cross-home access failures; replay the resulting trace offline.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-4",
+      "acceptance_criteria": "Every Milestone 4 gate passes: isolation holds, raw output is captured, malformed output fails visibly, identities do not share memory/worktrees, and exact replay needs no model.",
+      "dependencies": ["op-007-closed-loop-trace-replay", "op-008-population-manifests", "op-009-rcht-operator-cli"]
+    },
+    {
+      "slug": "exp-001-hrep-fixture-corpora",
+      "title": "Create H-REP-001 fixture corpora",
+      "description": "Create section 35 smoke, disjoint calibration, and held-out formal real-Git fixtures covering clean, obvious/subtle regressions, authorization, error handling, spec, test-only, misleading-valid, and ambiguous claims, with public/private manifests.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "Fixture classes are represented; calibration/formal sets are disjoint; public hashes and private manifest hash verify; operators cannot access private truth.",
+      "dependencies": ["op-010-autonomous-integration-gate"]
+    },
+    {
+      "slug": "exp-002-hrep-preregistration-scaffold",
+      "title": "Write the H-REP-001 experiment scaffold",
+      "description": "Create section 37 H-REP-001 layout plus hypothesis.md and preregistration fields from sections 38-40: capability, information, learning, resource match, populations/baselines, metrics, gates, exclusions, seeds, fixture hash, and limited claims.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "The scaffold contains every mandatory baseline category and all ten formal gate placeholders; it explicitly excludes claims about Sybils, humans, markets, tokens, standing, and generalization.",
+      "dependencies": ["exp-001-hrep-fixture-corpora"]
+    },
+    {
+      "slug": "exp-003-hrep-smoke",
+      "title": "Run the H-REP-001 smoke phase",
+      "description": "Execute section 38 Phase 1 on smoke fixtures under M00 and M01 to verify implementation, fixture validity, artifact capture, operator failures, evaluator resolutions, replay, and audit paths. Draw no research conclusion.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "Smoke runs complete or fail with diagnosed evidence; all successful runs replay/audit; fixture and capture defects become work items; no threshold or conclusion is claimed.",
+      "dependencies": ["exp-002-hrep-preregistration-scaffold"]
+    },
+    {
+      "slug": "exp-004-hrep-calibration",
+      "title": "Run H-REP-001 calibration",
+      "description": "Execute section 38 Phase 2 only on calibration fixtures to estimate runtime, variance, resource budgets, thresholds, seed procedure, and exclusion rules across productive, self-interested, adversarial, M00, M01, null, and trivial baselines.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "Calibration artifacts reconstruct; resource totals reconcile; proposed numeric gates are justified from calibration and outputs are excluded from formal evaluation.",
+      "dependencies": ["exp-003-hrep-smoke"]
+    },
+    {
+      "slug": "exp-005-lock-hrep-preregistration",
+      "title": "Lock the H-REP-001 preregistration",
+      "description": "Finalize and hash section 38 Phase 3 before formal outputs: hypothesis, exact mechanism/protocol locks, populations/information/learning/resources, all ten numeric gates, baselines, exclusions, seed procedure, and held-out private manifest hash.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "A timestamped immutable preregistration predates formal run IDs/outputs; every lock hash verifies and formal configuration cannot silently tune mechanisms or thresholds.",
+      "dependencies": ["exp-004-hrep-calibration"]
+    },
+    {
+      "slug": "exp-006-hrep-formal-runs",
+      "title": "Execute H-REP-001 formal runs",
+      "description": "Execute section 38 Phase 4 exactly from the locked preregistration and held-out fixtures. Preserve all populations, baseline categories, actions, resources, roots, economic states, and failures without mechanism or threshold changes.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "All preregistered seeds/runs have immutable complete evidence or explicit valid exclusion records; lock and held-out hashes match; no post-hoc configuration changed.",
+      "dependencies": ["exp-005-lock-hrep-preregistration"]
+    },
+    {
+      "slug": "exp-007-hrep-audit",
+      "title": "Audit H-REP-001 formal evidence",
+      "description": "Perform section 38 Phase 5: verify action signatures/nonces, replay block transitions/events/roots, recompute M01 updates and metrics, reconcile resources, validate hidden evaluator resolutions, independence disclosures, exclusions, and preregistration hashes.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "Every included result reconstructs exactly and every resource total reconciles; any non-reconstructing or policy-violating result is marked invalid rather than repaired.",
+      "dependencies": ["exp-006-hrep-formal-runs"]
+    },
+    {
+      "slug": "exp-008-hrep-assessment",
+      "title": "Assess and publish H-REP-001",
+      "description": "Perform section 38 Phases 6-7 against preregistered gates, assign PASS/FAIL/INVALID/INCONCLUSIVE, decide accepted/rejected/revised/awaiting, and publish assessment.md/result.md with all baseline categories and only section 40's permitted claim.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-5",
+      "acceptance_criteria": "The result follows locked gates, cites reconstructable evidence, reports limitations/independence/resources, includes no post-hoc threshold change, and does not revise M01 in place.",
+      "dependencies": ["exp-007-hrep-audit"]
+    },
+    {
+      "slug": "exploit-001-emergent-strategy-search",
+      "title": "Search for an emergent M01 exploit",
+      "description": "Run Milestone 6 unconstrained self-interested and explicitly adversarial operators under the declared permitted actions/resources to identify a profitable non-productive M01 strategy. Do not seed the conclusion with the existing trivial control.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-6",
+      "acceptance_criteria": "At least one candidate strategy has captured observations/actions/resources and measured reputation/reward versus useful validation, or the bounded search reports an evidence-backed no-discovery result.",
+      "dependencies": ["exp-008-hrep-assessment"]
+    },
+    {
+      "slug": "exploit-002-promote-reproducer",
+      "title": "Promote the first exploit and deterministic reproducer",
+      "description": "Use section 41's exploit registry layout to allocate REP-xxx, minimize and replay the candidate trace, record discovery/operator/mechanism/preconditions/strategy/useful work/profit/resources/status, and preserve M01 behavior.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-6",
+      "acceptance_criteria": "An independent replay reproduces the measured exploit from the minimal trace and verifies every artifact hash; status is at least reproduced and no old trace/result is rewritten.",
+      "dependencies": ["exploit-001-emergent-strategy-search"]
+    },
+    {
+      "slug": "exploit-003-causal-mechanism-proposal",
+      "title": "Write the exploit causal analysis and next hypothesis",
+      "description": "Perform sections 25 and 42 causal analysis of the rewarded behavior, not merely the actor. Select a fitting proposed module/version or allocate the next M13+ ID, create the issue/hypothesis/preregistration plan, and do not implement it yet.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "milestone-6",
+      "acceptance_criteria": "Root cause, affected claims, explicit causal intervention, expected gates, old-exploit replay plan, and mechanism status/version are recorded before any mechanism implementation begins.",
+      "dependencies": ["exploit-002-promote-reproducer"]
+    },
+    {
+      "slug": "release-001-core-v1-conformance-audit",
+      "title": "Audit Core v1 conformance and deferred scope",
+      "description": "Audit sections 3, 6, 43-50, and 53 across code, configs, tests, CLIs, and artifacts: architectural boundaries, key/role separation, codec/security rules, observability, consumer support boundary, machine output, test evidence, and all explicit deferrals.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "release",
+      "acceptance_criteria": "Each normative requirement and deferral has passing evidence or a blocking issue; no token, proposed M02-M12 behavior, governance, marketplace, GitHub App, billing, auto-merge, VM/plugin, or consensus model/Git/web path exists.",
+      "dependencies": ["exploit-003-causal-mechanism-proposal"]
+    },
+    {
+      "slug": "release-002-core-v1-end-to-end",
+      "title": "Validate the Core v1 completion claim",
+      "description": "Run section 54 end to end: real four-node Commonware validation chain, restart recovery, Git-backed jobs through resolutions, M00/M01 genesis selection, scripted/autonomous signed actions, exact closed-loop replay, preregistered H-REP-001 result, and a permanent exploit-derived next hypothesis.",
+      "priority": "P2",
+      "program": "core-v1",
+      "group": "release",
+      "acceptance_criteria": "Every section 54 condition is demonstrated by retained reproducible evidence; full fmt/clippy/test/conformance/fuzz-smoke/four-node/replay/audit gates pass; only the spec's narrow final claim is published.",
+      "dependencies": ["release-001-core-v1-conformance-audit"]
+    }
+  ]
+}

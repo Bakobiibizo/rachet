@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "calibration-malformed-error-handling",
+  "public_fixture_sha256": "1e251f0fc3c425416e1de74a3b3c5104f77d987a8b33821a7efa813b41a938e7",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "Malformed input is converted to the sentinel 0 instead of raising ConfigError.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The malformed-input assertion observes no ConfigError."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "moderate",
+        "expected_validation_seconds": 90,
+        "skill_tags": [
+          "error-handling",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

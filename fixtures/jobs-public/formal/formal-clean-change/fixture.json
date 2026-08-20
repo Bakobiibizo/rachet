@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "fixture_id": "formal-clean-change",
+  "class": "clean_change",
+  "repository": {
+    "path": "formal-clean-change",
+    "base_commit": "146945750d323d727aa1778edc88422c70b480c2",
+    "candidate_commit": "34a55e1ad5c99a4071716b8126899db86f2820ce",
+    "integrity_sha256": "855df9d3fe2a09e2b29dc3b3644a54696d8b497ac22ec1bba3d962ff66552316"
+  },
+  "specification": {
+    "artifact_id": "specification",
+    "path": "formal-clean-change/specification.md",
+    "media_type": "text/markdown",
+    "sha256": "4a5ba51aadda6985ceac4941ac403f8b53b73204502ea7899a7d013ad2395909"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "validation-input",
+      "path": "formal-clean-change/validation.md",
+      "media_type": "text/markdown",
+      "sha256": "ee5073fc54d513a61d13819954f0e7990ef3041f896d50deaae9a9110300a38b"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim/candidate-satisfies-specification",
+      "statement": "The candidate commit satisfies the supplied specification and its committed test suite passes."
+    }
+  ],
+  "permitted_commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "146945750d323d727aa1778edc88422c70b480c2",
+        "34a55e1ad5c99a4071716b8126899db86f2820ce"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "146945750d323d727aa1778edc88422c70b480c2",
+        "34a55e1ad5c99a4071716b8126899db86f2820ce",
+        "--",
+        "validator.py",
+        "tests/test_validator.py"
+      ]
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    }
+  ],
+  "resource_limits": {
+    "wall_clock_seconds": 300,
+    "cpu_seconds": 240,
+    "model_calls": 8,
+    "input_tokens": 64000,
+    "output_tokens": 16000,
+    "tool_calls": 80,
+    "git_objects_read": 4096,
+    "files_inspected": 256,
+    "tests_executed": 128,
+    "evidence_bytes": 262144
+  }
+}

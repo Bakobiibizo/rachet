@@ -1,0 +1,86 @@
+{
+  "communication_channels": [],
+  "operators": [
+    {
+      "agent": {
+        "model": "controlled-fixture-customer",
+        "model_family": "controlled-fixture-customer",
+        "provider": "scripted",
+        "random_seed": "customer-seed-001",
+        "system_prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tool_harness": "rachet-customer-fixture"
+      },
+      "communication_channels": [],
+      "customer_relationship": "none",
+      "identity_constraints": {
+        "fresh_signing_key": true,
+        "may_create_additional_identities": false,
+        "network_identities": 1,
+        "separated_from_roles": [
+          "consensus_node",
+          "resolution_authority",
+          "validation_operator"
+        ]
+      },
+      "independence": {
+        "communication_channel": {
+          "scope": "independent"
+        },
+        "customer_relationship": {
+          "scope": "independent"
+        },
+        "evidence_method": {
+          "scope": "independent"
+        },
+        "memory": {
+          "scope": "independent"
+        },
+        "model_family": {
+          "scope": "independent"
+        },
+        "random_seed": {
+          "scope": "independent"
+        },
+        "system_prompt": {
+          "scope": "independent"
+        },
+        "tool_harness": {
+          "scope": "independent"
+        },
+        "worktree": {
+          "scope": "independent"
+        }
+      },
+      "information": {
+        "evidence_method": "controlled-fixture-submission",
+        "filesystem_access": [
+          "worktree",
+          "private_scratch"
+        ],
+        "sources": [
+          "controlled_fixture_set",
+          "declared_resource_limits"
+        ]
+      },
+      "learning": {
+        "allowed_adaptations": [
+          "controlled_fixture_selection"
+        ],
+        "persistent_private_memory": false
+      },
+      "objective": "Create jobs from the declared controlled fixture set.",
+      "operator_id": "customer-001",
+      "operator_kind": {
+        "controlled_fixture_set": "formal",
+        "kind": "customer"
+      },
+      "resource_budget": {
+        "model_calls": 0,
+        "tool_calls": 10,
+        "validation_seconds": 300
+      },
+      "role": "customer"
+    }
+  ],
+  "schema_version": "operator-population.v1"
+}

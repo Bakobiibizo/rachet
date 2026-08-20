@@ -1,0 +1,149 @@
+{
+  "autonomous_invocations": 9,
+  "autonomous_runtime": {
+    "communication_channels": [],
+    "harness": "pi via agentctl",
+    "identity_qualification": "Nine isolated calls and worktree copies used one shared model family and one shared harness; they are not nine independent validator systems.",
+    "model": "gpt-5.6-sol",
+    "phase_3_requirement": "Lock exact provider/model, prompt hashes, operator manifests, and seed files before formal output.",
+    "provider": "openai-codex",
+    "worktree_isolation": "one private calibration worktree copy per population and replicate"
+  },
+  "baseline_categories": {
+    "adversarial": [
+      "self-interested",
+      "adversarial"
+    ],
+    "functional": "productive",
+    "mechanism_control": "M00@1.0.0",
+    "null": "seeded_random_ranking",
+    "resource_matched_competitor": "raw_validation_count",
+    "target_mechanism": "M01@1.0.0",
+    "trivial": [
+      "always-pass",
+      "always-fail",
+      "random-verdict",
+      "easy-job-only",
+      "majority-following",
+      "maximum-volume",
+      "perfect-abstainer",
+      "historical-majority"
+    ]
+  },
+  "calibration_seeds": [
+    8200401,
+    8200402,
+    8200403
+  ],
+  "claim_boundary": "Section 38 Phase 2 calibration evidence only. Numeric gates remain proposals for Phase 3 lock; calibration outputs are permanently excluded from formal evaluation.",
+  "experiment_id": "H-REP-001",
+  "fixture_classes": [
+    "authorization_defect",
+    "clean_change",
+    "genuinely_ambiguous_claim",
+    "malformed_error_handling",
+    "misleading_but_valid_change",
+    "obvious_regression",
+    "specification_violation",
+    "subtle_regression",
+    "test_only_failure"
+  ],
+  "fixture_set": "calibration",
+  "fixtures_processed": 9,
+  "formal_evaluation_eligible": false,
+  "formal_fixture_ids_observed": [],
+  "formal_outputs_observed": false,
+  "formal_run_permitted": false,
+  "phase": "calibration",
+  "populations": {
+    "explicitly_adversarial": true,
+    "productive": true,
+    "self_interested": true,
+    "trivial_heuristics": [
+      "always-pass",
+      "always-fail",
+      "random-verdict",
+      "easy-job-only",
+      "majority-following",
+      "maximum-volume",
+      "perfect-abstainer",
+      "historical-majority"
+    ]
+  },
+  "proposed_intelligent_budget": {
+    "concurrent_jobs_per_epoch": 1,
+    "model_calls_per_epoch": 4,
+    "rationale": "All nine one-call samples completed within 198 seconds and 27 tool calls; these ceilings preserve over 4.5x observed wall-time headroom and at least 13 tool calls of headroom while matching intelligent capacities.",
+    "tool_calls_per_epoch": 40,
+    "validation_seconds_per_epoch": 900
+  },
+  "public_decision_commitments": [
+    {
+      "bytes": 3592,
+      "population": "productive",
+      "seed": 8200401,
+      "sha256": "e553ba3da91dcfe9679b183248bee4e1fd61dff8fd14bed62429402765c3048c"
+    },
+    {
+      "bytes": 3532,
+      "population": "self-interested",
+      "seed": 8200401,
+      "sha256": "cbbf2eda7be0bfaac76c4c1edf0cd20f45706a3beaa49b6aea8f19a8a61e0a36"
+    },
+    {
+      "bytes": 3216,
+      "population": "adversarial",
+      "seed": 8200401,
+      "sha256": "89b5c407e10e7713525aaf9f652acfdfa62b2dc323cc30b2b1f92f882f7f89b6"
+    },
+    {
+      "bytes": 3722,
+      "population": "productive",
+      "seed": 8200402,
+      "sha256": "aa9d56134f44ab2cf67a807c53b267a94af15bd37d38fcd9be8f61ece8cbc09f"
+    },
+    {
+      "bytes": 3453,
+      "population": "self-interested",
+      "seed": 8200402,
+      "sha256": "b63639821a0f163ef2581255ad2df17d2d1bc7686d9b07c534bc58284ff26ae0"
+    },
+    {
+      "bytes": 3286,
+      "population": "adversarial",
+      "seed": 8200402,
+      "sha256": "0810ebb0348261fb54f7054b1769190f700ba9cad48ad12c23fa78ba70f97476"
+    },
+    {
+      "bytes": 3594,
+      "population": "productive",
+      "seed": 8200403,
+      "sha256": "be7aa319eda6e9f55bc5fdec6f3ca63084053878338d52d7114b0646708d2092"
+    },
+    {
+      "bytes": 3480,
+      "population": "self-interested",
+      "seed": 8200403,
+      "sha256": "919e2ffb8c675d7dbb4350a8f9dd8c305e3253b5a05f54d3128e002f88ee8a5e"
+    },
+    {
+      "bytes": 3324,
+      "population": "adversarial",
+      "seed": 8200403,
+      "sha256": "6110457aa1c9ea3c85aba957b7af301f674d83ebd16f360d4244100447137ec5"
+    }
+  ],
+  "public_decisions_closed_before_private_access": true,
+  "research_conclusion": null,
+  "resource_totals_reconcile": true,
+  "runtime_estimate": {
+    "maximum_ms": 197533,
+    "mean_ms": 132246,
+    "minimum_ms": 102364,
+    "p95_observed_ms": 197533,
+    "sample_stddev_ms": 29173,
+    "samples": 9
+  },
+  "schema_version": "hrep-calibration-report.v1",
+  "thresholds_are_proposals_only": true
+}

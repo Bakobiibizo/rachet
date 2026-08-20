@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-specification-violation",
+  "public_fixture_sha256": "6cf0e7a81659002da10ce9e372cc071ba7552253efdd5c3266fe3cad313976d2",
+  "claims": [
+    {
+      "verdict": "invalid",
+      "seeded_defect_description": "The candidate uses code-point ordering rather than required case-insensitive ordering.",
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "The mixed-case three-name ordering assertion fails."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "moderate",
+        "expected_validation_seconds": 90,
+        "skill_tags": [
+          "specification",
+          "python"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

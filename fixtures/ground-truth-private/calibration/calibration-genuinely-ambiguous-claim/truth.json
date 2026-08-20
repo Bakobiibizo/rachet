@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "calibration-genuinely-ambiguous-claim",
+  "public_fixture_sha256": "f6e2874c90020e87f46a22a3741d4897ffb938835fdac5ba262882035c35dcaa",
+  "claims": [
+    {
+      "verdict": "ambiguous",
+      "seeded_defect_description": null,
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "All specified non-empty behavior passes; the changed empty-input behavior is outside the written contract."
+      ],
+      "ambiguity": "specification_incomplete",
+      "difficulty": {
+        "tier": "expert",
+        "expected_validation_seconds": 240,
+        "skill_tags": [
+          "ambiguity",
+          "specification"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

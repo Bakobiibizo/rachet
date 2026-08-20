@@ -1,0 +1,33 @@
+{
+  "cargo_lock_sha256": "cde523802e6ebe04e3f7ec12311789b96164dcfc2b637ac67348604179b78bce",
+  "commonware_release_family": "2026.7.0",
+  "formal_outputs_observed_before_lock": false,
+  "formal_run_rule": "A formal runner must verify the externally anchored preregistration-lock SHA-256 before deriving a run ID or writing output.",
+  "genesis_protocol": {
+    "blocks_per_epoch": 100,
+    "max_actions_per_block": 1024,
+    "max_block_bytes": 4194304,
+    "overflow_checks": {
+      "dev": true,
+      "release": true,
+      "test": true
+    }
+  },
+  "locked_at_utc": "2026-08-19T06:44:40Z",
+  "preexisting_nonformal_run_ids": [
+    "02a5c89608f747dd36d870bff33604eb0fc6cd103562a3967b0715e187ef282b",
+    "0e6b352bf701e9570e2fb92aabe0d965e87a931d119a1896b22458a644eed4fc",
+    "178b464aeed8d902634113b7096e4d3d738791538b98391d8d946bb0e75ee453",
+    "2bdbd04accb80bbc8b01a74d23d685ad86f44bafd025c05055218524832debd8",
+    "3cc34e86d8078392022694b06c61fd7ff61326ae0c70beadf898d82b562f48ce",
+    "997cd885d5ddc97e4f0139c1944beadc75f453a45a0e01ed7251030a17a791d0"
+  ],
+  "protocol_git_commit": "83378b7d48cee0507cdc576e19abeb0ab6e1a435",
+  "protocol_git_commit_kind": "reproducible_snapshot_materialization",
+  "protocol_source_manifest": "protocol-source-manifest.json",
+  "protocol_source_manifest_sha256": "b890d5ba764f68294f59e5627cbc25459ed748f99c4baf910536a3a16071be12",
+  "protocol_version": 1,
+  "schema_version": 2,
+  "status": "locked",
+  "upstream_git_metadata_available": false
+}

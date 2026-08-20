@@ -1,0 +1,146 @@
+{
+  "condition_count": 2,
+  "experiment_id": "H-REP-001",
+  "files": [
+    {
+      "bytes": 99853,
+      "path": "Cargo.lock",
+      "sha256": "cde523802e6ebe04e3f7ec12311789b96164dcfc2b637ac67348604179b78bce"
+    },
+    {
+      "bytes": 1006,
+      "path": "experiments/H-REP-001/hypothesis.md",
+      "sha256": "0771fff0a62f6666c6a4879c994f845d892ced5061112699e39a852228981776"
+    },
+    {
+      "bytes": 12445,
+      "path": "experiments/H-REP-001/preregistration.toml",
+      "sha256": "fdc519fdbd9427407fcc188a28ce362c9f86c07c85c29a22e20364b88fa75ae8"
+    },
+    {
+      "bytes": 1721,
+      "path": "experiments/H-REP-001/mechanism-set.toml",
+      "sha256": "21f1a546974cf7f1681b47add51fff575700c96a510f3fae3132f2f3a01bad04"
+    },
+    {
+      "bytes": 1489,
+      "path": "experiments/H-REP-001/protocol-lock.json",
+      "sha256": "c7ef68039eb00bcdaccec118e839e08f0c5d16ebaaa48070724fd4462726482c"
+    },
+    {
+      "bytes": 33586,
+      "path": "experiments/H-REP-001/protocol-source-manifest.json",
+      "sha256": "b890d5ba764f68294f59e5627cbc25459ed748f99c4baf910536a3a16071be12"
+    },
+    {
+      "bytes": 1916,
+      "path": "experiments/H-REP-001/fixture-manifest-public.json",
+      "sha256": "68ccbbf5cdfe722dca17aadc9d8a4c908c5e090e76105951ac4b35e3808470bb"
+    },
+    {
+      "bytes": 65,
+      "path": "experiments/H-REP-001/fixture-manifest-private.hash",
+      "sha256": "5a2216a22fc111fa6e7d42c77a1154b176dee0c829f61dd4f8870d31236dd3b1"
+    },
+    {
+      "bytes": 2326,
+      "path": "experiments/H-REP-001/operators/customer.json",
+      "sha256": "2d0e2edb5c58f0a0c729b4fb416bad1e3a1bb02fa01c5e58b4427ca265d343a0"
+    },
+    {
+      "bytes": 2738,
+      "path": "experiments/H-REP-001/operators/explicitly-adversarial.json",
+      "sha256": "e986c9dd57a3abb702e03fd96cae1fe36484e54eaa5fc493854cc7fabd7b544d"
+    },
+    {
+      "bytes": 19251,
+      "path": "experiments/H-REP-001/operators/fixed-heuristics.json",
+      "sha256": "0ab431487ec4ce1bf4bad4234e9fbd21a11e904b0f52272296aa0be8e4efe509"
+    },
+    {
+      "bytes": 2689,
+      "path": "experiments/H-REP-001/operators/productive.json",
+      "sha256": "25910e911746303a7ef90e55fe66a9c393ee7d3caddc131891ae09214bf0eaaa"
+    },
+    {
+      "bytes": 2720,
+      "path": "experiments/H-REP-001/operators/self-interested.json",
+      "sha256": "1f4ee028771321e1feab165b5c1f4e01f3346529cb04d61d344801ccc5278bc7"
+    },
+    {
+      "bytes": 958,
+      "path": "experiments/H-REP-001/prompts/explicitly-adversarial.md",
+      "sha256": "ec5ba4bb65c6afa5a9fda27dc62373162e844c94e171e0ea518f864cbfa6eac7"
+    },
+    {
+      "bytes": 884,
+      "path": "experiments/H-REP-001/prompts/productive.md",
+      "sha256": "faf4a635bcc31b7ed3544dc02bb3d988c1ebbb362832427f247b834b82e58cbd"
+    },
+    {
+      "bytes": 937,
+      "path": "experiments/H-REP-001/prompts/self-interested.md",
+      "sha256": "0b357c9d6aae9dc32c57fb2753685cc509c7b3ac1cb5dedaf32c6325b078adef"
+    },
+    {
+      "bytes": 336,
+      "path": "experiments/H-REP-001/seeds/formal-000.json",
+      "sha256": "5534d6cf25c9228bd6da14c22558344b9bb04b4be2368b3d76f8056a65dada04"
+    },
+    {
+      "bytes": 336,
+      "path": "experiments/H-REP-001/seeds/formal-001.json",
+      "sha256": "ad36172093a6a28a3dc9c508f54ff1ed023d771e354bc415eb3feedb830afc64"
+    },
+    {
+      "bytes": 337,
+      "path": "experiments/H-REP-001/seeds/formal-002.json",
+      "sha256": "b9734ad27f4f749e514a718773b7786eefc03d1b82b3426fe61ac828768ed3a6"
+    },
+    {
+      "bytes": 336,
+      "path": "experiments/H-REP-001/seeds/formal-003.json",
+      "sha256": "da512722559619f0d37c6dbc3728805e0b0ddfd7802083a62c45c45ba6769e91"
+    },
+    {
+      "bytes": 336,
+      "path": "experiments/H-REP-001/seeds/formal-004.json",
+      "sha256": "4b0bd98bcd62c6407cf17e69fad14e4e2689e9f52f41de860b452a17198f6eeb"
+    },
+    {
+      "bytes": 4818,
+      "path": "experiments/H-REP-001/calibration/proposed-gates.json",
+      "sha256": "285ad89bbd2df9348c0d5094f60e7948d10ce9343338e173bff426d685405c8e"
+    },
+    {
+      "bytes": 731,
+      "path": "experiments/H-REP-001/calibration/exclusion-rules.json",
+      "sha256": "05f4a00aa52342efde4e3fe64574beca11a4535950386c2f63e972c278ac3368"
+    },
+    {
+      "bytes": 521,
+      "path": "experiments/H-REP-001/calibration/seed-procedure.json",
+      "sha256": "42b8920bd7cdea9769cb39f97b3ebae1ff7b01c9297c181200d02f6183196ce1"
+    },
+    {
+      "bytes": 29976,
+      "path": "tools/lock_hrep_preregistration.py",
+      "sha256": "1f711859aea3b38d68bd8b285ab1b069dea62a8cd888df02d45e71240a466e3c"
+    },
+    {
+      "bytes": 21515,
+      "path": "tools/verify_hrep_preregistration.py",
+      "sha256": "1411ab9991d30ce3b6aec13f1f7270d2a0eb8a097116bde1f78b8442a37a05fa"
+    }
+  ],
+  "formal_outputs_observed_before_lock": false,
+  "formal_run_ids_created_by_lock": [],
+  "formal_seed_count": 5,
+  "gate_count": 10,
+  "held_out_private_manifest_sha256": "a7d0a0e5f5ab8413437be9620aa17123457756710aa32dc06c69dc150e6a6c7c",
+  "locked_at_utc": "2026-08-19T06:44:40Z",
+  "phase": 3,
+  "protocol_git_commit": "83378b7d48cee0507cdc576e19abeb0ab6e1a435",
+  "schema_version": "hrep-preregistration-lock.v1",
+  "status": "locked"
+}

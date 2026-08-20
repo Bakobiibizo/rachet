@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "run_id": "3cc34e86d8078392022694b06c61fd7ff61326ae0c70beadf898d82b562f48ce",
+  "outcome": {
+    "status": "completed"
+  },
+  "artifacts": [
+    {
+      "path": "initial-state.bin",
+      "media_type": "application/octet-stream",
+      "bytes": 145,
+      "sha256": "ba94f0f1484d9914df868b160a7db7688581b772996c0d7e6f236434d27c4dd9"
+    },
+    {
+      "path": "observations.jsonl",
+      "media_type": "application/x-ndjson",
+      "bytes": 56121,
+      "sha256": "8b789aea9c720ea5ec04b9df06b301a81bc4a4a88cf143a61517b3f2529e9654"
+    },
+    {
+      "path": "decisions.jsonl",
+      "media_type": "application/x-ndjson",
+      "bytes": 121023,
+      "sha256": "58c76721a89ece1fa7c97112e3b4c1949af890e29d1b7548df27c86dc3c66ed8"
+    },
+    {
+      "path": "actions.bin",
+      "media_type": "application/octet-stream",
+      "bytes": 22106,
+      "sha256": "5da559109dd454bc9a5b4ce87b56febb1a5d8ea4323f281f19daffb46f43d823"
+    },
+    {
+      "path": "blocks.bin",
+      "media_type": "application/octet-stream",
+      "bytes": 22459,
+      "sha256": "fe391837a5be9fc41a5a05d1b7561a3ae59c2b6e7f556d6bcde4aaca0c968491"
+    },
+    {
+      "path": "events.bin",
+      "media_type": "application/octet-stream",
+      "bytes": 4478,
+      "sha256": "c0d16430e54f348a399787b8647deca1f575d656c41d0a2008e736d06ecd8033"
+    },
+    {
+      "path": "economic-state.jsonl",
+      "media_type": "application/x-ndjson",
+      "bytes": 1917,
+      "sha256": "15e9eebf4130fccd0d6809fdef29e406fc328268580a57c0f41519ccdb267d85"
+    },
+    {
+      "path": "resources.json",
+      "media_type": "application/json",
+      "bytes": 43157,
+      "sha256": "47c853e9597185d0d6dc228374ad2ef7f8781790c91044b89173035025da95b8"
+    },
+    {
+      "path": "metrics.json",
+      "media_type": "application/json",
+      "bytes": 22054,
+      "sha256": "d3f41b551c133319e50c01ceaa511555995635440117d210f3b83a839678ec2b"
+    },
+    {
+      "path": "discovered-strategies.md",
+      "media_type": "text/markdown; charset=utf-8",
+      "bytes": 104,
+      "sha256": "f18709b22954fa2a1030ba3e21e2b624096139afe1128cc764091aa75e8b6bce"
+    }
+  ],
+  "seeds": [
+    {
+      "path": ".gitkeep",
+      "media_type": "application/octet-stream",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

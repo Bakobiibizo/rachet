@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "formal-clean-change",
+  "public_fixture_sha256": "36455b2fe894e6c75aa55a4ebecc15066591a45d7dcbb9cabe88bbe160f3418f",
+  "claims": [
+    {
+      "verdict": "valid",
+      "seeded_defect_description": null,
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "All public ASCII examples pass and the refactor preserves the specified domain."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "moderate",
+        "expected_validation_seconds": 90,
+        "skill_tags": [
+          "python",
+          "specification"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

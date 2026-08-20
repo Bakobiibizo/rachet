@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "fixture_id": "smoke-clean-change",
+  "public_fixture_sha256": "caf3e44d5b755e53b3fc104fc9702d8e0e451a1ed380b880dc582bca1301da1a",
+  "claims": [
+    {
+      "verdict": "valid",
+      "seeded_defect_description": null,
+      "reproduction_procedure": [
+        {
+          "argv": [
+            "python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ]
+        }
+      ],
+      "expected_evidence": [
+        "All public ASCII examples pass and the refactor preserves the specified domain."
+      ],
+      "ambiguity": "none",
+      "difficulty": {
+        "tier": "moderate",
+        "expected_validation_seconds": 90,
+        "skill_tags": [
+          "python",
+          "specification"
+        ]
+      },
+      "claim_id": "claim/candidate-satisfies-specification"
+    }
+  ]
+}

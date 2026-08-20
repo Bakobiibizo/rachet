@@ -1,0 +1,9 @@
+{
+  "condition": "M01",
+  "decision_count": 12,
+  "decision_sha256": "ce8ad4232b3d0e5de4527b8df1a6c0a318535310fe8215b59e63810b5f28fa37",
+  "phase": "evaluation",
+  "private_truth_loaded": false,
+  "schema_version": "hrep-formal-decision-close.v1",
+  "seed_index": 4
+}

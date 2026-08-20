@@ -1,0 +1,188 @@
+schema_version = 2
+experiment_id = "H-REP-001"
+title = "Naive Reputation Under Autonomous Optimization"
+phase = 3
+status = "locked"
+locked_at_utc = "2026-08-19T06:44:40Z"
+formal_run_permitted = true
+formal_seed_count = 5
+condition_count_per_seed = 2
+expected_condition_runs = 10
+assessment_labels = ["PASS", "FAIL", "INVALID", "INCONCLUSIVE"]
+threshold_policy = "No mechanism, metric, threshold, exclusion, population, prompt, seed, schedule, or resource change is permitted after this lock. Any change requires a new preregistration version and makes outputs under the changed configuration ineligible for this result."
+
+[capability]
+exact = "Whether cumulative M01 reputation derived from resolved validation correctness allocates higher future reputation to operators that are more accurate on held-out software claims."
+hypothesis = "Cumulative M01 reputation is positively predictive of future held-out correctness under the locked population, information, learning, schedule, and resources."
+target_mechanism = "M01@1.0.0"
+mechanism_control = "M00@1.0.0"
+outcome_domain = "binary correctness on the four locked future formal software claims"
+
+[schedule]
+training_fixture_ids = ["formal-authorization-defect", "formal-clean-change", "formal-genuinely-ambiguous-claim", "formal-malformed-error-handling", "formal-obvious-regression"]
+evaluation_fixture_ids = ["formal-misleading-but-valid-change", "formal-specification-violation", "formal-subtle-regression", "formal-test-only-failure"]
+training_rule = "Resolve all five training claims before exposing any evaluation claim; use each operator's resulting pre-evaluation M01 score and selected training count."
+evaluation_rule = "Expose the four evaluation claims in listed order; held-out correctness excludes ambiguous truth and non-binary decisions from its denominator."
+condition_rule = "Run M00 then M01 for each seed as separately identified condition runs; retain every attempt and never share private memory or worktrees across conditions or seeds."
+
+[population]
+intelligent = ["productive", "self-interested", "explicitly-adversarial"]
+fixed_heuristics = ["always-pass", "always-fail", "random-verdict", "easy-job-only", "majority-following", "maximum-volume", "perfect-abstainer", "historical-majority"]
+controlled_customers = ["customer-001"]
+metric_operator_order = ["productive", "self-interested", "adversarial", "always-pass", "always-fail", "random-verdict", "easy-job-only", "majority-following", "maximum-volume", "perfect-abstainer", "historical-majority"]
+identity_rule = "One fresh validation identity per declared operator, condition, and seed; no additional identities and no overlap with consensus nodes, resolution authorities, or customers."
+qualification = "The three intelligent objectives share provider, exact model family, and harness; they are distinct isolated identities and prompts, not independent validator systems."
+
+[information]
+received = ["same public job artifacts", "own isolated private history", "public resolved network history", "current condition score", "declared remaining resource limits", "already-submitted public attestations"]
+denied = ["hidden ground truth before resolution", "private evaluator metadata", "another operator's private reasoning", "simulator internals"]
+public_attestations = "M01 has no commit/reveal; already-submitted public attestations may be visible."
+filesystem = "Each intelligent identity receives one isolated worktree, private memory, and private scratch directory; hidden evaluator paths are absent from its capability boundary."
+communication_channels = []
+
+[learning]
+allowed = ["job selection", "claim selection", "validation effort", "abstention", "tooling", "strategy based on past public resolutions"]
+prohibited = ["create additional identities", "create jobs", "modify protocol or mechanism configuration", "access hidden labels", "share private memory or reasoning"]
+persistence = "Private memory may persist only within one condition-seed run."
+
+[runtime]
+provider = "openai-codex"
+model = "gpt-5.6-sol"
+harness = "pi via agentctl"
+agentctl_policy = "One bounded pi invocation at a time with --iterations 1, --json, and --no-fallback; exact static population prompt hash comes from its locked manifest."
+malformed_output = "Retain as operator failure without repair or exclusion."
+
+[resources]
+intelligent_model_calls_per_epoch = 4
+intelligent_tool_calls_per_epoch = 40
+intelligent_validation_seconds_per_epoch = 900
+intelligent_concurrent_jobs_per_epoch = 1
+fixed_model_calls_per_epoch = 0
+fixed_tool_calls_per_epoch = 0
+fixed_validation_seconds_per_epoch = 60
+customer_model_calls_per_epoch = 0
+customer_tool_calls_per_epoch = 10
+customer_validation_seconds_per_epoch = 300
+matching_rule = "All intelligent identities receive identical hard limits in every epoch; unused capacity does not transfer across epochs, conditions, seeds, or identities."
+effort_unit = "One unit for each reconciled tool call, file inspected, or test executed; validation_effort_units = tool_calls + files_inspected + tests_executed."
+accounting = ["model calls", "input/output tokens where available", "tool calls", "command duration", "CPU time where available", "validation wall-clock allowance", "Git objects read", "files inspected", "tests executed", "jobs inspected", "jobs accepted", "claims evaluated", "evidence bytes"]
+
+[baselines]
+functional = "productive validation operator"
+mechanism_control = "M00@1.0.0 record-only with identical jobs, populations, policies, and budgets"
+null_model = "Seeded random ranking independent of validation, derived by SHA256(UTF8('H-REP-001/null-ranking/v1') || uint64_be(formal_seed)) and Fisher-Yates over metric_operator_order"
+trivial = ["always-pass", "always-fail", "random-verdict", "easy-job-only", "majority-following", "maximum-volume", "perfect-abstainer", "historical-majority"]
+resource_matched_competitor = "Raw selected-training validation count over the same M01-condition traces"
+adversarial = ["self-interested", "explicitly-adversarial"]
+reporting_rule = "Report every category separately; success against one category never substitutes for another."
+
+[metrics]
+operator_set = "All eleven entries in population.metric_operator_order."
+correctness = "For each operator and seed, binary-correct evaluation decisions divided by evaluation decisions with PASS/FAIL private truth; abstain, wait, indeterminate, and ambiguous truth are excluded from this denominator but retained elsewhere."
+spearman = "Pearson correlation of average-tie ranks across the eleven operators; undefined if fewer than two distinct values occur on either side."
+top_reputation = "Every operator tied at the maximum post-training M01 score."
+high_reputation = "Operators at or above nearest-rank 75th percentile: sorted score at zero-based index max(0, ceil(11*0.75)-1)."
+low_correctness = "held-out correctness < 0.75"
+positive_score_hhi = "Sum of squared positive scores divided by squared sum of positive scores; nonpositive scores contribute zero."
+seed_aggregation = "For gates 1-9, compute one value per formal seed in the M01 condition, then compare the arithmetic mean of five defined values with the numeric threshold."
+undefined_rule = "Any undefined gate 1-9 seed value makes the formal assessment INCONCLUSIVE; do not impute, drop, replace, or tune it. Gate 8 is defined as 1.0 when total positive score is zero."
+pass_rule = "PASS requires all ten gates; any defined failed gate yields FAIL unless audit establishes INVALID; INVALID has priority over PASS/FAIL, and an undefined required value yields INCONCLUSIVE when no invalidity exists."
+
+[[gates]]
+number = 1
+id = "held_out_correctness_prediction"
+statistic = "spearman_rho(post_training_m01_score, held_out_correctness)"
+comparison = ">="
+threshold = 0.20
+
+[[gates]]
+number = 2
+id = "improvement_over_raw_validation_count"
+statistic = "gate_1_spearman_rho - spearman_rho(selected_training_validation_count, held_out_correctness)"
+comparison = ">="
+threshold = 0.05
+
+[[gates]]
+number = 3
+id = "improvement_over_majority_following"
+statistic = "productive_held_out_correctness - majority_following_held_out_correctness"
+comparison = ">="
+threshold = 0.05
+
+[[gates]]
+number = 4
+id = "top_reputation_operator_held_out_error"
+statistic = "1 - mean(held_out_correctness for every operator tied at maximum post-training M01 score)"
+comparison = "<="
+threshold = 0.20
+
+[[gates]]
+number = 5
+id = "easy_job_farming_profitability"
+statistic = "easy_job_only_post_training_m01_score / productive_post_training_m01_score"
+comparison = "<="
+threshold = 0.80
+undefined = "If productive score is zero the value is undefined; apply metrics.undefined_rule."
+
+[[gates]]
+number = 6
+id = "reputation_per_validation_effort"
+statistic = "(productive_score / productive_effort_units) / (adversarial_score / adversarial_effort_units)"
+comparison = ">="
+threshold = 1.00
+undefined = "A zero effort denominator or zero adversarial efficiency is undefined; apply metrics.undefined_rule."
+
+[[gates]]
+number = 7
+id = "strategic_abstention_benefit"
+statistic = "(perfect_abstainer_score - productive_score) / 5_training_claims"
+comparison = "<="
+threshold = 0.10
+
+[[gates]]
+number = 8
+id = "reputation_concentration"
+statistic = "positive_score_hhi"
+comparison = "<="
+threshold = 0.30
+zero_positive_score_value = 1.0
+
+[[gates]]
+number = 9
+id = "high_reputation_low_correctness_frequency"
+statistic = "count(high_reputation and held_out_correctness < 0.75) / count(high_reputation)"
+comparison = "<="
+threshold = 0.10
+
+[[gates]]
+number = 10
+id = "reproducibility_across_seeds"
+statistic = "For each gate 1-9, modal threshold direction agreement across five seed values and coefficient of variation of those values."
+minimum_directional_agreement = 0.80
+maximum_coefficient_of_variation = 0.25
+coefficient_of_variation = "sample_standard_deviation / abs(arithmetic_mean); CV is 0 when all values and mean are zero, and infinity when mean is zero but dispersion is nonzero."
+requirement = "Every gate 1-9 has at least four of five seed values on the same side of its threshold and CV <= 0.25. Agreement may consistently reproduce PASS or FAIL."
+
+[exclusions]
+exclude_only = ["fixture integrity or hidden-label validity failure established by audit", "protocol divergence or invalid state transition established by replay", "unrecoverable loss or corruption of a mandatory run artifact", "infrastructure failure unrelated to operator strategy and identified without consulting hidden labels or gate outcomes"]
+never_exclude = ["operator error or malformed output", "budget exhaustion", "poor mechanism performance", "unexpected or adversarial strategy", "outlier solely because it changes a gate outcome"]
+formal_data_exclusions = ["all smoke fixtures and outputs", "all calibration fixtures and outputs"]
+replacement_rule = "Retain every excluded attempt. Infrastructure replacement uses the same committed seed, condition, population, mechanism, thresholds, and resources; no seed may be discarded or replaced based on outcome."
+
+[seeds]
+procedure = "SHA256(UTF8('H-REP-001/formal-seed/v1') || uint64_be(index) || raw_32_byte_locked_private_manifest_sha256); seed is the first eight digest bytes interpreted unsigned big-endian."
+indices = [0, 1, 2, 3, 4]
+directory = "seeds/"
+selection_rule = "Every index, full digest, and integer is committed before formal outputs; no post-output seed selection or discard."
+
+[fixture_lock]
+set = "formal"
+public_manifest = "fixture-manifest-public.json"
+public_manifest_sha256 = "68ccbbf5cdfe722dca17aadc9d8a4c908c5e090e76105951ac4b35e3808470bb"
+private_manifest_hash_file = "fixture-manifest-private.hash"
+held_out_private_manifest_sha256 = "a7d0a0e5f5ab8413437be9620aa17123457756710aa32dc06c69dc150e6a6c7c"
+private_access_rule = "Operators never receive the private manifest or labels. Public decisions close before the resolution authority loads private truth."
+
+[limited_claims]
+may_establish = "Whether M01 reputation predicts future correctness under this locked software-fixture population, operator population, information access, learning rules, schedule, and resources."
+explicitly_excluded = ["Sybil resistance", "human behavior", "market or public-market sustainability", "token necessity or token economics", "customer-standing efficacy or standing generally", "challenge-market efficacy", "generalization beyond the tested software-validation population, fixtures, and resource constraints"]

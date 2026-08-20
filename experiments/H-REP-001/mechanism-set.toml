@@ -1,0 +1,35 @@
+schema_version = 2
+experiment_id = "H-REP-001"
+status = "locked"
+protocol_version = 1
+condition_order = ["M00", "M01"]
+condition_rule = "Each formal seed executes both conditions separately with identical fixture schedule, populations, information policy, learning policy, and budgets."
+
+[[conditions]]
+name = "mechanism_control"
+mechanism_id = "M00"
+version = "1.0.0"
+canonical_config_hex = ""
+config_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+implementation = "rachet_mechanisms::m00_record_only::M00RecordOnly"
+implementation_source_sha256 = "25c95e478c7d20ee4677d7bb17f581c385a0b0069b3dc2221035e90788371115"
+conformance_sha256 = "97c37a1f0d4e474eff1695fe38f31c2c0626ac48aad389a05afd9b115f294e8c"
+state_namespace = 0
+semantics = "Record-only; every event and epoch produces zero economic mutations and its namespace remains empty."
+
+[[conditions]]
+name = "target"
+mechanism_id = "M01"
+version = "1.0.0"
+canonical_config_hex = ""
+config_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+implementation = "rachet_mechanisms::m01_naive_reputation::M01NaiveReputation"
+implementation_source_sha256 = "dbf1a49890252d2c59dd088ee46e2b4a983e6c2b1eef4bf73972450e6b707c4d"
+conformance_sha256 = "c7ea67b2204f38260951871ae5a18bc8a2b62c6bd0fa8359763ceeef7c58c565"
+state_namespace = 1
+matching_resolution_delta = 1
+contradicting_resolution_delta = -1
+abstain_or_indeterminate_delta = 0
+unresolved_delta = 0
+resolution_policy = "ExperimentAuthority only; authority identities never receive validation reputation."
+semantics = "Cumulative non-transferable score equals correct minus incorrect; no stake, standing, maturity, weighting, payout, transfer, or consensus effect."

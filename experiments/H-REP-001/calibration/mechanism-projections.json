@@ -1,0 +1,409 @@
+{
+  "future_fixture_ids": [
+    "calibration-misleading-but-valid-change",
+    "calibration-specification-violation",
+    "calibration-subtle-regression",
+    "calibration-test-only-failure"
+  ],
+  "mechanisms": [
+    "M00@1.0.0",
+    "M01@1.0.0"
+  ],
+  "null_model": "seeded random ranking independent of validation",
+  "projections": [
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "productive",
+      "raw_validation_count": 4,
+      "seed": 8200401,
+      "validation_effort_units": 84
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "self-interested",
+      "raw_validation_count": 4,
+      "seed": 8200401,
+      "validation_effort_units": 84
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "adversarial",
+      "raw_validation_count": 4,
+      "seed": 8200401,
+      "validation_effort_units": 54
+    },
+    {
+      "held_out_binary_correctness": 0.25,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "always-pass",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 2,
+      "operator": "always-fail",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "random-verdict",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "easy-job-only",
+      "raw_validation_count": 2,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "majority-following",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.25,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "maximum-volume",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "perfect-abstainer",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 2,
+      "operator": "historical-majority",
+      "raw_validation_count": 5,
+      "seed": 8200401,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "productive",
+      "raw_validation_count": 4,
+      "seed": 8200402,
+      "validation_effort_units": 75
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "self-interested",
+      "raw_validation_count": 4,
+      "seed": 8200402,
+      "validation_effort_units": 84
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "adversarial",
+      "raw_validation_count": 4,
+      "seed": 8200402,
+      "validation_effort_units": 27
+    },
+    {
+      "held_out_binary_correctness": 0.25,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "always-pass",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 2,
+      "operator": "always-fail",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "random-verdict",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "easy-job-only",
+      "raw_validation_count": 2,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "majority-following",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.25,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "maximum-volume",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "perfect-abstainer",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 2,
+      "operator": "historical-majority",
+      "raw_validation_count": 5,
+      "seed": 8200402,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "productive",
+      "raw_validation_count": 4,
+      "seed": 8200403,
+      "validation_effort_units": 84
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "self-interested",
+      "raw_validation_count": 4,
+      "seed": 8200403,
+      "validation_effort_units": 84
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "adversarial",
+      "raw_validation_count": 4,
+      "seed": 8200403,
+      "validation_effort_units": 27
+    },
+    {
+      "held_out_binary_correctness": 0.25,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "always-pass",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 2,
+      "operator": "always-fail",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "random-verdict",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "easy-job-only",
+      "raw_validation_count": 2,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 1.0,
+      "m00_score": 0,
+      "m01_training_score": 4,
+      "operator": "majority-following",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.25,
+      "m00_score": 0,
+      "m01_training_score": -2,
+      "operator": "maximum-volume",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.0,
+      "m00_score": 0,
+      "m01_training_score": 0,
+      "operator": "perfect-abstainer",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    },
+    {
+      "held_out_binary_correctness": 0.75,
+      "m00_score": 0,
+      "m01_training_score": 2,
+      "operator": "historical-majority",
+      "raw_validation_count": 5,
+      "seed": 8200403,
+      "validation_effort_units": 0
+    }
+  ],
+  "schema_version": "hrep-calibration-mechanism-projections.v1",
+  "seed_metrics": [
+    {
+      "easy_job_farming_score_ratio": 0.0,
+      "high_reputation_low_correctness_frequency": 0.0,
+      "m00_prediction": null,
+      "m01_rho_advantage_over_raw_count": 1.1241607351672425,
+      "m01_spearman_rho": 0.8529411764705882,
+      "majority_following_future_correctness": 1.0,
+      "null_random_ranking": [
+        "adversarial",
+        "self-interested",
+        "always-pass",
+        "productive",
+        "always-fail",
+        "majority-following",
+        "random-verdict",
+        "perfect-abstainer",
+        "maximum-volume",
+        "historical-majority",
+        "easy-job-only"
+      ],
+      "productive_advantage_over_majority": 0.0,
+      "productive_future_correctness": 1.0,
+      "productive_to_adversarial_efficiency_ratio": 0.6428571428571429,
+      "raw_count_spearman_rho": -0.2712195586966542,
+      "reputation_hhi": 0.18,
+      "seed": 8200401,
+      "strategic_abstention_score_advantage_per_available_claim": -0.8,
+      "top_reputation_error": 0.0
+    },
+    {
+      "easy_job_farming_score_ratio": 0.0,
+      "high_reputation_low_correctness_frequency": 0.0,
+      "m00_prediction": null,
+      "m01_rho_advantage_over_raw_count": 1.100436586205491,
+      "m01_spearman_rho": 0.867962678751216,
+      "majority_following_future_correctness": 1.0,
+      "null_random_ranking": [
+        "always-pass",
+        "always-fail",
+        "maximum-volume",
+        "easy-job-only",
+        "self-interested",
+        "historical-majority",
+        "adversarial",
+        "productive",
+        "perfect-abstainer",
+        "majority-following",
+        "random-verdict"
+      ],
+      "productive_advantage_over_majority": 0.0,
+      "productive_future_correctness": 1.0,
+      "productive_to_adversarial_efficiency_ratio": 0.36000000000000004,
+      "raw_count_spearman_rho": -0.23247390745427501,
+      "reputation_hhi": 0.1527777777777778,
+      "seed": 8200402,
+      "strategic_abstention_score_advantage_per_available_claim": -0.8,
+      "top_reputation_error": 0.050000000000000044
+    },
+    {
+      "easy_job_farming_score_ratio": 0.0,
+      "high_reputation_low_correctness_frequency": 0.0,
+      "m00_prediction": null,
+      "m01_rho_advantage_over_raw_count": 1.0412974368660397,
+      "m01_spearman_rho": 0.8088235294117647,
+      "majority_following_future_correctness": 1.0,
+      "null_random_ranking": [
+        "always-pass",
+        "adversarial",
+        "always-fail",
+        "self-interested",
+        "random-verdict",
+        "maximum-volume",
+        "majority-following",
+        "perfect-abstainer",
+        "productive",
+        "easy-job-only",
+        "historical-majority"
+      ],
+      "productive_advantage_over_majority": 0.0,
+      "productive_future_correctness": 1.0,
+      "productive_to_adversarial_efficiency_ratio": 0.32142857142857145,
+      "raw_count_spearman_rho": -0.23247390745427501,
+      "reputation_hhi": 0.18,
+      "seed": 8200403,
+      "strategic_abstention_score_advantage_per_available_claim": -0.8,
+      "top_reputation_error": 0.0
+    }
+  ],
+  "training_fixture_ids": [
+    "calibration-authorization-defect",
+    "calibration-clean-change",
+    "calibration-genuinely-ambiguous-claim",
+    "calibration-malformed-error-handling",
+    "calibration-obvious-regression"
+  ]
+}

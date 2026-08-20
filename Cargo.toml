@@ -1,5 +1,6 @@
 [workspace]
 members = ["crates/*", "bins/*"]
+exclude = ["vendor/ctutils"]
 resolver = "2"
 
 [workspace.package]
@@ -47,3 +48,9 @@ overflow-checks = true
 
 [profile.release]
 overflow-checks = true
+
+# Commonware 2026.7.0 requires ctutils ^0.3.1, whose registry releases pin
+# cmov below the 0.5.4 fix for GHSA-3rjw-m598-pq24. This audited local patch is
+# upstream ctutils 0.3.2 with only its cmov requirement advanced to 0.5.4.
+[patch.crates-io]
+ctutils = { path = "vendor/ctutils" }

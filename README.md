@@ -4,8 +4,8 @@ Rachet is an experimental validation chain for studying how independent agents
 submit evidence, attest to claims, challenge one another, and resolve outcomes
 under deterministic rules.
 
-The repository is named `ratchet`; the existing Rust crates retain the
-`rachet-*` package names and the command-line programs use the `rcht-*` prefix.
+The repository and Rust crates use the `rachet` name; command-line programs use
+the shorter `rcht-*` prefix.
 
 Rachet combines:
 
@@ -78,8 +78,8 @@ Rachet supports Linux. On Windows, use WSL2. Install Rust 1.93.0 with `rustfmt`
 and `clippy`, then run:
 
 ```sh
-git clone https://github.com/bakobiibizo/ratchet.git
-cd ratchet
+git clone https://github.com/bakobiibizo/rachet.git
+cd rachet
 python3 tools/generate_hrep_fixtures.py
 cargo build --workspace --bins
 cargo test --workspace

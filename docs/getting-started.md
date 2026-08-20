@@ -10,8 +10,8 @@ The repository includes `rust-toolchain.toml`, so rustup selects the expected
 toolchain automatically.
 
 ```sh
-git clone https://github.com/bakobiibizo/ratchet.git
-cd ratchet
+git clone https://github.com/bakobiibizo/rachet.git
+cd rachet
 python3 tools/generate_hrep_fixtures.py
 cargo build --workspace --bins
 ```
